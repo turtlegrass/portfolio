@@ -831,6 +831,36 @@
     .builder-list-item:hover { margin: 0; padding: 16px 0; }
     .builder-list-item.selected { margin: 0 -8px; padding: 16px 8px; }
   }
+
+  .btn-calendly {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #3B2D8A;
+    border: 1.5px solid #3B2D8A;
+    padding: 13px 26px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-calendly:hover { background: #3B2D8A; color: #fff; }
+  .btn-calendly svg { stroke: currentColor; flex-shrink: 0; }
+  .btn-work-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid rgba(255,255,255,0.4); color: #fff;
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; padding: 13px 28px; white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-work-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.85); }
+  .btn-work-cta svg { stroke: #fff; flex-shrink: 0; transition: transform 0.2s; }
+  .btn-work-cta:hover svg { transform: translateX(4px); }
+  @media (max-width: 900px) { #work-cta { padding: 60px 24px !important; } }
 </style>
 </head>
 <body>
@@ -842,8 +872,9 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#packages">Packages</a></li>
     <li><a href="#pyramid">Approach</a></li>
-    <li></li>
+    <li><a href="https://rachelpilloff.com/work">Case Studies</a></li>
     <li><a href="#collage">In The Field</a></li>
+    <li><a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a></li>
     <li><a href="#contact" class="nav-cta">Work With Me</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
@@ -858,7 +889,9 @@
   <a href="#packages" onclick="toggleMobileNav()">Packages</a>
   <a href="#pyramid" onclick="toggleMobileNav()">Approach</a>
   
+  <a href="https://rachelpilloff.com/work" onclick="toggleMobileNav()">Case Studies</a>
   <a href="#collage" onclick="toggleMobileNav()">In The Field</a>
+  <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly" onclick="toggleMobileNav()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a>
   <a href="#contact" onclick="toggleMobileNav()" style="color:var(--accent);font-weight:500;">Work With Me</a>
 </div>
 
@@ -870,6 +903,7 @@
     <p class="hero-tagline">Strategy, copy, and digital products for founders and brands who are serious about growth. Remote-first. Available anywhere.</p>
     <div class="hero-meta">
       <p class="hero-location">Siem Reap, Cambodia</p>
+      <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a>
       <a href="#services" class="hero-scroll-cta">See what's possible</a>
     </div>
   </div>
@@ -1037,6 +1071,18 @@
 
 
 
+<!-- CASE STUDIES CTA -->
+<section id="work-cta" style="padding:80px 60px;background:var(--ink);">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap;">
+    <div>
+      <p style="font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;">Case Studies</p>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-0.02em;line-height:1.15;color:#fff;margin-bottom:12px;">Real results.<br><em style="color:#9B92D8;">Real clients.</em></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.65;max-width:480px;margin:0;">Case studies and project breakdowns from clients across Southeast Asia, Europe, and beyond.</p>
+    </div>
+    <a href="https://rachelpilloff.com/work" class="btn-work-cta">View case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</section>
+
 <!-- SOCIAL FEED -->
 <section id="collage">
   <div class="collage-top reveal">
@@ -1201,7 +1247,7 @@
     <div class="contact-left">
       <h2 class="reveal">Let's make something real.</h2>
       <p class="reveal">Whether you have a fully formed brief or just an idea on a napkin, I'm glad to hear it. Fill in the form or email directly.</p>
-      <a href="mailto:hello@rachelpilloff.com" class="contact-email reveal">hello@rachelpilloff.com</a>
+      <a href="/cdn-cgi/l/email-protection#3159545d5d5e7143505259545d41585d5d5e57571f525e5c" class="contact-email reveal"><span class="__cf_email__" data-cfemail="cca4a9a0a0a38cbeadafa4a9a0bca5a0a0a3aaaae2afa3a1">[email&#160;protected]</span></a>
     </div>
     <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xqeygapb" method="POST">
       <input type="hidden" name="_next" value="https://rachelpilloff.com/#contact">
@@ -1269,7 +1315,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" onerror="void(0)"></script><script>
 // NAV SCROLL
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
@@ -1409,12 +1455,11 @@ form.addEventListener('submit', async (e) => {
       btn.textContent = 'Send message';
       btn.disabled = false;
     }
-  } catch {
+  } catch (err) {
     btn.textContent = 'Send message';
     btn.disabled = false;
   }
 });
 </script>
-
 </body>
 </html>
