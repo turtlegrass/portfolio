@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rachel Pilloff: Marketing Methodology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+ --accent: #3B2D8A;
+ --accent-light: #EDEAF8;
+ --accent-dark: #2a1f63;
+ --accent-mid: rgba(59,45,138,0.55);
+ --ink: #0E0E0E;
+ --ink-soft: #4A4A4A;
+ --ink-muted: #9A9A9A;
+ --bg: #F6F4F0;
+ --bg-alt: #EDEAF8;
+ --white: #FFFFFF;
+ --rule: rgba(14,14,14,0.1);
+ --serif: 'Fraunces', Georgia, serif;
+ --sans: 'Manrope', system-ui, sans-serif;
+ /* legacy aliases so existing var() refs keep working */
+ --plum: #3B2D8A;
+ --plum-light: rgba(255,255,255,0.6);
+ --plum-dark: #2a1f63;
+ --cream: #F6F4F0;
+ --warm: #EDEAF8;
+ --muted: #9A9A9A;
+ --border: rgba(14,14,14,0.1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(246,244,240,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+nav.scrolled { border-color: var(--rule); }
+.nav-brand { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; }
+.nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.1em !important; color: var(--white) !important; background: var(--accent); padding: 9px 18px !important; transition: opacity 0.2s !important; }
+.nav-cta:hover { opacity: 0.85; color: var(--white) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+.mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(246,244,240,0.98); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { font-size: 22px; font-family: var(--serif); font-weight: 300; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; transition: color 0.2s; }
+.mobile-nav a:hover { color: var(--accent); }
+.mobile-nav .mobile-close { position: absolute; top: 24px; right: 24px; font-size: 28px; background: none; border: none; cursor: pointer; color: var(--ink); font-family: var(--sans); line-height: 1; }
+
+/* HERO */
+#hero { min-height: 100vh; background: var(--bg); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+.hero-bg { display: none; }
+.hero-grid-bg { display: none; }
+.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 60px 60px; padding-top: 140px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+.hero-title { font-family: var(--serif); font-size: clamp(56px, 9vw, 120px); font-weight: 300; line-height: 0.95; letter-spacing: -0.03em; color: var(--ink); opacity: 0; animation: fadeUp 0.9s 0.4s forwards; }
+.hero-title em { font-style: italic; color: var(--accent); }
+.hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(16px, 2vw, 22px); color: var(--ink-soft); margin-top: 24px; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.9s 0.6s forwards; }
+.hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: #fff; padding: 14px 28px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; opacity: 0; animation: fadeUp 0.9s 0.8s forwards; align-self: flex-start; }
+.hero-cta:hover { opacity: 0.85; }
+.hero-scroll { position: relative; z-index: 2; padding: 28px 60px; display: flex; align-items: center; gap: 16px; color: var(--ink-muted); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.hero-line { width: 40px; height: 1px; background: var(--rule); }
+
+/* SECTION WRAPPERS */
+section { position: relative; }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+
+/* COLLAPSIBLE */
+.collapsible-wrap { border-bottom: 1px solid var(--border); }
+.collapsible-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 60px; cursor: pointer; background: none; border: none; text-align: left; transition: background 0.2s; }
+.collapsible-trigger:hover { background: rgba(59,45,138,0.03); }
+.trigger-left { display: flex; flex-direction: column; gap: 6px; }
+.trigger-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--plum); }
+.trigger-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 36px); font-weight: 700; color: var(--ink); line-height: 1.1; }
+.trigger-title-light { color: #fff !important; }
+.trigger-eyebrow-light { color: var(--plum-light) !important; }
+.trigger-arrow { font-size: 22px; color: var(--plum); transition: transform 0.35s; flex-shrink: 0; margin-left: 24px; }
+.collapsible-trigger.open .trigger-arrow { transform: rotate(180deg); }
+.trigger-arrow-light { color: rgba(255,255,255,0.5) !important; }
+.collapsible-body { display: none; }
+.collapsible-body.open { display: block; }
+
+/* INTRO */
+#intro { background: var(--cream); }
+.intro-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; padding: 16px 48px 60px; max-width: 1100px; margin: 0 auto; }
+.intro-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--plum); padding-top: 8px; }
+.intro-text p { font-family: var(--serif); font-size: clamp(17px, 2.1vw, 24px); line-height: 1.7; color: var(--ink); margin-bottom: 22px; }
+.intro-text p:last-child { margin-bottom: 0; }
+
+/* PILLARS */
+#pillars, #pillars .collapsible-trigger { background: var(--ink); }
+#pillars .collapsible-trigger:hover { background: rgba(255,255,255,0.03); }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 0 48px 64px; max-width: 1100px; margin: 0 auto; }
+.pillar-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(59,45,138,0.15); padding: 36px 28px; cursor: pointer; transition: background 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
+.pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--plum); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.pillar-card:hover::before, .pillar-card.active::before { transform: scaleX(1); }
+.pillar-card:hover, .pillar-card.active { background: rgba(59,45,138,0.1); border-color: rgba(59,45,138,0.4); }
+.pillar-num { font-size: 10px; letter-spacing: 0.2em; color: var(--plum-light); text-transform: uppercase; margin-bottom: 12px; }
+.pillar-name { font-family: var(--serif); font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.pillar-lead { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; font-style: italic; }
+.pillar-body { display: none; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(59,45,138,0.15); }
+.pillar-card.active .pillar-body { display: block; }
+.pillar-body p { font-size: 13.5px; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 13px; }
+.pillar-body p:last-child { margin-bottom: 0; }
+.pillar-callout { font-style: italic; color: var(--plum-light) !important; font-size: 13px !important; padding-left: 14px; border-left: 2px solid var(--plum); margin-top: 14px !important; }
+
+/* CASE STUDIES */
+#cases, #cases .collapsible-trigger { background: var(--warm); }
+#cases .collapsible-trigger:hover { background: rgba(59,45,138,0.05); }
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 12px 48px 64px; max-width: 1100px; margin: 0 auto; }
+.case-card { background: #fff; padding: 32px 28px; border-top: 3px solid transparent; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.case-card:hover { border-top-color: var(--plum); transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.07); }
+.case-tag { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--plum); margin-bottom: 10px; }
+.case-name { font-family: var(--serif); font-size: 21px; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.2; }
+.case-type { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.case-body { display: none; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06); }
+.case-card.expanded .case-body { display: block; }
+.case-body p { font-size: 13px; line-height: 1.85; color: #555; margin-bottom: 11px; }
+.case-body p:last-child { margin-bottom: 0; }
+.case-toggle { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--plum); margin-top: 14px; display: inline-block; }
+
+/* LIFE */
+#life { background: var(--cream); }
+.life-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 12px 48px 64px; max-width: 1100px; margin: 0 auto; }
+.life-card { padding: 36px; background: var(--warm); border-left: 3px solid var(--plum); }
+.life-card-title { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.life-card-sub { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.life-card p { font-size: 13.5px; line-height: 1.85; color: #444; margin-bottom: 11px; }
+.life-card p:last-child { margin-bottom: 0; }
+
+
+
+/* CTA */
+#cta { background: var(--warm); }
+.cta-inner { max-width: 720px; margin: 0 auto; padding: 100px 48px; text-align: center; }
+.cta-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--plum); margin-bottom: 22px; }
+.cta-title { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 52px); font-weight: 700; color: var(--ink); line-height: 1.1; margin-bottom: 32px; }
+.cta-title em { font-style: italic; color: var(--plum); }
+.cta-body p { font-size: 16px; line-height: 1.85; color: #555; margin-bottom: 18px; font-family: var(--serif); }
+.cta-divider { width: 50px; height: 1px; background: var(--plum); margin: 40px auto; }
+.cta-email { font-family: var(--serif); font-size: 18px; color: var(--plum); letter-spacing: 0.05em; margin: 8px 0; }
+.cta-name { font-family: var(--serif); font-size: 20px; color: var(--plum); margin-top: 44px; }
+.cta-tagline { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 6px; }
+.cta-book { margin-top: 32px; display: flex; justify-content: center; }
+
+/* CALENDLY BUTTON */
+.btn-calendly { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--accent); border: 1.5px solid var(--accent); padding: 13px 26px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
+.btn-calendly:hover { background: var(--accent); color: #fff; }
+.btn-calendly svg { flex-shrink: 0; }
+.btn-calendly-solid { background: var(--accent); color: #fff !important; border-color: var(--accent); }
+.btn-calendly-solid:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.pillars-cta-row { display: flex; justify-content: center; padding: 0 48px 56px; max-width: 1100px; margin: 0 auto; }
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* FOOTER */
+footer { background: var(--ink); padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.footer-left { display: flex; flex-direction: column; gap: 4px; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; }
+.footer-location { font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 0.08em; text-transform: uppercase; }
+.footer-ctas { display: flex; gap: 12px; flex-shrink: 0; }
+.footer-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); text-decoration: none; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+.footer-cta-btn:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.footer-cta-icon { display: flex; align-items: center; opacity: 0.7; }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+ nav { padding: 16px 20px; }
+ .nav-links { display: none; }
+ .nav-hamburger { display: flex; }
+ .hero-content { padding: 120px 20px 48px; }
+ .hero-scroll { padding: 20px; }
+ .collapsible-trigger, .section-inner { padding-left: 20px; padding-right: 20px; }
+ .pillars-grid, .cases-grid, .life-grid { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; }
+ .intro-grid { grid-template-columns: 1fr; gap: 18px; padding-left: 20px; padding-right: 20px; }
+ .cta-inner { padding: 72px 20px; }
+ footer { flex-direction: column; gap: 16px; padding: 28px 20px; text-align: center; }
+ .footer-ctas { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+ <a class="nav-brand" href="/">Rachel Pilloff</a>
+ <ul class="nav-links">
+ <li><a href="#intro">About</a></li>
+ <li><a href="#pillars">Methodology</a></li>
+ <li><a href="#cases">Work</a></li>
+ <li><a href="#life">Background</a></li>
+ <li><a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="nav-cta" style="background:transparent;color:var(--accent)!important;border:1.5px solid var(--accent);margin-right:4px;">Book a call</a></li>
+ <li><a href="#cta" class="nav-cta">Let's Talk</a></li>
+ </ul>
+ <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+ <span></span><span></span><span></span>
+ </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+ <button class="mobile-close" onclick="toggleMobileNav()">×</button>
+ <a href="#intro" onclick="toggleMobileNav()">About</a>
+ <a href="#pillars" onclick="toggleMobileNav()">Methodology</a>
+ <a href="#cases" onclick="toggleMobileNav()">Work</a>
+ <a href="#life" onclick="toggleMobileNav()">Background</a>
+ <a href="#cta" onclick="toggleMobileNav()">Let's Talk</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+ <div class="hero-bg"></div>
+ <div class="hero-grid-bg"></div>
+ <div class="hero-content">
+ <p class="hero-eyebrow">How I Do It</p>
+ <h1 class="hero-title">Rachel's<br><em>Digital</em><br>Methodology</h1>
+ <p class="hero-sub">A funnel-centred approach to digital marketing</p>
+ <div class="hero-ctas">
+ <a href="#intro" class="hero-cta">Read the methodology ↓</a>
+ <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly" style="opacity:0;animation:fadeUp 0.9s 1s forwards;">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+ Book a call
+ </a>
+ </div>
+ </div>
+ <div class="hero-scroll"><span class="hero-line"></span><span>Scroll to explore</span></div>
+</section>
+
+<!-- INTRO -->
+<div class="collapsible-wrap" id="intro">
+ <button class="collapsible-trigger open" onclick="toggleSection(this)">
+ <div class="trigger-left">
+ <span class="trigger-eyebrow">Before We Begin</span>
+ <span class="trigger-title">The Approach</span>
+ </div>
+ <span class="trigger-arrow">↓</span>
+ </button>
+ <div class="collapsible-body open">
+ <div class="intro-grid reveal">
+ <div class="intro-label">Before We Begin</div>
+ <div class="intro-text">
+ <p>Most marketing feels like a stranger handing you a flyer. The approach I use is more reliable than any framework: understand people well enough to build them something that feels like it was made for them alone.</p>
+ <p>This methodology covers everything I do - copywriting, digital marketing, social media, and digital product creation. Six pillars. Each one builds on the last.</p>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- PILLARS -->
+<div class="collapsible-wrap" id="pillars">
+ <button class="collapsible-trigger open" onclick="toggleSection(this)">
+ <div class="trigger-left">
+ <span class="trigger-eyebrow trigger-eyebrow-light">The Framework</span>
+ <span class="trigger-title trigger-title-light">Six Pillars</span>
+ </div>
+ <span class="trigger-arrow trigger-arrow-light">↓</span>
+ </button>
+ <div class="collapsible-body open">
+ <div class="pillars-grid">
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 1</div>
+ <div class="pillar-name">The Meaning Making</div>
+ <div class="pillar-lead">We figure out your why - so everything that follows is built on something real.</div>
+ <div class="pillar-body">
+ <p>I never start with a brief. I start with a conversation. Whether the output is a website, a content strategy, a social presence, or a digital product, it has to be rooted in something true about you and what you're building.</p>
+ <p>I ask questions that might feel unusual for a marketing conversation. I listen for the moments where your voice changes. I look for the detail that arrives with a small pause: because that detail is usually the one that belongs at the centre of everything - the copy, the campaign, the brand.</p>
+ <p class="pillar-callout">The Daun Penh Group brief arrived as floor plans and square footage. What emerged was a narrative about cultural preservation: about giving Khmer arts a home that was also a destination.</p>
+ </div>
+ </div>
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 2</div>
+ <div class="pillar-name">Defining Your Audience</div>
+ <div class="pillar-lead">We figure out who they are - and which channels actually reach them.</div>
+ <div class="pillar-body">
+ <p>Most digital marketing fails not because the product is wrong, but because the message is aimed at no one in particular. I map three layers: Needs (the functional gap), Wants (the emotional underpinning), and Hungers (the deep driver with no clean name).</p>
+ <p>That map doesn't just shape the copy. It shapes the channel mix. Where your audience actually lives online - which platforms they trust, how they search, what format stops them scrolling - determines everything from social strategy to SEO priority to what your lead magnet should offer.</p>
+ <p class="pillar-callout">For Bay of Lights, the 2am investor thought wasn't about the development: it was about whether a frontier market was a smart bet. Once I understood that, the messaging - and the channel strategy - wrote itself.</p>
+ </div>
+ </div>
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 3</div>
+ <div class="pillar-name">The Research</div>
+ <div class="pillar-lead">I get behind their eyes and ears - then build content that feels like it was made for them alone.</div>
+ <div class="pillar-body">
+ <p>This is the part most agencies rush past. I stay in it. Research means genuine immersion: reading the forums where your audience talks when they think no one is watching, paying attention to the words they reach for when they're being honest.</p>
+ <p>Those words inform everything: the copy, the social content calendar, the hooks for paid campaigns, the titles of digital products. When the language comes from the audience, it lands with them. That's not a coincidence.</p>
+ <p class="pillar-callout">For Dorsu, the research meant understanding how Cambodian consumers relate to ethical fashion. The product pages, the social captions, the email sequences - none of it was translated marketing. It was written from the ground up for that reader.</p>
+ </div>
+ </div>
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 4</div>
+ <div class="pillar-name">Digital Presence &amp; Channel Strategy</div>
+ <div class="pillar-lead">The right platforms. The right content. A system that compounds.</div>
+ <div class="pillar-body">
+ <p>A digital presence isn't a website and a logo. It's a set of channels working together: SEO-optimised web copy that captures search intent, social content that builds trust over time, email that converts the people already in your world, and digital products that generate value while you sleep.</p>
+ <p>I design the full ecosystem - which platforms earn attention from your specific audience, what content rhythm is sustainable, how your Google presence gets built through GEO and local SEO, and where a well-placed lead magnet turns browsers into buyers. Your email list is the one asset the algorithm can't take from you.</p>
+ <p class="pillar-callout">Business Class ASAP had strong positioning and almost no digital footprint. We built the channel strategy, the social presence, and the content funnel from scratch - every platform saying the same thing in the right language for where it was being read.</p>
+ </div>
+ </div>
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 5</div>
+ <div class="pillar-name">The Build</div>
+ <div class="pillar-lead">Copy, content, and digital products - made by hand, for real people.</div>
+ <div class="pillar-body">
+ <p>This is where the strategy becomes something tangible. Website copy and landing pages. Social content series. Email sequences. Ebooks, guides, and digital courses that position you as the authority in your space. The deliverable changes shape depending on what the strategy calls for - but the standard stays constant.</p>
+ <p>I write by hand first. Always. The human version exists before anything else does. After that, I use AI as a polish layer - the same way I use a good editor. But the thinking, the structure, the voice: that comes from a person. You can tell the difference, and so can your audience.</p>
+ <p class="pillar-callout">For Vedic Psychology Institute, every piece - from web copy to the downloadable intake guide - went through one test: accessible without being condescending? Clear without being thin? The line between those is narrower than most expect.</p>
+ </div>
+ </div>
+ <div class="pillar-card" onclick="togglePillar(this)">
+ <div class="pillar-num">Pillar 6</div>
+ <div class="pillar-name">Review &amp; Iteration</div>
+ <div class="pillar-lead">We measure, adjust, and sharpen. That part doesn't end.</div>
+ <div class="pillar-body">
+ <p>A strategy that never gets looked at again isn't a strategy. After launch - whether that's a new site, a campaign, a content series, or a digital product - we track what's working and what isn't. Open rates. Search rankings. Conversion paths. Social reach versus engagement.</p>
+ <p>The numbers tell a story too. My job is to read it alongside you, make the call on what to adjust, and keep the whole system moving in the right direction. Iteration isn't a sign something went wrong. It's the work.</p>
+ <p class="pillar-callout">TechFlow came in as a Webflow agency. Through iteration across positioning, copy, and digital strategy, we repositioned them around design-led digital product development: an identity that didn't tie them to any single platform or deliverable.</p>
+ </div>
+ </div>
+ </div>
+ <div class="pillars-cta-row">
+ <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly btn-calendly-solid">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+ Book a call with Rachel
+ </a>
+ </div>
+ </div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="collapsible-wrap" id="cases">
+ <button class="collapsible-trigger open" onclick="toggleSection(this)">
+ <div class="trigger-left">
+ <span class="trigger-eyebrow">Selected Work</span>
+ <span class="trigger-title">The Work: Case Studies</span>
+ </div>
+ <span class="trigger-arrow">↓</span>
+ </button>
+ <div class="collapsible-body open">
+ <div class="cases-grid">
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Investment · Podcast · Cultural</div>
+ <div class="case-name">Good Morning Cambodia</div>
+ <div class="case-type">Podcast Copywriting · Investment Portal · gmcambodia.com</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>Most investment platforms talk to investors. Good Morning Cambodia talks to people who are genuinely curious about a country, and trusts that curiosity to do the conversion work.</p>
+ <p>The platform sits at a specific intersection: it's a podcast, an investment portal, and a cultural guide all at once. My work focused on connecting international audiences with Cambodia's growth story, promoting cultural insights alongside investment opportunities.</p>
+ <p>I helped develop positioning that framed GMC not as a typical investment platform but as an insider access point: decades of on-the-ground experience, conversations with the people actually building things. Honesty as differentiator in a space full of sanitized opportunity decks.</p>
+ <p>During this time I also became spokesperson for PSTC and the UPTIME Academy, working in both Thailand and Cambodia.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">GEO · SEO · AI Search</div>
+ <div class="case-name">Akalah</div>
+ <div class="case-type">GEO Strategy · SEO Audit · AI Search Visibility</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>This is the project I get asked about most: getting clients through ChatGPT. Generative Engine Optimization means writing to be summarized, cited, and recommended by a language model.</p>
+ <p>For Akalah, I ran a full SEO audit and developed a GEO strategy that positioned them as an authoritative source in their category. Content structured to be machine-readable and genuinely useful turns out to be the same thing.</p>
+ <p>The result was direct client acquisition through AI chat platforms. It's early days for this kind of work, and that's exactly why I found it worth doing.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Tourism · Research · Award-Winning</div>
+ <div class="case-name">Ministry of Tourism</div>
+ <div class="case-type">Tourism Research · Strategic Content · Cambodia</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>This is the project I'm proudest of. I was commissioned to conduct tourism research and strategic content development for Cambodia's Ministry of Tourism, focused on U.S. outbound travel.</p>
+ <p>The research covered traveler demographics, spending patterns, destination preferences, and service gaps. The findings pointed to concrete opportunities in marketing framing, cultural storytelling, and visitor services.</p>
+ <p>The work was formally recognized with an award for supporting tourism development. His Excellency HUOT Hak thanked me personally for my efforts to promote Cambodia through market research and international outreach.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">SEO · B2B · Positioning</div>
+ <div class="case-name">TechFlow Agency</div>
+ <div class="case-type">SEO Architecture · B2B Positioning</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>TechFlow came in positioned as a Webflow agency: already too narrow and getting more so. I helped reposition around design-led digital product development, building keyword clusters and an internal linking system for long-term topical authority.</p>
+ <p>Clarity of positioning is an SEO decision as much as a branding one. When a site knows what it is, Google figures it out faster.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Investment · Coastal · Cambodia</div>
+ <div class="case-name">Bay of Lights</div>
+ <div class="case-type">Investment Copywriting · Coastal Development</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>Investment copy is a trust exercise. The reader is alert to anything that papers over risk. Writing for this audience means earning the right to make a case, not just making one.</p>
+ <p>I developed keyword-aligned narratives across hospitality, tourism, and real estate investment: translating the masterplan's complexity into messaging that could hold together across presentations and web copy. The goal: an investor who felt informed. Informed people close deals.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Brand · SEO · Localization</div>
+ <div class="case-name">Dorsu</div>
+ <div class="case-type">Brand Localization · SEO · shopdorsu.com</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>Dorsu is a sustainable fashion brand in Cambodia selling to a local market that international templates don't speak to. The research phase was the whole job: understanding how Cambodian consumers relate to ethical fashion in their specific cultural context.</p>
+ <p>I rewrote the product pages from the ground up, optimized for local SEO, and built in Khmer language support. A brand that sounds like it was written in a European marketing office has a ceiling here. This work pushed past it.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Urban Vision · Proposal</div>
+ <div class="case-name">Daun Penh Group</div>
+ <div class="case-type">Urban Vision Storytelling · Phnom Penh Arts District</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>The brief arrived as a blueprint: floor plans, facility lists, projected square footage. What was needed was a story.</p>
+ <p>In reality it was an answer to a question Phnom Penh had been quietly asking: where does Khmer culture live in a city moving this fast? That question became the spine of everything. Each facility got its own narrative logic, explained in terms of the community it would serve.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Educational · SEO · Philosophy</div>
+ <div class="case-name">Vedic Psychology Institute</div>
+ <div class="case-type">Educational Copywriting · myvedicpsychology.com</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>Vedic psychology sits at the intersection of ancient philosophy and modern self-inquiry. The audience was curious but not yet initiated. Every piece went through one calibration: is this accessible without being condescending?</p>
+ <p>The line between those two is narrower than most expect. I developed keyword frameworks and handled full technical SEO alongside the writing.</p>
+ </div>
+ </div>
+ <div class="case-card" onclick="toggleCase(this)">
+ <div class="case-tag">Luxury · Social Launch</div>
+ <div class="case-name">Business Class ASAP</div>
+ <div class="case-type">Luxury Positioning · Social Launch · businessclassasap.com</div>
+ <span class="case-toggle">Read more ↓</span>
+ <div class="case-body">
+ <p>Luxury copy has one rule: the reader isn't looking to be impressed by features. They assume quality. What they're looking for is feeling: that this brand understands their standards.</p>
+ <p>I refined web copy, contributed to the blog, and launched their Instagram, Facebook, and TikTok from the ground up with seeded high-quality content on day one. Someone who found them on TikTok and visited the website should feel like they'd arrived at the same place from a different door.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- LIFE BEHIND THE WORK -->
+<div class="collapsible-wrap" id="life">
+ <button class="collapsible-trigger open" onclick="toggleSection(this)">
+ <div class="trigger-left">
+ <span class="trigger-eyebrow">Background</span>
+ <span class="trigger-title">The Life Behind The Work</span>
+ </div>
+ <span class="trigger-arrow">↓</span>
+ </button>
+ <div class="collapsible-body open">
+ <p style="font-family:var(--serif); font-size:18px; line-height:1.7; color:#555; padding:0 48px 32px; max-width:1100px; margin:0 auto;">Good copy doesn't come from a desk alone. It comes from a life lived with enough curiosity and range to understand people across vastly different contexts.</p>
+ <div class="life-grid">
+ <div class="life-card">
+ <div class="life-card-title">Phnom Penh Players</div>
+ <div class="life-card-sub">Actor · Writer · Director · Producer · Head of Marketing</div>
+ <p>The longest-running charity theatre group in Cambodia, founded in 1992. Every show raises money for local causes. I acted, co-starred, wrote original plays, directed, produced, and eventually joined the committee as Head of Marketing.</p>
+ <p>When you are standing in front of a live audience, you know immediately whether something landed. The room either shifts or it doesn't. That instinct lives in every piece of copy I write.</p>
+ <p>One of my original productions was a comedy called <em>'That Would Never Happen'</em>, starring Monja McKay. A joke on paper is a theory. A joke in a room is either a fact or an embarrassment. Headlines work the same way.</p>
+ </div>
+ <div class="life-card">
+ <div class="life-card-title">ACSR Siem Reap</div>
+ <div class="life-card-sub">Stand-Up Comedy · Siem Reap</div>
+ <p>Out of the Phnom Penh Players grew a stand-up comedy scene in Siem Reap. Stand-up and copywriting share the same problem: a very short window to earn someone's full attention, and if you lose it, they're gone.</p>
+ <p>The structure of a good joke and the structure of a good headline are closer than most people realize. Both require you to set something up and pay it off with a surprise that, in hindsight, felt inevitable.</p>
+ <p>Getting on stage regularly also does something to your relationship with failure that is genuinely useful in a creative profession. You learn to iterate without flinching.</p>
+ </div>
+ <div class="life-card">
+ <div class="life-card-title">ICIDO</div>
+ <div class="life-card-sub">Fundraising · Volunteer Teaching · Takeo Province, Cambodia</div>
+ <p>ICIDO is an orphanage and English school operating in Takeo province, serving children who need both a safe place and a future. I fundraised for the organization and volunteered as an English teacher with the kids directly.</p>
+ <p>Teaching children in a rural Cambodian province puts you inside the culture in a way that no research project ever could. Understanding Cambodia deeply has made me a better writer for every Cambodian brand I've worked with since: Dorsu, Bay of Lights, Ministry of Tourism, Daun Penh.</p>
+ </div>
+ <div class="life-card">
+ <div class="life-card-title">AFIS</div>
+ <div class="life-card-sub">Grade 1 Teacher · Head of Admissions · $22K in Enrolments</div>
+ <p>I joined AFIS as a Grade 1 teacher. Within six months I was Head of Admissions. The school needed enrolments: a Facebook presence that wasn't working and families who didn't know enough about what was on offer.</p>
+ <p>For parents choosing a school, the decision is never purely rational. It's about trust, belonging, whether their child will be seen. The Facebook content I produced spoke to that directly.</p>
+ <p>In the first year, the marketing effort brought in $22,000 in enrolments. A school in need of students found them. The writing was just the bridge.</p>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+ <div class="cta-inner reveal">
+ <p class="cta-eyebrow">What It Looks Like To Work With Me</p>
+ <h2 class="cta-title">Built carefully.<br><em>On purpose.</em></h2>
+ <div class="cta-body">
+ <p>The work I do is built around your specific story, your specific audience, the particular shape of what you're offering. No templates with your name dropped in.</p>
+ <p>Working with me is a full build: story, audience, funnel, words, all of it aligned and pulling in the same direction. You get the research behind every phrase that sounds effortless. You get someone who cares about your conversion as much as you do.</p>
+ <p>I work best with coaches, creators, and founders who have something real to offer and need someone who can articulate it with the precision it deserves.</p>
+ </div>
+ <div class="cta-divider"></div>
+ <div class="cta-email reveal"><a href="mailto:hello@rachelpilloff.com">hello@rachelpilloff.com</a></div>
+ <div class="cta-book reveal">
+ <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly btn-calendly-solid" style="margin: 0 auto;">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+ Book a discovery call
+ </a>
+ </div>
+ <div class="cta-name">Rachel Pilloff</div>
+ <div class="cta-tagline">Copywriter · Content Strategist · Meaning Maker</div>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-left">
+ <span class="footer-copy">&copy; 2026 Rachel Pilloff &nbsp;&middot;&nbsp; rachelpilloff.com</span>
+ <span class="footer-location">Siem Reap, Cambodia</span>
+ </div>
+ <div class="footer-ctas">
+ <a href="https://t.me/writerachel" target="_blank" rel="noopener" class="footer-cta-btn">
+ <span class="footer-cta-icon">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.367l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.192z"/>
+ </svg>
+ </span>
+ Telegram
+ </a>
+ <a href="https://wa.me/qr/USOVNQFA5B4JH1" target="_blank" rel="noopener" class="footer-cta-btn">
+ <span class="footer-cta-icon">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+ </svg>
+ </span>
+ WhatsApp
+ </a>
+ </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener('scroll', () => {
+ document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function toggleMobileNav() {
+ document.getElementById('mobileNav').classList.toggle('open');
+}
+
+function toggleSection(btn) {
+ btn.classList.toggle('open');
+ const body = btn.nextElementSibling;
+ body.classList.toggle('open');
+}
+
+function togglePillar(card) {
+ const was = card.classList.contains('active');
+ document.querySelectorAll('.pillar-card').forEach(c => c.classList.remove('active'));
+ if (!was) card.classList.add('active');
+}
+
+function toggleCase(card) {
+ const is = card.classList.contains('expanded');
+ card.classList.toggle('expanded', !is);
+ card.querySelector('.case-toggle').textContent = is ? 'Read more ↓' : 'Close ↑';
+}
+
+const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ }
+ });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
