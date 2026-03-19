@@ -109,7 +109,22 @@ section { position: relative; }
 .pillar-body p:last-child { margin-bottom: 0; }
 .pillar-callout { font-style: italic; color: #3B2D8A !important; font-size: 13px !important; padding-left: 14px; border-left: 2px solid #3B2D8A; margin-top: 14px !important; }
 
- /* LIFE */
+/* CASE STUDIES */
+#cases, #cases .collapsible-trigger { background: var(--warm); }
+#cases .collapsible-trigger:hover { background: rgba(59,45,138,0.05); }
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 12px 48px 64px; max-width: 1100px; margin: 0 auto; }
+.case-card { background: #fff; padding: 32px 28px; border-top: 3px solid transparent; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.case-card:hover { border-top-color: var(--plum); transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.07); }
+.case-tag { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--plum); margin-bottom: 10px; }
+.case-name { font-family: var(--serif); font-size: 21px; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.2; }
+.case-type { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.case-body { display: none; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06); }
+.case-card.expanded .case-body { display: block; }
+.case-body p { font-size: 13px; line-height: 1.85; color: #555; margin-bottom: 11px; }
+.case-body p:last-child { margin-bottom: 0; }
+.case-toggle { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--plum); margin-top: 14px; display: inline-block; }
+
+/* LIFE */
 #life { background: var(--cream); }
 .life-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 12px 48px 64px; max-width: 1100px; margin: 0 auto; }
 .life-card { padding: 36px; background: var(--warm); border-left: 3px solid var(--plum); }
@@ -117,6 +132,8 @@ section { position: relative; }
 .life-card-sub { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
 .life-card p { font-size: 13.5px; line-height: 1.85; color: #444; margin-bottom: 11px; }
 .life-card p:last-child { margin-bottom: 0; }
+
+
 
 /* CTA */
 #cta { background: var(--warm); }
@@ -234,7 +251,7 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="intro-label">Before We Begin</div>
  <div class="intro-text">
  <p>Most marketing feels like a stranger handing you a flyer. The approach I use is more reliable than any framework: understand people well enough to build them something that feels like it was made for them alone.</p>
- <p>This methodology covers everything I do from copywriting and digital marketing to social media, and digital product creation. Six pillars. Each one builds on the last.</p>
+ <p>This methodology covers everything I do - copywriting, digital marketing, social media, and digital product creation. Six pillars. Each one builds on the last.</p>
  </div>
  </div>
  </div>
