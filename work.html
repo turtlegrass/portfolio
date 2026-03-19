@@ -93,22 +93,21 @@ section { position: relative; }
 .intro-text p:last-child { margin-bottom: 0; }
 
 /* PILLARS */
-#pillars, #pillars .collapsible-trigger { background: var(--ink); }
-#pillars .collapsible-trigger:hover { background: rgba(255,255,255,0.03); }
+#pillars, #pillars .collapsible-trigger { background: #F0EEEA; }
+#pillars .collapsible-trigger:hover { background: rgba(59,45,138,0.04); }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 0 48px 64px; max-width: 1100px; margin: 0 auto; }
-.pillar-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(59,45,138,0.15); padding: 36px 28px; cursor: pointer; transition: background 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
+.pillar-card { background: #E8E6E0; border: 1px solid rgba(59,45,138,0.15); padding: 36px 28px; cursor: pointer; transition: background 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
 .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--plum); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
 .pillar-card:hover::before, .pillar-card.active::before { transform: scaleX(1); }
-.pillar-card:hover, .pillar-card.active { background: rgba(59,45,138,0.1); border-color: rgba(59,45,138,0.4); }
+.pillar-card:hover, .pillar-card.active { background: rgba(59,45,138,0.07); border-color: rgba(59,45,138,0.3); }
 .pillar-num { font-size: 10px; letter-spacing: 0.2em; color: var(--plum-light); text-transform: uppercase; margin-bottom: 12px; }
-.pillar-name { font-family: var(--serif); font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.pillar-lead { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; font-style: italic; }
+.pillar-name { font-family: var(--serif); font-size: 21px; font-weight: 700; color: #0E0E0E; margin-bottom: 10px; }
+.pillar-lead { font-size: 13px; color: rgba(14,14,14,0.6); line-height: 1.7; font-style: italic; }
 .pillar-body { display: none; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(59,45,138,0.15); }
 .pillar-card.active .pillar-body { display: block; }
-.pillar-body p { font-size: 13.5px; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 13px; }
+.pillar-body p { font-size: 13.5px; line-height: 1.8; color: rgba(14,14,14,0.7); margin-bottom: 13px; }
 .pillar-body p:last-child { margin-bottom: 0; }
 .pillar-callout { font-style: italic; color: var(--plum-light) !important; font-size: 13px !important; padding-left: 14px; border-left: 2px solid var(--plum); margin-top: 14px !important; }
-
 /* CASE STUDIES */
 #cases, #cases .collapsible-trigger { background: var(--warm); }
 #cases .collapsible-trigger:hover { background: rgba(59,45,138,0.05); }
