@@ -137,7 +137,9 @@
     font-family: var(--sans);
     line-height: 1;
   }
-
+.nav-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.nav-logo { height: 36px; width: auto; display: block; }
+.footer-logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
   /* SECTIONS */
   section { padding: 120px 60px; }
 
@@ -870,7 +872,7 @@
 <body>
 
 <nav id="navbar">
-  <a class="nav-brand" href="#">Rachel Pilloff</a>
+  <a class="nav-brand" href="/"><img src="logo.svg" alt="Rachel Pilloff" class="nav-logo"></a>
   <ul class="nav-links">
     <li><a href="#intro">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -1134,6 +1136,7 @@
 
 <footer>
   <div class="footer-left">
+   <img src="logo.svg" alt="Rachel Pilloff" class="footer-logo">
     <span class="footer-copy">&copy; 2026 Rachel Pilloff &nbsp;&middot;&nbsp; rachelpilloff.com</span>
     <span class="footer-location">Siem Reap, Cambodia</span>
   </div>
