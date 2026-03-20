@@ -20,7 +20,7 @@
  --bg-alt: #EDEAF8;
  --white: #FFFFFF;
  --rule: rgba(14,14,14,0.1);
- --serif: 'Manrope', Georgia, serif;
+ --serif: 'Fraunces', Georgia, serif;
  --sans: 'Manrope', system-ui, sans-serif;
  /* legacy aliases so existing var() refs keep working */
  --plum: #3B2D8A;
@@ -38,7 +38,8 @@ body { background: var(--cream); color: var(--ink); font-family: var(--sans); fo
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(246,244,240,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
 nav.scrolled { border-color: var(--rule); }
-.nav-brand { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; }
+.nav-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.nav-logo { height: 36px; width: auto; display: block; }
 .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
 .nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
 .nav-links a:hover { color: var(--accent); }
@@ -93,21 +94,22 @@ section { position: relative; }
 .intro-text p:last-child { margin-bottom: 0; }
 
 /* PILLARS */
-#pillars, #pillars .collapsible-trigger { background: #3B2D8A; }
-#pillars .collapsible-trigger:hover { background: rgba(255,255,255,0.04); }
-.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; padding: 0 48px 64px; max-width: 1100px; margin: 0 auto; background: rgba(255,255,255,0.15); }
-.pillar-card { background: #F6F4F0; border: none; padding: 36px 28px; cursor: pointer; transition: background 0.25s; position: relative; overflow: hidden; }
-.pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #3B2D8A; transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-.pillar-card:hover::before, .pillar-card.active::before { transform: scaleX(1); }
-.pillar-card:hover, .pillar-card.active { background: #EDEAF8; }
-.pillar-num { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; color: #3B2D8A; opacity: 0.45; text-transform: uppercase; margin-bottom: 14px; }
-.pillar-name { font-family: var(--serif); font-size: 21px; font-weight: 400; color: #0E0E0E; margin-bottom: 10px; line-height: 1.2; }
-.pillar-lead { font-size: 13px; color: #4A4A4A; line-height: 1.65; font-style: italic; }
-.pillar-body { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(59,45,138,0.15); }
+#pillars, #pillars .collapsible-trigger { background: var(--accent-light); }
+#pillars .collapsible-trigger:hover { background: rgba(59,45,138,0.08); }
+.trigger-title-light { color: var(--ink) !important; }
+.trigger-eyebrow-light { color: var(--accent) !important; }
+.trigger-arrow-light { color: var(--accent) !important; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 48px 64px; max-width: 1100px; margin: 0 auto; }
+.pillar-card { background: var(--white); border: 1px solid rgba(59,45,138,0.12); border-left: 3px solid transparent; padding: 32px 28px; cursor: pointer; transition: border-color 0.25s, box-shadow 0.25s; }
+.pillar-card:hover, .pillar-card.active { border-left-color: var(--accent); box-shadow: 0 4px 20px rgba(59,45,138,0.1); }
+.pillar-num { font-size: 10px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.pillar-name { font-family: var(--serif); font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+.pillar-lead { font-size: 13px; color: var(--ink-soft); line-height: 1.7; font-style: italic; }
+.pillar-body { display: none; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(59,45,138,0.12); }
 .pillar-card.active .pillar-body { display: block; }
-.pillar-body p { font-size: 14px; line-height: 1.8; color: #4A4A4A; margin-bottom: 14px; }
+.pillar-body p { font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 13px; }
 .pillar-body p:last-child { margin-bottom: 0; }
-.pillar-callout { font-style: italic; color: #3B2D8A !important; font-size: 13px !important; padding-left: 14px; border-left: 2px solid #3B2D8A; margin-top: 14px !important; }
+.pillar-callout { font-style: italic; color: var(--accent) !important; font-size: 13px !important; padding-left: 14px; border-left: 2px solid var(--accent); margin-top: 14px !important; }
 
 /* CASE STUDIES */
 #cases, #cases .collapsible-trigger { background: var(--warm); }
@@ -143,7 +145,6 @@ section { position: relative; }
 .cta-title em { font-style: italic; color: var(--plum); }
 .cta-body p { font-size: 16px; line-height: 1.85; color: #555; margin-bottom: 18px; font-family: var(--serif); }
 .cta-divider { width: 50px; height: 1px; background: var(--plum); margin: 40px auto; }
-.cta-email { font-family: var(--serif); font-size: 18px; color: var(--plum); letter-spacing: 0.05em; margin: 8px 0; }
 .cta-name { font-family: var(--serif); font-size: 20px; color: var(--plum); margin-top: 44px; }
 .cta-tagline { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 6px; }
 .cta-book { margin-top: 32px; display: flex; justify-content: center; }
@@ -165,7 +166,8 @@ section { position: relative; }
 
 /* FOOTER */
 footer { background: var(--ink); padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-.footer-left { display: flex; flex-direction: column; gap: 4px; }
+.footer-left { display: flex; flex-direction: column; gap: 8px; }
+.footer-logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
 .footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; }
 .footer-location { font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 0.08em; text-transform: uppercase; }
 .footer-ctas { display: flex; gap: 12px; flex-shrink: 0; }
@@ -178,12 +180,13 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  nav { padding: 16px 20px; }
  .nav-links { display: none; }
  .nav-hamburger { display: flex; }
- #hero { min-height: 0 !important; padding-top: 100px !important; padding-bottom: 48px; justify-content: flex-start !important; }
- .hero-content { padding: 0 20px 40px !important; }
+ #hero { min-height: 0 !important; padding-top: 80px !important; padding-bottom: 40px !important; justify-content: flex-start !important; display: block !important; }
+ .hero-content { padding: 80px 20px 32px !important; }
+ .hero-bg, .hero-grid-bg { display: none !important; }
  .hero-scroll { padding: 12px 20px; }
  .hero-ctas { flex-direction: column; align-items: flex-start; }
  .collapsible-trigger, .section-inner { padding-left: 20px; padding-right: 20px; }
- .pillars-grid, .cases-grid, .life-grid { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; }
+ .pillars-grid, .cases-grid, .life-grid { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; gap: 12px; }
  .intro-grid { grid-template-columns: 1fr; gap: 18px; padding-left: 20px; padding-right: 20px; }
  .cta-inner { padding: 72px 20px; }
  footer { flex-direction: column; gap: 16px; padding: 28px 20px; text-align: center; }
@@ -194,7 +197,7 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
 <body>
 
 <nav id="navbar">
- <a class="nav-brand" href="/">Welcome to rachelpilloff.com</a>
+ <a class="nav-brand" href="/"><img src="logo.svg" alt="Rachel Pilloff" class="nav-logo"></a>
  <ul class="nav-links">
  <li><a href="/">&#8592; Home</a></li>
  <li><a href="#intro">About</a></li>
@@ -250,8 +253,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="intro-grid reveal">
  <div class="intro-label">Before We Begin</div>
  <div class="intro-text">
- <p>Most marketing feels like a stranger handing you a flyer. The approach I use is more reliable than any framework: understand people well enough to build them something that feels like it was made for them alone.</p>
- <p>This methodology covers everything I do from copywriting and digital marketing to social media and digital product creation. Six pillars. Each one building on the last.</p>
+ <p>Most marketing is aimed at everyone, which means it lands with no one. The approach I use starts somewhere different: understand the specific person on the other end well enough to write them something that feels personal, even at scale.</p>
+ <p>This methodology covers the full scope of what I do - copywriting, digital marketing, social media, and digital product creation. Six pillars, each one grounded in the one before it.</p>
  </div>
  </div>
  </div>
@@ -271,61 +274,61 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 1</div>
  <div class="pillar-name">The Meaning Making</div>
- <div class="pillar-lead">We figure out your why - so everything that follows is built on something real.</div>
+ <div class="pillar-lead">We figure out what actually makes this worth building, before we say a word about it publicly.</div>
  <div class="pillar-body">
- <p>I never start with a brief. I start with a conversation. Whether the output is a website, a content strategy, a social presence, or a digital product, it has to be rooted in something true about you and what you're building.</p>
- <p>I ask questions that might feel unusual for a marketing conversation. I listen for the moments where your voice changes. I look for the detail that arrives with a small pause: because that detail is usually the one that belongs at the centre of everything - the copy, the campaign, the brand.</p>
- <p class="pillar-callout">The Daun Penh Group brief arrived as floor plans and square footage. What emerged was a narrative about cultural preservation: about giving Khmer arts a home that was also a destination.</p>
+ <p>I never start with a brief. I start with a conversation. Whether the output is a website, a content strategy, a social presence, or a digital product, the words have to come from somewhere honest about you and what you are building.</p>
+ <p>I ask questions that might feel out of place in a marketing meeting. I listen for the moments where your voice changes. I look for the detail that arrives with a small pause, because that detail usually shapes everything that follows.</p>
+ <p class="pillar-callout">The Daun Penh Group brief arrived as floor plans and square footage. What came out of it was a story about cultural preservation - about giving Khmer arts a home that was also a destination.</p>
  </div>
  </div>
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 2</div>
  <div class="pillar-name">Defining Your Audience</div>
- <div class="pillar-lead">We figure out who they are - and which channels actually reach them.</div>
+ <div class="pillar-lead">We figure out who they are and where they actually pay attention.</div>
  <div class="pillar-body">
- <p>Most digital marketing fails not because the product is wrong, but because the message is aimed at no one in particular. I map three layers: Needs (the functional gap), Wants (the emotional underpinning), and Hungers (the deep driver with no clean name).</p>
- <p>That map doesn't just shape the copy. It shapes the channel mix. Where your audience actually lives online - which platforms they trust, how they search, what format stops them scrolling - determines everything from social strategy to SEO priority to what your lead magnet should offer.</p>
- <p class="pillar-callout">For Bay of Lights, the 2am investor thought wasn't about the development: it was about whether a frontier market was a smart bet. Once I understood that, the messaging - and the channel strategy - wrote itself.</p>
+ <p>A lot of digital marketing fails quietly. The product is fine. The message is just aimed at nobody in particular. I map three layers of what your audience is carrying: Needs (the practical gap), Wants (the emotional pull), and Hungers (the deeper thing they might not say out loud).</p>
+ <p>That picture shapes more than the copy. It tells you which platforms are worth your time, how people are searching, what format holds their attention, and what kind of lead magnet will actually work. Channel choices follow from audience understanding, not the other way around.</p>
+ <p class="pillar-callout">For Bay of Lights, the 2am investor thought had nothing to do with the development itself. It was about whether a frontier market was worth the risk. Once I understood that, the whole approach fell into place.</p>
  </div>
  </div>
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 3</div>
  <div class="pillar-name">The Research</div>
- <div class="pillar-lead">I get behind their eyes and ears - then build content that feels like it was made for them alone.</div>
+ <div class="pillar-lead">I stay in the research longer than most. It shows in the writing.</div>
  <div class="pillar-body">
- <p>This is the part most agencies rush past. I stay in it. Research means genuine immersion: reading the forums where your audience talks when they think no one is watching, paying attention to the words they reach for when they're being honest.</p>
- <p>Those words inform everything: the copy, the social content calendar, the hooks for paid campaigns, the titles of digital products. When the language comes from the audience, it lands with them. That's not a coincidence.</p>
- <p class="pillar-callout">For Dorsu, the research meant understanding how Cambodian consumers relate to ethical fashion. The product pages, the social captions, the email sequences - none of it was translated marketing. It was written from the ground up for that reader.</p>
+ <p>This is the part most agencies rush past. I stay in it. Research means reading the forums where your audience talks when they think no one is watching, paying close attention to the words they reach for when they are being honest with themselves.</p>
+ <p>Those words feed into everything: the copy, the social calendar, the hooks for paid campaigns, the titles of digital products. When the language starts from the audience, it lands differently.</p>
+ <p class="pillar-callout">For Dorsu, the research meant understanding how Cambodian consumers think about ethical fashion in their own cultural context. The product pages, the social captions, the email sequences were all written from scratch for that reader, not adapted from a global template.</p>
  </div>
  </div>
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 4</div>
  <div class="pillar-name">Digital Presence &amp; Channel Strategy</div>
- <div class="pillar-lead">The right platforms. The right content. A system that compounds.</div>
+ <div class="pillar-lead">The right platforms, the right content, and a clear plan for how they work together.</div>
  <div class="pillar-body">
- <p>A digital presence isn't a website and a logo. It's a set of channels working together: SEO-optimised web copy that captures search intent, social content that builds trust over time, email that converts the people already in your world, and digital products that generate value while you sleep.</p>
- <p>I design the full ecosystem - which platforms earn attention from your specific audience, what content rhythm is sustainable, how your Google presence gets built through GEO and local SEO, and where a well-placed lead magnet turns browsers into buyers. Your email list is the one asset the algorithm can't take from you.</p>
- <p class="pillar-callout">Business Class ASAP had strong positioning and almost no digital footprint. We built the channel strategy, the social presence, and the content funnel from scratch - every platform saying the same thing in the right language for where it was being read.</p>
+ <p>A real digital presence is a set of channels that reinforce each other: web copy built for search, social content that earns trust over time, email that keeps working for the people already paying attention, and digital products that bring in income without your direct involvement every time.</p>
+ <p>I plan out which platforms make sense for your specific audience, what a sustainable posting rhythm actually looks like, how your Google visibility gets built through SEO and local search, and where a well-made lead magnet fits into the picture. Your email list matters because it belongs to you, not to any platform.</p>
+ <p class="pillar-callout">Business Class ASAP had strong positioning and almost no online presence. We built the channel strategy, the social accounts, and the content plan from the ground up, making sure every platform sounded like the same brand.</p>
  </div>
  </div>
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 5</div>
  <div class="pillar-name">The Build</div>
- <div class="pillar-lead">Copy, content, and digital products - made by hand, for real people.</div>
+ <div class="pillar-lead">This is where the planning becomes something you can actually publish.</div>
  <div class="pillar-body">
- <p>This is where the strategy becomes something tangible. Website copy and landing pages. Social content series. Email sequences. Ebooks, guides, and digital courses that position you as the authority in your space. The deliverable changes shape depending on what the strategy calls for - but the standard stays constant.</p>
- <p>I write by hand first. Always. The human version exists before anything else does. After that, I use AI as a polish layer - the same way I use a good editor. But the thinking, the structure, the voice: that comes from a person. You can tell the difference, and so can your audience.</p>
- <p class="pillar-callout">For Vedic Psychology Institute, every piece - from web copy to the downloadable intake guide - went through one test: accessible without being condescending? Clear without being thin? The line between those is narrower than most expect.</p>
+ <p>Website copy and landing pages. Social content series. Email sequences. Ebooks, guides, and digital courses that show your audience what you actually know. The format changes depending on what the strategy calls for, but the standard stays the same.</p>
+ <p>I write by hand first, always. The human draft exists before anything else does. After that, I use AI the way I use a good editor - for polish, not for thinking. The structure, the voice, the ideas: those come from a person. Your audience can tell the difference.</p>
+ <p class="pillar-callout">For Vedic Psychology Institute, every piece went through one question before it left my desk: is this clear without being shallow? That line is harder to walk than it sounds.</p>
  </div>
  </div>
  <div class="pillar-card" onclick="togglePillar(this)">
  <div class="pillar-num">Pillar 6</div>
  <div class="pillar-name">Review &amp; Iteration</div>
- <div class="pillar-lead">We measure, adjust, and sharpen. That part doesn't end.</div>
+ <div class="pillar-lead">We look at what's working and keep adjusting. That part doesn't stop.</div>
  <div class="pillar-body">
- <p>A strategy that never gets looked at again isn't a strategy. After launch - whether that's a new site, a campaign, a content series, or a digital product - we track what's working and what isn't. Open rates. Search rankings. Conversion paths. Social reach versus engagement.</p>
- <p>The numbers tell a story too. My job is to read it alongside you, make the call on what to adjust, and keep the whole system moving in the right direction. Iteration isn't a sign something went wrong. It's the work.</p>
- <p class="pillar-callout">TechFlow came in as a Webflow agency. Through iteration across positioning, copy, and digital strategy, we repositioned them around design-led digital product development: an identity that didn't tie them to any single platform or deliverable.</p>
+ <p>After launch - a new site, a campaign, a content series, a digital product - we look at what the numbers are actually saying. Open rates. Search rankings. Where people drop off. What social content earns engagement versus just reach.</p>
+ <p>I read those results with you, make the call on what to change, and keep things moving. Adjusting based on evidence is not a sign the original plan failed. It is just how good work gets made.</p>
+ <p class="pillar-callout">TechFlow came in as a Webflow agency. Through several rounds of work across positioning, copy, and strategy, we moved them toward an identity built around design-led digital product development - one that was not tied to any single tool or platform.</p>
  </div>
  </div>
  </div>
@@ -355,10 +358,9 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Podcast Copywriting · Investment Portal · gmcambodia.com</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>Most investment platforms talk to investors. Good Morning Cambodia talks to people who are genuinely curious about a country, and trusts that curiosity to do the conversion work.</p>
- <p>The platform sits at a specific intersection: it's a podcast, an investment portal, and a cultural guide all at once. My work focused on connecting international audiences with Cambodia's growth story, promoting cultural insights alongside investment opportunities.</p>
- <p>I helped develop positioning that framed GMC not as a typical investment platform but as an insider access point: decades of on-the-ground experience, conversations with the people actually building things. Honesty as differentiator in a space full of sanitized opportunity decks.</p>
- <p>During this time I also became spokesperson for PSTC and the UPTIME Academy, working in both Thailand and Cambodia.</p>
+ <p>Good Morning Cambodia sits across three things at once - a podcast, an investment portal, and a cultural guide. Most platforms like this default to financial language. We went the other direction: lead with genuine curiosity about Cambodia, and let that curiosity do the conversion work.</p>
+ <p>My job was to find the positioning that made GMC feel different from a standard opportunity deck. The angle we landed on was access. Decades on the ground. Conversations with the people actually building things. A perspective you can't get from a prospectus.</p>
+ <p>During this period I also worked as spokesperson for PSTC and the UPTIME Academy, across both Thailand and Cambodia.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -367,9 +369,9 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">GEO Strategy · SEO Audit · AI Search Visibility</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>This is the project I get asked about most: getting clients through ChatGPT. Generative Engine Optimization means writing to be summarized, cited, and recommended by a language model.</p>
- <p>For Akalah, I ran a full SEO audit and developed a GEO strategy that positioned them as an authoritative source in their category. Content structured to be machine-readable and genuinely useful turns out to be the same thing.</p>
- <p>The result was direct client acquisition through AI chat platforms. It's early days for this kind of work, and that's exactly why I found it worth doing.</p>
+ <p>This is the project people ask me about most: how do you get recommended by ChatGPT? Generative Engine Optimization is writing structured to be picked up, summarized, and cited by AI tools when someone asks a relevant question.</p>
+ <p>For Akalah, I ran a full SEO audit and built out a GEO approach that helped them show up as a credible source in their category. Writing that is clear, specific, and well-organized for humans turns out to work the same way for models.</p>
+ <p>Clients came in directly through AI search. It is still early for this kind of work, which is part of what made it worth doing.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -389,8 +391,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">SEO Architecture · B2B Positioning</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>TechFlow came in positioned as a Webflow agency: already too narrow and getting more so. I helped reposition around design-led digital product development, building keyword clusters and an internal linking system for long-term topical authority.</p>
- <p>Clarity of positioning is an SEO decision as much as a branding one. When a site knows what it is, Google figures it out faster.</p>
+ <p>TechFlow came in positioned as a Webflow agency - a description that was already limiting and would only get more so. I helped shift the positioning toward design-led digital product development, then built the keyword structure and internal linking to match.</p>
+ <p>When your positioning is clear, it shows up in search too. A site that knows what it is gets read correctly by Google, not just by humans.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -399,8 +401,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Investment Copywriting · Coastal Development</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>Investment copy is a trust exercise. The reader is alert to anything that papers over risk. Writing for this audience means earning the right to make a case, not just making one.</p>
- <p>I developed keyword-aligned narratives across hospitality, tourism, and real estate investment: translating the masterplan's complexity into messaging that could hold together across presentations and web copy. The goal: an investor who felt informed. Informed people close deals.</p>
+ <p>Writing for investors is different from most marketing work. The reader is paying close attention to anything that glosses over the hard parts. You have to earn the right to make a case before you start making it.</p>
+ <p>I developed messaging across hospitality, tourism, and real estate investment - taking the complexity of the masterplan and turning it into language that held together across presentations and web copy. The aim was a reader who finished feeling genuinely informed, not sold to.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -409,8 +411,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Brand Localization · SEO · shopdorsu.com</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>Dorsu is a sustainable fashion brand in Cambodia selling to a local market that international templates don't speak to. The research phase was the whole job: understanding how Cambodian consumers relate to ethical fashion in their specific cultural context.</p>
- <p>I rewrote the product pages from the ground up, optimized for local SEO, and built in Khmer language support. A brand that sounds like it was written in a European marketing office has a ceiling here. This work pushed past it.</p>
+ <p>Dorsu is a sustainable fashion brand in Cambodia selling to a local market that international templates were not built for. The research phase was the core of the job: understanding how Cambodian consumers actually think about ethical fashion, in their own cultural context.</p>
+ <p>I rewrote the product pages from scratch, optimized for local SEO, and built in Khmer language support. Copy that sounds like it was written somewhere else has a limited shelf life in this market. The goal was writing that belonged here.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -419,8 +421,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Urban Vision Storytelling · Phnom Penh Arts District</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>The brief arrived as a blueprint: floor plans, facility lists, projected square footage. What was needed was a story.</p>
- <p>In reality it was an answer to a question Phnom Penh had been quietly asking: where does Khmer culture live in a city moving this fast? That question became the spine of everything. Each facility got its own narrative logic, explained in terms of the community it would serve.</p>
+ <p>The brief arrived as a blueprint - floor plans, facility lists, projected square footage. What it needed was a reason to exist in the minds of the people it was meant to serve.</p>
+ <p>Underneath the project was an answer to something Phnom Penh had been quietly working out: where does Khmer culture live in a city moving this fast? That question shaped everything. Each facility got its own story, explained in terms of the people who would actually use it.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -429,8 +431,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Educational Copywriting · myvedicpsychology.com</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>Vedic psychology sits at the intersection of ancient philosophy and modern self-inquiry. The audience was curious but not yet initiated. Every piece went through one calibration: is this accessible without being condescending?</p>
- <p>The line between those two is narrower than most expect. I developed keyword frameworks and handled full technical SEO alongside the writing.</p>
+ <p>Vedic psychology draws on ancient philosophy and applies it to how people understand themselves today. The audience was open and curious but largely unfamiliar with the tradition. Every piece had to work as an introduction without feeling like it was talking down.</p>
+ <p>Getting that tone right is harder than it sounds. Alongside the writing, I developed the keyword structure and handled technical SEO.</p>
  </div>
  </div>
  <div class="case-card" onclick="toggleCase(this)">
@@ -439,8 +441,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <div class="case-type">Luxury Positioning · Social Launch · businessclassasap.com</div>
  <span class="case-toggle">Read more ↓</span>
  <div class="case-body">
- <p>Luxury copy has one rule: the reader isn't looking to be impressed by features. They assume quality. What they're looking for is feeling: that this brand understands their standards.</p>
- <p>I refined web copy, contributed to the blog, and launched their Instagram, Facebook, and TikTok from the ground up with seeded high-quality content on day one. Someone who found them on TikTok and visited the website should feel like they'd arrived at the same place from a different door.</p>
+ <p>Writing for a luxury audience means skipping the feature list. These readers assume quality. What they are looking for is whether the brand actually understands how they think and what they expect.</p>
+ <p>I refined the web copy, wrote for the blog, and launched their Instagram, Facebook, and TikTok from scratch. The goal was that someone who found them on TikTok and then visited the website would feel like they'd landed in the same world, just from a different direction.</p>
  </div>
  </div>
  </div>
@@ -457,21 +459,21 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <span class="trigger-arrow">↓</span>
  </button>
  <div class="collapsible-body open">
- <p style="font-family:var(--serif); font-size:18px; line-height:1.7; color:#555; padding:0 48px 32px; max-width:1100px; margin:0 auto;">Good copy doesn't come from a desk alone. It comes from a life lived with enough curiosity and range to understand people across vastly different contexts.</p>
+ <p style="font-family:var(--serif); font-size:18px; line-height:1.7; color:#555; padding:0 48px 32px; max-width:1100px; margin:0 auto;">The writing I do is shaped by a life that has put me in front of a lot of different kinds of people, in a lot of different situations. That range shows up in the work.</p>
  <div class="life-grid">
  <div class="life-card">
  <div class="life-card-title">Phnom Penh Players</div>
  <div class="life-card-sub">Actor · Writer · Director · Producer · Head of Marketing</div>
  <p>The longest-running charity theatre group in Cambodia, founded in 1992. Every show raises money for local causes. I acted, co-starred, wrote original plays, directed, produced, and eventually joined the committee as Head of Marketing.</p>
- <p>When you are standing in front of a live audience, you know immediately whether something landed. The room either shifts or it doesn't. That instinct lives in every piece of copy I write.</p>
- <p>One of my original productions was a comedy called <em>'That Would Never Happen'</em>, starring Monja McKay. A joke on paper is a theory. A joke in a room is either a fact or an embarrassment. Headlines work the same way.</p>
+ <p>Standing in front of a live audience teaches you something about timing that is hard to learn any other way. You know within seconds whether something landed, and you adjust. That reflex carries into the writing.</p>
+ <p>One of my original productions was a comedy called <em>'That Would Never Happen'</em>, starring Monja McKay. Writing a joke is one thing. Watching whether it works in a room full of people is another entirely. Headlines are not so different.</p>
  </div>
  <div class="life-card">
  <div class="life-card-title">ACSR Siem Reap</div>
  <div class="life-card-sub">Stand-Up Comedy · Siem Reap</div>
  <p>Out of the Phnom Penh Players grew a stand-up comedy scene in Siem Reap. Stand-up and copywriting share the same problem: a very short window to earn someone's full attention, and if you lose it, they're gone.</p>
- <p>The structure of a good joke and the structure of a good headline are closer than most people realize. Both require you to set something up and pay it off with a surprise that, in hindsight, felt inevitable.</p>
- <p>Getting on stage regularly also does something to your relationship with failure that is genuinely useful in a creative profession. You learn to iterate without flinching.</p>
+ <p>The structure of a good joke and the structure of a good headline are closer than most people think. Both need a setup and a payoff, and the payoff has to feel like it was always coming, even if no one saw it.</p>
+ <p>Getting on stage regularly also changes how you handle things not working. In a creative profession, that shift matters. You stop treating failure as a verdict and start treating it as information.</p>
  </div>
  <div class="life-card">
  <div class="life-card-title">ICIDO</div>
@@ -496,9 +498,9 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
  <p class="cta-eyebrow">What It Looks Like To Work With Me</p>
  <h2 class="cta-title">Built carefully.<br><em>On purpose.</em></h2>
  <div class="cta-body">
- <p>The work I do is built around your specific story, your specific audience, the particular shape of what you're offering. No templates with your name dropped in.</p>
- <p>Working with me is a full build: story, audience, funnel, words, all of it aligned and pulling in the same direction. You get the research behind every phrase that sounds effortless. You get someone who cares about your conversion as much as you do.</p>
- <p>I work best with coaches, creators, and founders who have something real to offer and need someone who can articulate it with the precision it deserves.</p>
+ <p>Everything I make is built around the specific thing you are doing, for the specific people you are trying to reach. I do not work from templates.</p>
+ <p>When we work together you get the thinking behind the words, not just the words. The research. The strategic decisions. Someone who treats your results as a shared concern rather than a file to hand over and move on from.</p>
+ <p>I work best with coaches, founders, and creators who have something worth saying and want to say it clearly.</p>
  </div>
  <div class="cta-divider"></div>
  <div class="cta-book reveal">
@@ -514,6 +516,7 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; justify-cont
 
 <footer>
  <div class="footer-left">
+ <img src="logo.svg" alt="Rachel Pilloff" class="footer-logo">
  <span class="footer-copy">&copy; 2026 Rachel Pilloff &nbsp;&middot;&nbsp; rachelpilloff.com</span>
  <span class="footer-location">Siem Reap, Cambodia</span>
  </div>
