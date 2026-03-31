@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Website & Outreach Proposal · VDCA Cambodia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F5F0;
+      --ink: #1C1C1A;
+      --ink-mid: #4A4845;
+      --ink-light: #8A8780;
+      --rule: #D9D6CF;
+      --accent: #7B3B2A;
+      --accent-light: #F5EDE9;
+      --warn-bg: #FDF8F0;
+      --warn-border: #E8C97A;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-bottom: 48px;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    .problem-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .problem-list li {
+      font-size: 15px;
+      color: var(--ink-mid);
+      padding: 10px 0 10px 20px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      line-height: 1.65;
+    }
+
+    .problem-list li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .problem-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink-light);
+    }
+
+    .problem-list li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .phases {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .phase {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+    }
+
+    .phase:last-child {
+      border-bottom: none;
+    }
+
+    .phase-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 3px;
+    }
+
+    .phase-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .phase-desc {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .goal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .goal-card {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 18px 20px;
+      background: white;
+    }
+
+    .goal-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .goal-card p {
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    table.price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table.price-table th {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      background: #EFECEA;
+      padding: 10px 20px;
+      text-align: left;
+    }
+
+    table.price-table th:last-child {
+      text-align: right;
+    }
+
+    table.price-table td {
+      padding: 14px 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+
+    table.price-table td:last-child {
+      text-align: right;
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .price-total td {
+      background: var(--accent-light);
+      color: var(--ink) !important;
+      font-weight: 500 !important;
+    }
+
+    .note-box {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 20px 24px;
+      background: white;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .note-box p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .rec-box {
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      background: var(--warn-bg);
+      margin-top: 20px;
+      margin-bottom: 16px;
+    }
+
+    .rec-box-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #A07D2A;
+      margin-bottom: 8px;
+    }
+
+    .rec-box p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .rec-box strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 15px;
+      color: var(--ink-mid);
+    }
+
+    .steps li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink-light);
+      padding-top: 1px;
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 520px) {
+      .page { padding: 48px 20px 80px; }
+      h1 { font-size: 26px; }
+      .phase { grid-template-columns: 1fr; gap: 4px; }
+      .goal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <p class="eyebrow">Project Proposal</p>
+    <h1>New Website &amp; Outreach Plan</h1>
+    <p class="subtitle">Volunteer Development Children's Association (VDCA) &nbsp;·&nbsp; Prepared by Rachel Pilloff Consulting</p>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">00 &nbsp;· About VDCA</span>
+      <h2>Free education for children in Siem Reap</h2>
+      <p>VDCA has been running free schools in Cambodia since 2004. It was founded by two Buddhist monks who saw children in Siem Reap with no path forward and decided to build one. What started in two simple classrooms grew into a full school campus, funded entirely by donations from people around the world.</p>
+      <p>The organisation became an official NGO in 2007. A few years later, it opened a second school in Anlung Pi Village, a community about 25km from the city that had become home to Siem Reap's rubbish dump. Children there needed support, and VDCA showed up.</p>
+      <p style="font-style: italic; color: var(--ink-mid);">People from many countries support VDCA. Some give once. Some give regularly. Some come to volunteer. All of it goes directly to the children.</p>
+
+      <div class="note-box" style="margin-top: 24px;">
+        <p style="margin-bottom: 8px; font-weight: 500; color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em;">Mission</p>
+        <p>Teach children to take responsibility and make good decisions. Support teachers with training and fair pay. Give international volunteers a way to contribute. Build a school that Cambodians own and run for the long term.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">01 &nbsp;· The goals</span>
+      <h2>Three things this project needs to do</h2>
+      <p>VDCA has a strong story and a real track record. The challenge is making that visible and easy to act on for people around the world.</p>
+
+      <div class="goal-grid">
+        <div class="goal-card">
+          <p class="goal-card-label">Volunteers</p>
+          <p>Bring in new local and international volunteers with a clear, welcoming sign-up process and honest information about what to expect.</p>
+        </div>
+        <div class="goal-card">
+          <p class="goal-card-label">Donors</p>
+          <p>Make it easy for anyone in the world to give money online. Show exactly where donations go and why they matter.</p>
+        </div>
+        <div class="goal-card">
+          <p class="goal-card-label">International interest</p>
+          <p>Reconnect with past supporters and reach new audiences through fresh content and a site that works on any device.</p>
+        </div>
+        <div class="goal-card">
+          <p class="goal-card-label">New website</p>
+          <p>Replace the current slow site with a fast, modern, mobile-friendly one that is easy to update and easy to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">02 &nbsp;· What is wrong now</span>
+      <h2>What the current site gets wrong</h2>
+      <p>The existing website has good content buried inside a slow, outdated build. These are the main problems.</p>
+      <ul class="problem-list">
+        <li><strong>Slow loading.</strong> The site takes too long to open on mobile. Most international visitors leave a slow site in the first few seconds.</li>
+        <li><strong>Not mobile-friendly.</strong> The layout breaks on phones and tablets. Most visitors today browse on a phone.</li>
+        <li><strong>Typos and errors.</strong> The current text has spelling mistakes and grammar problems. This makes the organisation look less professional to new donors and volunteers.</li>
+        <li><strong>Old messaging.</strong> The writing does not clearly explain what VDCA does today or how to get involved. It needs a full rewrite in plain, welcoming language.</li>
+        <li><strong>Hard to volunteer.</strong> The volunteer page does not give enough practical information. Interested people do not know what is needed, how long to come, or what to expect.</li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">03 &nbsp;· The solution</span>
+      <h2>What we will build</h2>
+      <p>Instead of patching the old site, we will build a new one from scratch. It will be fast, simple, and designed to turn visitors into supporters.</p>
+
+      <div class="phases">
+        <div class="phase">
+          <span class="phase-label">Website</span>
+          <div>
+            <p class="phase-title">New responsive site</p>
+            <p class="phase-desc">A fast, mobile-friendly website that works well on any screen. Clean layout with clear sections for volunteers, donors, and supporters. Easy to read and easy to navigate.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Content</span>
+          <div>
+            <p class="phase-title">Fresh writing throughout</p>
+            <p class="phase-desc">All text rewritten in plain, correct English at a reading level that works for international visitors. Typos fixed. Messaging updated to reflect what VDCA does now.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Volunteers</span>
+          <div>
+            <p class="phase-title">Clear volunteer page</p>
+            <p class="phase-desc">A dedicated page explaining how to volunteer, what to expect, how long to come, and how to apply. A simple contact form or WhatsApp link for quick replies.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Donations</span>
+          <div>
+            <p class="phase-title">Online payment setup</p>
+            <p class="phase-desc">Keep the existing donation setup, which works well, and carry it into the new site. Make sure the donate button is visible and prominent on every section of the page.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Outreach</span>
+          <div>
+            <p class="phase-title">International-facing content</p>
+            <p class="phase-desc">A section that speaks directly to international supporters: the school's story, photos, impact, and ways to stay connected. Social media links made visible and easy to find.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">04 &nbsp;· Investment</span>
+      <h2>Straightforward pricing</h2>
+      <p>This project is donation-supported. The fee covers all the work. Any domain or software costs are paid directly to third-party providers and passed on at cost.</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New website, all sections included</td>
+            <td>$350</td>
+          </tr>
+          <tr>
+            <td>Content rewrite, all pages</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td>Volunteer page and contact setup</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td>Donation and payment gateway setup</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td>Domain name &nbsp;<span style="font-size:13px; color: var(--ink-light);">(paid directly to provider)</span></td>
+            <td style="font-weight:400; color: var(--ink-mid);">At cost</td>
+          </tr>
+          <tr>
+            <td>Hosting &nbsp;<span style="font-size:13px; color: var(--ink-light);">(paid directly to provider)</span></td>
+            <td style="font-weight:400; color: var(--ink-mid);">At cost</td>
+          </tr>
+          <tr class="price-total">
+            <td>Timeline</td>
+            <td>3–4 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="rec-box">
+        <p class="rec-box-label">Alternative arrangement</p>
+        <p>If paying 50% is not possible, we kindly ask for a short <strong>recommendation letter</strong> recognising <strong>Rachel Pilloff</strong> as an official consultant and donor for VDCA. This costs nothing and helps us with our own records.</p>
+      </div>
+
+      <div class="note-box">
+        <p>Some direct costs, including hosting and any paid tools, will be communicated clearly before work begins.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">05 &nbsp;· Next steps</span>
+      <h2>How to get started</h2>
+      <ol class="steps">
+        <li>Agree to the fee (or discuss the letter option above).</li>
+        <li>Share any photos, newsletters, or reports you want to use on the new site.</li>
+        <li>Give us access to the current domain or confirm if you want a new one.</li>
+      </ol>
+    </section>
+
+    <div class="footer">
+      <p>Prepared by Rachel Pilloff Consulting &nbsp;·&nbsp; rachelpilloff.com<br>
+      This proposal is confidential and intended solely for Volunteer Development Children's Association (VDCA).</p>
+    </div>
+
+  </div>
+</body>
+</html>
