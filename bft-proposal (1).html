@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFT Digital Partnership Proposal — Rachel Pilloff &amp; Be Good Consultancy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #F6F4F0;
+      --bg-card:     #FFFFFF;
+      --border:      #DDD9D0;
+      --border-dark: #C8C3B8;
+      --ink:         #1A1A1A;
+      --ink-soft:    #3A3A3A;
+      --muted:       #5C5852;
+      --indigo:      #3B2D8A;
+      --indigo-mid:  #5142A8;
+      --indigo-pale: #EAE7F8;
+      --od-strong:   #FFFFFF;
+      --od-body:     rgba(255,255,255,0.85);
+      --od-muted:    rgba(255,255,255,0.6);
+      --od-accent:   #C4BCEE;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-ui:      'Nunito', system-ui, sans-serif;
+      --max:    860px;
+      --spine:  56px;
+      --gap:    1.75rem;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SPINE LAYOUT ── */
+    .page-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: var(--spine) 1fr;
+      gap: 0 var(--gap);
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-row:last-of-type { border-bottom: none; }
+
+    /* Continuous spine line */
+    .spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .spine::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: -4rem; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .step-row:last-of-type .spine::before { display: none; }
+
+    .step-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--indigo);
+      color: var(--od-strong);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+
+    .body { min-width: 0; }
+
+    /* ── TYPOGRAPHY ── */
+    .step-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--indigo-mid);
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 400;
+      color: var(--indigo);
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    .lede {
+      font-size: 0.925rem;
+      color: var(--ink-soft);
+      max-width: 62ch;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    /* ── VISION QUOTE ── */
+    .vision {
+      border-left: 3px solid var(--indigo);
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      max-width: 60ch;
+    }
+    .vision .v-label {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--indigo-mid);
+      margin-bottom: 0.35rem;
+    }
+    .vision p {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--indigo);
+      line-height: 1.55;
+      font-weight: 400;
+    }
+
+    /* ── TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .data-table thead th {
+      background: var(--bg);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.65rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table tbody td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-weight: 400;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table .td-strong { font-weight: 700; color: var(--ink); }
+    .data-table .td-right { text-align: right; white-space: nowrap; }
+    .data-table .td-price { font-weight: 700; color: var(--indigo); text-align: right; white-space: nowrap; }
+    .data-table tfoot td {
+      padding: 0.75rem 1rem;
+      border-top: 2px solid var(--border-dark);
+      background: var(--bg);
+    }
+    .data-table tfoot .tf-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .data-table tfoot .tf-value {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--indigo);
+      text-align: right;
+    }
+
+    /* Phase tag inside table */
+    .phase-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .phase-tag .num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--indigo-pale);
+      border: 2px solid var(--indigo);
+      color: var(--indigo);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .foot-note {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
+      line-height: 1.65;
+      max-width: 60ch;
+    }
+    .foot-note strong { color: var(--ink-soft); font-weight: 700; }
+
+    /* ── TEAM BLOCK ── */
+    .team-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .team-person {
+      background: var(--bg-card);
+      padding: 1.4rem;
+    }
+    .team-person h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--indigo);
+      margin-bottom: 0.1rem;
+    }
+    .team-person .role {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--indigo-mid);
+      margin-bottom: 0.75rem;
+    }
+    .team-person p {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    .skills {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .skills span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: var(--indigo-pale);
+      color: var(--indigo);
+      border-radius: 2px;
+      padding: 0.18rem 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SMART GOALS ── */
+    .goals-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.25rem;
+    }
+    .goals-list li {
+      display: flex;
+      gap: 0.85rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list .g-num {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--indigo);
+      flex-shrink: 0;
+      width: 1.5rem;
+    }
+
+    /* ── MILESTONE LIST ── */
+    .milestone-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.75rem;
+    }
+    .milestone-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+    }
+    .milestone-list li:last-child { border-bottom: none; }
+    .milestone-list li::before {
+      content: '→';
+      color: var(--indigo);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--indigo);
+      padding: 5.5rem 1.5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -120px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,188,238,0.14) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-client {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--od-accent);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--od-strong);
+      max-width: 640px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--od-accent); }
+    .hero-rule { width: 36px; height: 2px; background: var(--od-accent); border-radius: 2px; margin-bottom: 1.1rem; }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--od-body);
+      max-width: 52ch;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--od-muted);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+    .hero-meta strong { color: var(--od-body); font-weight: 700; }
+
+    /* ── CONCLUSION ── */
+    .conclusion {
+      background: var(--indigo);
+      margin-top: 0;
+    }
+    .conclusion-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+      display: grid;
+      grid-template-columns: var(--spine) 1fr;
+      gap: 0 var(--gap);
+    }
+    .conclusion-spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .conclusion-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--od-accent);
+      color: var(--indigo);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px var(--indigo);
+    }
+    .conclusion-body { min-width: 0; }
+    .conclusion-body .step-label { color: var(--od-accent); }
+    .conclusion-body h2 {
+      color: var(--od-strong);
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      margin-bottom: 1.25rem;
+    }
+    .conclusion-body h2 em { font-style: italic; color: var(--od-accent); }
+    .conclusion-body p {
+      font-size: 0.925rem;
+      color: var(--od-body);
+      font-weight: 400;
+      line-height: 1.8;
+      max-width: 56ch;
+      margin-bottom: 0.85rem;
+    }
+    .conclusion-body p:last-of-type { margin-bottom: 1.75rem; }
+
+    .contact-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 6px;
+      padding: 1.1rem 1.4rem;
+      min-width: 200px;
+    }
+    .contact-card .name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--od-strong);
+      margin-bottom: 0.15rem;
+    }
+    .contact-card .detail {
+      font-size: 0.8rem;
+      color: var(--od-muted);
+      font-weight: 400;
+      line-height: 1.55;
+    }
+    .contact-card a {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--od-accent);
+      text-decoration: none;
+      margin-top: 0.4rem;
+    }
+    .contact-card a:hover { color: var(--od-strong); }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      :root { --spine: 0px; }
+      .step-row { grid-template-columns: 1fr; padding: 2.5rem 0; }
+      .spine { display: none; }
+      .conclusion-inner { grid-template-columns: 1fr; }
+      .conclusion-spine { display: none; }
+      .team-block { grid-template-columns: 1fr; }
+      .contact-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-client">Client Proposal &nbsp;·&nbsp; Build Your Future Today Center</p>
+      <h1>Digital Infrastructure<br>for <em>20 years of impact</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">A focused website, donor CRM, and support plan for BFT, prepared by Rachel Pilloff and Be Good Consultancy.</p>
+      <div class="hero-meta">
+        <strong>Rachel Pilloff</strong> and <strong>Bong Kim / Be Good Consultancy</strong><br>
+        Siem Reap &nbsp;·&nbsp; April 2026
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+
+    <!-- STEP 1: EXECUTIVE SUMMARY -->
+    <div class="step-row fade-in">
+      <div class="spine"><div class="step-dot">1</div></div>
+      <div class="body">
+        <div class="step-label">Executive Summary</div>
+        <h2>What this proposal covers</h2>
+        <div class="vision">
+          <div class="v-label">Vision</div>
+          <p>"To give BFT a digital presence that reflects 20 years of extraordinary impact and makes it easier than ever for supporters around the world to find them, trust them, and give."</p>
+        </div>
+        <p class="lede">BFT has operated for 20 years and reached over 100,000 people across rural Cambodia. The digital infrastructure has not kept pace. This proposal addresses three specific gaps with three focused solutions, scoped to be affordable and genuinely useful to a lean team.</p>
+        <table class="data-table">
+          <thead><tr><th>Component</th><th>What it delivers</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-strong">Website</td>
+              <td>Three pages that tell BFT's story, showcase 20 years of impact, and give every visitor a clear path to get involved or give.</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Donor CRM</td>
+              <td>All supporter data in one place, captured automatically from the donation form, so your team always has a clear picture of who is behind you.</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Training and support</td>
+              <td>A recorded training session at launch and a quarterly maintenance plan that keeps everything working without requiring a dedicated tech person.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STEP 2: PROJECT BACKGROUND -->
+    <div class="step-row fade-in">
+      <div class="spine"><div class="step-dot">2</div></div>
+      <div class="body">
+        <div class="step-label">Project Background</div>
+        <h2>The story so far</h2>
+        <p class="lede">Build Your Future Today Center has been transforming lives in rural Cambodia since 2006. Over two decades, BFT has built 99 primary school classrooms, reached over 100,000 people through education, health, and capacity-building programs, and grown a global network of donors and partners across Australia, the USA, the UK, Europe, Hong Kong, Singapore, and beyond. This proposal is about giving that legacy the digital infrastructure to match.</p>
+        <table class="data-table">
+          <thead><tr><th>Opportunity</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-strong">A story worth telling beautifully</td>
+              <td>Two decades of transformation and a global support network. A well-built website puts that front and centre for every new visitor who arrives already interested in BFT's work.</td>
+            </tr>
+            <tr>
+              <td class="td-strong">A giving pathway that converts</td>
+              <td>Supporters who are ready to give deserve a smooth, trustworthy experience. Multiple payment options and QR codes make giving easy from anywhere in the world.</td>
+            </tr>
+            <tr>
+              <td class="td-strong">A unified view of supporters</td>
+              <td>BFT's global donor community is one of its greatest assets. A CRM brings all supporter data together so the organisation can nurture relationships and grow its funding base with confidence.</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Fresh branding, finally live</td>
+              <td>BFT's new logo and visual identity are ready. This proposal applies them across every page so the public face of the organisation reflects the same quality as its programs on the ground.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STEP 3: SOLUTION -->
+    <div class="step-row fade-in">
+      <div class="spine"><div class="step-dot">3</div></div>
+      <div class="body">
+        <div class="step-label">The Solution</div>
+        <h2>How we will build this</h2>
+        <p class="lede">Three components designed to work together. Each solves something specific. Together they give BFT a complete, low-maintenance digital foundation.</p>
+        <table class="data-table">
+          <thead><tr><th>Phase</th><th>Deliverables</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="phase-tag"><span class="num">1</span>Website build</div></td>
+              <td>Home, Get Involved, and Donate pages. Mobile-responsive. MailChimp contact form on every page. Instagram and Telegram CTAs throughout. Donation QR codes, international payment options, and partner links on the Donate page.</td>
+            </tr>
+            <tr>
+              <td><div class="phase-tag"><span class="num">2</span>CRM integration</div></td>
+              <td>SwipeOne setup with donation form connected. Supporter data captured automatically. Welcome and confirmation emails automated. NDA signed before any data is accessed.</td>
+            </tr>
+            <tr>
+              <td><div class="phase-tag"><span class="num">3</span>Training and handover</div></td>
+              <td>One recorded walkthrough session covering login, records, and data entry. Site preview shared with BFT before launch. Milestone email updates sent at each project stage.</td>
+            </tr>
+            <tr>
+              <td><div class="phase-tag"><span class="num">4</span>Ongoing support</div></td>
+              <td>Quarterly QA checks covering forms, CRM sync, links, mobile responsiveness, speed, and hosting status. Basic content updates included in the annual maintenance plan.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="lede" style="margin-bottom:0.75rem;">BFT will receive an email update at each milestone so the team is always informed before the next phase begins.</p>
+        <ul class="milestone-list">
+          <li>Scope confirmed and project kicked off</li>
+          <li>Website design approved, build underway</li>
+          <li>CRM configured, donation form connected</li>
+          <li>Training session completed, site ready for review</li>
+          <li>Launch confirmed, maintenance plan active</li>
+        </ul>
+
+        <table class="data-table" style="margin-top:1.5rem;">
+          <thead><tr><th>Timeline</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="td-strong">Now / Early April 2026</td><td>Internal review. Share this link with your executive director and team.</td></tr>
+            <tr><td class="td-strong">After Khmer New Year</td><td>Decision meeting. Scope confirmed, budget aligned, project begins.</td></tr>
+            <tr><td class="td-strong">Weeks 1 to 4</td><td>Website built by Rachel. Preview link shared before anything goes live.</td></tr>
+            <tr><td class="td-strong">Running in parallel</td><td>CRM configured by Kim. NDA signed before any data access begins.</td></tr>
+            <tr><td class="td-strong">Weeks 4 to 6</td><td>Training session recorded and delivered. Site launched. Maintenance plan begins.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STEP 4: DELIVERABLES -->
+    <div class="step-row fade-in">
+      <div class="spine"><div class="step-dot">4</div></div>
+      <div class="body">
+        <div class="step-label">Deliverables and Goals</div>
+        <h2>What you will have at the end</h2>
+        <p class="lede">Every item below is confirmed in scope. Success at 90 days post-launch is defined by three measurable goals.</p>
+        <table class="data-table">
+          <thead><tr><th>Deliverable</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td class="td-strong">3-page website</td><td>Home, Get Involved, and Donate. Refreshed branding applied throughout. Working donation pathways and consistent calls to action on every page.</td></tr>
+            <tr><td class="td-strong">Donation experience</td><td>Multiple bank QR codes, PayPal, SE Asia payment providers, and partner links. Every supporter can give in the way that works for them.</td></tr>
+            <tr><td class="td-strong">Email list growth</td><td>MailChimp integrated across all pages. Visitors can join instantly, with zero manual effort from your team.</td></tr>
+            <tr><td class="td-strong">Live CRM</td><td>Supporter and donor records created automatically from launch day. Your team always has a current picture of who is behind you.</td></tr>
+            <tr><td class="td-strong">Staff training</td><td>Recorded walkthrough covering login, reading records, and adding entries. Your team leaves feeling equipped.</td></tr>
+            <tr><td class="td-strong">Signed NDA</td><td>Be Good Consultancy access limited to maintenance only. Documented, signed, and enforceable.</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--indigo-mid); margin-bottom:0.6rem; margin-top:1.5rem;">Success at 3 months</p>
+        <ul class="goals-list">
+          <li><span class="g-num">01</span>The donation pathway is fully live, tested across all devices, and every contribution is tracked inside the CRM from day one.</li>
+          <li><span class="g-num">02</span>Existing donor and contact data has been migrated into SwipeOne, giving BFT a complete, searchable record of its supporter base.</li>
+          <li><span class="g-num">03</span>At least two BFT staff members can log in, navigate the CRM, and add records independently without needing outside support.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 5: RESOURCES -->
+    <div class="step-row fade-in">
+      <div class="spine"><div class="step-dot">5</div></div>
+      <div class="body">
+        <div class="step-label">Required Resources</div>
+        <h2>Team and investment</h2>
+        <p class="lede">Two people based in Siem Reap with direct NGO experience, and a transparent breakdown of every cost involved.</p>
+
+        <div class="team-block">
+          <div class="team-person">
+            <h4>Rachel Pilloff</h4>
+            <div class="role">Digital Strategy &amp; Website Build</div>
+            <p>Four years in Cambodia. Moved from classroom teaching into digital marketing, raising over $22,000 for a school in her first year. Co-founded Astral Soup, produced a government investment podcast, and has built websites for NGOs and local businesses across Siem Reap.</p>
+            <div class="skills"><span>Website Design</span><span>Copywriting</span><span>MailChimp</span><span>SEO</span><span>Digital Marketing</span></div>
+          </div>
+          <div class="team-person">
+            <h4>Bong Kim</h4>
+            <div class="role">Full-Stack Dev &amp; CRM, Be Good Consultancy</div>
+            <p>Full-stack developer with direct NGO experience. Built the digital infrastructure for Maloclusa including an integrated donation form feeding directly into their CRM. Technical lead at Be Good Consultancy, focused on NGO digital milestones.</p>
+            <div class="skills"><span>Full-Stack Dev</span><span>CRM Integration</span><span>AI Automations</span><span>NGO Experience</span></div>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead><tr><th>Item</th><th>Description</th><th class="td-right">Cost</th></tr></thead>
+          <tbody>
+            <tr><td class="td-strong">Website Build (3 pages)</td><td>Design and build, mobile responsive, SEO structure, CTA strategy</td><td class="td-price">$500</td></tr>
+            <tr><td class="td-strong">Content and Image Structure (large volume)</td><td>Full content upload, image formatting and structuring, social and email linking across all pages</td><td class="td-price">$300</td></tr>
+            <tr><td class="td-strong">CRM, Donation Integration and Automation</td><td>SwipeOne setup, form connection, donation flow, welcome and confirmation email automation</td><td class="td-price">$400</td></tr>
+            <tr><td class="td-strong">Domain, hosting and software</td><td>Direct third-party costs, pass-through</td><td class="td-price td-right" style="font-weight:400; color:var(--muted);">At cost</td></tr>
+            <tr><td class="td-strong">Annual QA maintenance</td><td>Quarterly checks, basic content updates</td><td class="td-price td-right" style="font-weight:400; color:var(--muted);">$200 / yr</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td class="tf-label" colspan="2">Project total (service fees)</td><td class="tf-value">$1,200</td></tr>
+          </tfoot>
+        </table>
+
+        <div class="foot-note">
+          This project is donation-supported. <strong>The $1,200 fee covers all service work.</strong> Domain, hosting, and software fees are direct third-party costs billed at cost with no markup. BFT pays what their budget genuinely allows toward the service fee. Whatever gap exists, we work out together through phased timelines or in-kind arrangements.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end page-wrap -->
+
+  <!-- STEP 6: CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-inner fade-in">
+      <div class="conclusion-spine">
+        <div class="conclusion-dot">6</div>
+      </div>
+      <div class="conclusion-body">
+        <div class="step-label">Conclusion</div>
+        <h2>Twenty years of impact<br>deserve to <em>shine online</em></h2>
+        <p>BFT has built something remarkable. Over 100,000 people across rural Cambodia have better lives because of this organisation. Children are in school. Families are healthier. Communities are leading their own futures.</p>
+        <p>This proposal puts the tools in place to tell that story. A website that captures the warmth and depth of 20 years of work. A CRM that honours every supporter who has been part of the journey. A system light enough that your team can focus on what they do best.</p>
+        <p>We are genuinely honoured to be invited into this work and ready to move as soon as you are.</p>
+        <div class="contact-row">
+          <div class="contact-card">
+            <div class="name">Rachel Pilloff</div>
+            <div class="detail">Website and Digital Strategy</div>
+            <a href="mailto:rachelpilloff@gmail.com">rachelpilloff@gmail.com</a>
+            <a href="https://rachelpilloff.com" target="_blank">rachelpilloff.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="name">Bong Kim</div>
+            <div class="detail">CRM Integration, Be Good Consultancy</div>
+            <a href="mailto:rachelpilloff@gmail.com">Reach Kim via Rachel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Prepared April 2026 &nbsp;·&nbsp; Confidential, for BFT internal review only &nbsp;·&nbsp; rachelpilloff.com
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
