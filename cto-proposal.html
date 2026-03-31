@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Recovery & Fundraising Infrastructure · CTO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F5F0;
+      --ink: #1C1C1A;
+      --ink-mid: #4A4845;
+      --ink-light: #8A8780;
+      --rule: #D9D6CF;
+      --accent: #2B4C3F;
+      --accent-light: #EAF0ED;
+      --warn-bg: #FDF8F0;
+      --warn-border: #E8C97A;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-bottom: 48px;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    .problem-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .problem-list li {
+      font-size: 15px;
+      color: var(--ink-mid);
+      padding: 10px 0 10px 20px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      line-height: 1.65;
+    }
+
+    .problem-list li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .problem-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink-light);
+    }
+
+    .problem-list li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .phases {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .phase {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+    }
+
+    .phase:last-child {
+      border-bottom: none;
+    }
+
+    .phase-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 3px;
+    }
+
+    .phase-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .phase-desc {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    table.price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table.price-table th {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      background: #EFECEA;
+      padding: 10px 20px;
+      text-align: left;
+    }
+
+    table.price-table th:last-child {
+      text-align: right;
+    }
+
+    table.price-table td {
+      padding: 14px 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+
+    table.price-table td:last-child {
+      text-align: right;
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .price-total td {
+      background: var(--accent-light);
+      color: var(--ink) !important;
+      font-weight: 500 !important;
+    }
+
+    .note-box {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 20px 24px;
+      background: white;
+      margin-top: 20px;
+      margin-bottom: 32px;
+    }
+
+    .note-box p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .rec-box {
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      background: var(--warn-bg);
+      margin-top: 20px;
+      margin-bottom: 32px;
+    }
+
+    .rec-box-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #A07D2A;
+      margin-bottom: 8px;
+    }
+
+    .rec-box p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .rec-box strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 15px;
+      color: var(--ink-mid);
+    }
+
+    .steps li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink-light);
+      padding-top: 1px;
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 520px) {
+      .page { padding: 48px 20px 80px; }
+      h1 { font-size: 26px; }
+      .phase { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <p class="eyebrow">Project Proposal</p>
+    <h1>Website Rebuild &amp; Fundraising Setup</h1>
+    <p class="subtitle">Community Translation Organisation &nbsp;·&nbsp; Prepared by Rachel Pilloff Consulting</p>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">00 &nbsp;· About CTO</span>
+      <h2>Translating awareness into action</h2>
+      <p>Community Translation Organisation (CTO) is a non-profit organisation in Cambodia. CTO helps poor rural communities by giving people the skills and tools they need to build a better life.</p>
+      <p>Many rural families in Cambodia do not have clean water, good schools, or electricity at home. CTO works directly in these areas.</p>
+      <p>CTO builds community groups, such as savings groups, farmer groups, and women-led groups. These groups speak up for their members and protect the most vulnerable people, including women and ethnic minorities.</p>
+      <p style="font-style: italic; color: var(--ink-mid);">CTO believes that when people get the right knowledge and tools, they can change their own lives. Turning that knowledge into real action is what the name "Community Translation" means.</p>
+
+      <div class="phases" style="margin-top: 24px;">
+        <div class="phase">
+          <span class="phase-label">Water</span>
+          <div>
+            <p class="phase-title">Irrigation and clean water</p>
+            <p class="phase-desc">Building canals and water tanks so villages have clean water for drinking and growing food.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Agriculture</span>
+          <div>
+            <p class="phase-title">Farmer training</p>
+            <p class="phase-desc">Teaching farmers better ways to grow crops and manage land, water, and forests.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Finance</span>
+          <div>
+            <p class="phase-title">Money management</p>
+            <p class="phase-desc">Helping families and communities learn how to manage money and plan for the future.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Equity</span>
+          <div>
+            <p class="phase-title">Gender equality and education</p>
+            <p class="phase-desc">Supporting women's rights and children's education so communities can grow stronger.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-box" style="margin-top: 24px; margin-bottom: 0;">
+        <p style="margin-bottom: 8px; font-weight: 500; color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em;">Partners over the years</p>
+        <p style="margin: 0; font-size: 14px; color: var(--ink-mid);">UNDP, World Food Programme, Oxfam America, AusAID, We Effect, Engineers Without Borders, ActionAID Cambodia, Pact-USAID, and government departments of Agriculture, Water Resources, and Women's Affairs.</p>
+      </div>
+
+      <div class="note-box" style="margin-top: 12px; margin-bottom: 0;">
+        <p style="margin-bottom: 4px; font-weight: 500; color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em;">Contact</p>
+        <p style="margin: 0; font-size: 14px; color: var(--ink-mid);">NR.06, #099, Group 1, Tnal Village, Sangkat Sro Ngae, Siem Reap, Cambodia &nbsp;·&nbsp; +855 012 707 474</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">01 &nbsp;· The problem</span>
+      <h2>Your website is holding you back</h2>
+      <p>CTO has 25 years of work with big global partners, including the UN and Oxfam. But right now, the website is making it harder to find new donors and partners.</p>
+      <ul class="problem-list">
+        <li><strong>Security risk.</strong> The domain and email accounts are controlled by a former staff member in New York. CTO does not have access to its own online accounts.</li>
+        <li><strong>Trust gap.</strong> The website has broken links and old content. This makes CTO look inactive to potential donors.</li>
+        <li><strong>Hard to give.</strong> There is no simple way for an international donor to send money or get in touch.</li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">02 &nbsp;· What needs to change</span>
+      <h2>Four things the current site gets wrong</h2>
+      <p>Beyond the security issues, the website content itself needs work. Here is what we will fix.</p>
+      <ul class="problem-list">
+        <li><strong>Typos and errors.</strong> The current site has spelling mistakes and grammar errors throughout. This makes CTO look unprofessional to donors and partner organisations. We will review and correct all text on the site.</li>
+        <li><strong>Old messaging.</strong> The writing does not clearly explain what CTO does or why it matters. We will rewrite the key pages with simple, direct language that speaks to donors, partners, and volunteers.</li>
+        <li><strong>Donation information is unclear.</strong> Visitors who want to give money have no easy way to find out how. Bank details are missing or hard to find, and there is no clear explanation of how donations are used. We will create a dedicated section with all the information a donor needs.</li>
+        <li><strong>No payment gateway.</strong> There is no online payment option for international donors. We will set up a simple, trusted payment link so anyone in the world can donate in a few clicks.</li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">03 &nbsp;· The solution</span>
+      <h2>Four steps to fix this</h2>
+      <div class="phases">
+        <div class="phase">
+          <span class="phase-label">Phase I</span>
+          <div>
+            <p class="phase-title">Get your accounts back</p>
+            <p class="phase-desc">Reclaim the domain and email accounts from the former staff member. Set up a secure login system that belongs to CTO, not to one person.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Phase II</span>
+          <div>
+            <p class="phase-title">Build a new website</p>
+            <p class="phase-desc">A clean, modern one-page site with CTO's mission, history, and team. Impact data shown clearly. WhatsApp and Telegram links for easy contact.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Phase III</span>
+          <div>
+            <p class="phase-title">Make it easy to donate</p>
+            <p class="phase-desc">A clear section for local QR code payments and international bank transfers. Simple language to explain how donations are used.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <span class="phase-label">Phase IV</span>
+          <div>
+            <p class="phase-title">Italian outreach page</p>
+            <p class="phase-desc">A separate page at <code>/italiano</code> for Italian donors and Italians living abroad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">04 &nbsp;· Investment</span>
+      <h2>Straightforward pricing</h2>
+      <p>This project is supported by donations. The fee below covers all the work. Domain and software fees are paid directly to third parties and passed on at cost.</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fixed project fee, covering all four phases</td>
+            <td>$300</td>
+          </tr>
+          <tr>
+            <td>Domain name &nbsp;<span style="font-size:13px; color: var(--ink-light);">(paid directly to provider)</span></td>
+            <td style="font-weight:400; color: var(--ink-mid);">At cost</td>
+          </tr>
+          <tr>
+            <td>Software fees &nbsp;<span style="font-size:13px; color: var(--ink-light);">(paid directly to provider)</span></td>
+            <td style="font-weight:400; color: var(--ink-mid);">At cost</td>
+          </tr>
+          <tr class="price-total">
+            <td>Timeline</td>
+            <td>2–3 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="rec-box">
+        <p class="rec-box-label">Alternative arrangement</p>
+        <p>If paying 50% is not possible, we kindly ask for a short <strong>recommendation letter</strong> recognising <strong>Rachel Pilloff</strong> as an official consultant and donor for your NGO. This letter helps us with our own records and costs nothing on your end.</p>
+      </div>
+
+      <div class="note-box">
+        <p>Some direct costs, including domain registration and software, still need to be covered separately. We will let you know about these costs in advance.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <span class="section-num">05 &nbsp;· Next steps</span>
+      <h2>How to get started</h2>
+      <ol class="steps">
+        <li>Agree to the $300 fee (or discuss the letter option above).</li>
+        <li>Share the contact details for the New York staff member so we can start recovering your accounts.</li>
+        <li>Send us 5–10 key facts about CTO's work to use on the new site.</li>
+      </ol>
+    </section>
+
+    <div class="footer">
+      <p>Prepared by Rachel Pilloff Consulting &nbsp;·&nbsp; rachelpilloff.com<br>
+      This proposal is confidential and intended solely for Community Translation Organisation.</p>
+    </div>
+
+  </div>
+</body>
+</html>
