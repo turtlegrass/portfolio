@@ -493,7 +493,8 @@
     }
 
     /* ANIMATIONS */
-    .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+    .js-ready .fade-in { opacity: 0; transform: translateY(14px); }
     .fade-in.visible { opacity: 1; transform: none; }
 
     /* RESPONSIVE */
@@ -542,11 +543,11 @@
           <tbody>
             <tr>
               <td class="td-strong">Website</td>
-              <td>Three pages that tell BFT's story, showcase 20 years of impact, and give every visitor a clear path to get involved or give.</td>
+              <td>A WordPress build with comprehensive on-page SEO, three pages that tell BFT's story and give every visitor a clear path to get involved or give.</td>
             </tr>
             <tr>
               <td class="td-strong">Donor CRM</td>
-              <td>All supporter data in one place, captured automatically from the donation form, so your team always has a clear picture of who is behind you.</td>
+              <td>HubSpot free tier integrated with the donation form. Supporter data captured automatically at no monthly cost, so your team always has a current picture of who is behind you.</td>
             </tr>
             <tr>
               <td class="td-strong">Training and support</td>
@@ -599,12 +600,12 @@
           <thead><tr><th>Phase</th><th>Deliverables</th></tr></thead>
           <tbody>
             <tr>
-              <td><div class="phase-tag"><span class="num">1</span>Website build</div></td>
-              <td>Home, Get Involved, and Donate pages. Mobile-responsive. MailChimp contact form on every page. Instagram and Telegram CTAs throughout. Donation QR codes, international payment options, and partner links on the Donate page.</td>
+              <td><div class="phase-tag"><span class="num">1</span>WordPress build</div></td>
+              <td>Home, Get Involved, and Donate pages built on WordPress by Bong Kim. Mobile-responsive with comprehensive on-page SEO, CTA structure, and MailChimp contact form on every page. Instagram and Telegram CTAs throughout. Donation QR codes, international payment options, and partner links on the Donate page.</td>
             </tr>
             <tr>
-              <td><div class="phase-tag"><span class="num">2</span>CRM integration</div></td>
-              <td>SwipeOne setup with donation form connected. Supporter data captured automatically. Welcome and confirmation emails automated. NDA signed before any data is accessed.</td>
+              <td><div class="phase-tag"><span class="num">2</span>HubSpot integration</div></td>
+              <td>HubSpot free tier configured and connected to the donation form. Supporter data captured automatically with no monthly platform cost. Welcome and confirmation emails automated. NDA signed before any data is accessed.</td>
             </tr>
             <tr>
               <td><div class="phase-tag"><span class="num">3</span>Training and handover</div></td>
@@ -631,8 +632,8 @@
           <tbody>
             <tr><td class="td-strong">Now / Early April 2026</td><td>Internal review. Share this link with your executive director and team.</td></tr>
             <tr><td class="td-strong">After Khmer New Year</td><td>Decision meeting. Scope confirmed, budget aligned, project begins.</td></tr>
-            <tr><td class="td-strong">Weeks 1 to 4</td><td>Website built by Rachel. Preview link shared before anything goes live.</td></tr>
-            <tr><td class="td-strong">Running in parallel</td><td>CRM configured by Kim. NDA signed before any data access begins.</td></tr>
+            <tr><td class="td-strong">Weeks 1 to 4</td><td>WordPress site built by Kim. Rachel leads content, SEO structure, and CTA strategy. Preview link shared before anything goes live.</td></tr>
+            <tr><td class="td-strong">Running in parallel</td><td>HubSpot configured by Kim. NDA signed before any data access begins.</td></tr>
             <tr><td class="td-strong">Weeks 4 to 6</td><td>Training session recorded and delivered. Site launched. Maintenance plan begins.</td></tr>
           </tbody>
         </table>
@@ -645,22 +646,23 @@
       <div class="body">
         <div class="step-label">Deliverables and Goals</div>
         <h2>What you will have at the end</h2>
-        <p class="lede">Every item below is confirmed in scope. Success at 30 days post-launch is defined by three measurable goals.</p>
+        <p class="lede">Every item below is confirmed in scope. Success at 90 days post-launch is defined by three measurable goals.</p>
         <table class="data-table">
           <thead><tr><th>Deliverable</th><th>Detail</th></tr></thead>
           <tbody>
-            <tr><td class="td-strong">3-page website</td><td>Home, Get Involved, and Donate. Refreshed branding applied throughout. Working donation pathways and consistent calls to action on every page.</td></tr>
+            <tr><td class="td-strong">WordPress website, 3 pages</td><td>Home, Get Involved, and Donate. Refreshed branding applied throughout. On-page SEO, CTA strategy, and working donation pathways on every page.</td></tr>
             <tr><td class="td-strong">Donation experience</td><td>Multiple bank QR codes, PayPal, SE Asia payment providers, and partner links. Every supporter can give in the way that works for them.</td></tr>
             <tr><td class="td-strong">Email list growth</td><td>MailChimp integrated across all pages. Visitors can join instantly, with zero manual effort from your team.</td></tr>
-            <tr><td class="td-strong">Live CRM</td><td>Supporter and donor records created automatically from launch day. Your team always has a current picture of who is behind you.</td></tr>
+            <tr><td class="td-strong">Live HubSpot CRM</td><td>Supporter and donor records created automatically from launch day at no monthly cost. Your team always has a current picture of who is behind you.</td></tr>
             <tr><td class="td-strong">Staff training</td><td>Recorded walkthrough covering login, reading records, and adding entries. Your team leaves feeling equipped.</td></tr>
+            <tr><td class="td-strong">Signed NDA</td><td>Be Good Consultancy access limited to maintenance only. Documented, signed, and enforceable.</td></tr>
           </tbody>
         </table>
 
-        <p style="font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--indigo-mid); margin-bottom:0.6rem; margin-top:1.5rem;">Success Snapshot</p>
+        <p style="font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--indigo-mid); margin-bottom:0.6rem; margin-top:1.5rem;">Success KPIs</p>
         <ul class="goals-list">
-          <li><span class="g-num">01</span>The donation pathway is fully live, tested across all devices, and every contribution is tracked inside the CRM from day one.</li>
-          <li><span class="g-num">02</span>Existing donor and contact data has been migrated into SwipeOne, giving BFT a complete, searchable record of its supporter base.</li>
+          <li><span class="g-num">01</span>The donation pathway is fully live, tested across all devices, and every contribution is tracked inside HubSpot from day one.</li>
+          <li><span class="g-num">02</span>Existing donor and contact data has been migrated into HubSpot, giving BFT a complete, searchable record of its supporter base.</li>
           <li><span class="g-num">03</span>At least two BFT staff members can log in, navigate the CRM, and add records independently without needing outside support.</li>
         </ul>
       </div>
@@ -677,24 +679,24 @@
         <div class="team-block">
           <div class="team-person">
             <h4>Rachel Pilloff</h4>
-            <div class="role">Digital Strategy &amp; Website Build</div>
-            <p>Four years in Cambodia. Co-founded Astral Soup Digital Marketing Agency, produced a government investment podcast, and has built websites for NGOs and local businesses across Siem Reap.</p>
-            <div class="skills"><span>Website Design</span><span>Copywriting</span><span>CRMs</span><span>SEO</span><span>Digital Marketing</span></div>
+            <div class="role">Digital Strategy, Content &amp; SEO</div>
+            <p>Four years in Cambodia. Moved from classroom teaching into digital marketing. Co-founded Astral Soup, produced a government investment podcast, and has led content strategy and SEO for NGOs and local businesses across Siem Reap.</p>
+            <div class="skills"><span>Digital Strategy</span><span>Copywriting</span><span>SEO</span><span>MailChimp</span><span>Content Structure</span></div>
           </div>
           <div class="team-person">
             <h4>Bong Kim</h4>
-            <div class="role">Full-Stack Dev &amp; CRM, Be Good Consultancy</div>
-            <p>Full-stack developer with direct NGO experience. Built the digital infrastructure for Maloclusa including an integrated donation form feeding directly into their CRM. Technical lead at Be Good Consultancy, focused on NGO digital milestones.</p>
-            <div class="skills"><span>Full-Stack Dev</span><span>CRM Integration</span><span>AI Automations</span><span>NGO Experience</span></div>
+            <div class="role">WordPress Build, HubSpot &amp; Automation, Be Good Consultancy</div>
+            <p>Full-stack developer with direct NGO experience. Built WordPress sites and integrated donor management systems for NGOs including Maloclusa. Technical lead at Be Good Consultancy, specialising in WordPress, CRM integration, and AI automations for lean organisations.</p>
+            <div class="skills"><span>WordPress</span><span>HubSpot</span><span>CRM Integration</span><span>AI Automations</span><span>NGO Experience</span></div>
           </div>
         </div>
 
         <table class="data-table">
           <thead><tr><th>Item</th><th>Description</th><th class="td-right">Cost</th></tr></thead>
           <tbody>
-            <tr><td class="td-strong">Website Build (3 pages)</td><td>Design and build, mobile responsive, SEO structure, CTA strategy</td><td class="td-price">$500</td></tr>
-            <tr><td class="td-strong">Content and Image Structure (large volume)</td><td>Full content upload, image formatting and structuring, social and email linking across all pages</td><td class="td-price">$300</td></tr>
-            <tr><td class="td-strong">CRM, Donation Integration and Automation</td><td>SwipeOne setup, form connection, donation flow, welcome and confirmation email automation</td><td class="td-price">$400</td></tr>
+            <tr><td class="td-strong">WordPress Website Build (3 pages)</td><td>Design and build on WordPress, mobile responsive, on-page SEO, CTA strategy</td><td class="td-price">$500</td></tr>
+            <tr><td class="td-strong">Content and Image Structure (large volume)</td><td>Full content upload, image formatting, social and email linking across all pages</td><td class="td-price">$300</td></tr>
+            <tr><td class="td-strong">HubSpot Integration and Automation</td><td>HubSpot free tier setup, form connection, donation flow, welcome and confirmation email automation</td><td class="td-price">$400</td></tr>
             <tr><td class="td-strong">Domain, hosting and software</td><td>Direct third-party costs, pass-through</td><td class="td-price td-right" style="font-weight:400; color:var(--muted);">At cost</td></tr>
             <tr><td class="td-strong">Annual QA maintenance</td><td>Quarterly checks, basic content updates</td><td class="td-price td-right" style="font-weight:400; color:var(--muted);">$200 / yr</td></tr>
           </tbody>
@@ -704,11 +706,7 @@
         </table>
 
         <div class="foot-note">
-          This project runs on a donation-supported PAY WHAT YOU CAN honor system. If paying at least 50% is not possible, we kindly ask for an official recommendation letter recognizing Rachel Pilloff and Nat
-Kimsreng as official consultants and donors for your NGO. We also request to use your product as a case study, and will count on your honest, supportive review of our services.
-
-          
- <strong>The $1,200 fee covers all service work.</strong> *Domain, hosting, and software fees are direct third-party costs billed at cost and cannot be subsidized. BFT pays what their budget genuinely allows toward the service fee. Whatever gap exists, we work out together through phased timelines or in-kind arrangements.
+          This project is donation-supported. <strong>The $1,200 fee covers all service work.</strong> Domain, hosting, and software fees are direct third-party costs billed at cost with no markup. BFT pays what their budget genuinely allows toward the service fee. Whatever gap exists, we work out together through phased timelines or in-kind arrangements.
         </div>
       </div>
     </div>
@@ -736,8 +734,8 @@ Kimsreng as official consultants and donors for your NGO. We also request to use
           </div>
           <div class="contact-card">
             <div class="name">Bong Kim</div>
-            <div class="detail">CRM Integration, Be Good Consultancy</div>
-            <a href="mailto:rachelpilloff@gmail.com">Reach Kim via Rachel</a>
+            <div class="detail">WordPress Build &amp; HubSpot, Be Good Consultancy</div>
+            <a href="/cdn-cgi/l/email-protection#087a696b606d6478616464676e6e486f65696164266b6765">Reach Kim via Rachel</a>
           </div>
         </div>
       </div>
@@ -745,23 +743,11 @@ Kimsreng as official consultants and donors for your NGO. We also request to use
   </div>
 
   <footer>
-  <div class="footer-left">
-    <span class="footer-copy">&copy; 2026 Rachel Pilloff &nbsp;&middot;&nbsp; rachelpilloff.com</span>
-    <span class="footer-location">Siem Reap, Cambodia</span>
-  </div>
-  <div class="footer-ctas">
-    <a href="https://t.me/writerachel" target="_blank" rel="noopener" class="footer-cta-btn">
-      <span class="footer-cta-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.367l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.192z"/>
-        </svg>
-      </span>
-      Message on Telegram
-  </div>
     Prepared April 2026 &nbsp;·&nbsp; Confidential, for BFT internal review only &nbsp;·&nbsp; rachelpilloff.com
   </footer>
 
   <script>
+    document.documentElement.classList.add('js-ready');
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
