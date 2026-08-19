@@ -3,1305 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rachel Pilloff | Marketing Strategist & Business Consultant in Siem Reap, Cambodia</title>
-<meta name="description" content="Rachel Pilloff is a marketing strategist, copywriter, and business consultant. Siem Reap, Cambodia → Remote, Worldwide. Helping brands build a real digital presence in Southeast Asia and beyond.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Rachel Pilloff — Marketing, PR &amp; Brand Strategy</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-  :root {
-    --bg: #F6F4F0;
-    --ink: #0E0E0E;
-    --ink-soft: #4A4A4A;
-    --ink-muted: #9A9A9A;
-    --accent: #3B2D8A;
-    --accent-light: #EDEAF8;
-    --contact-blue: #3B2D8A;
-    --contact-blue-light: rgba(59,45,138,0.18);
-    --white: #FFFFFF;
-    --rule: rgba(14,14,14,0.1);
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Manrope', system-ui, sans-serif;
+  :root{
+    --paper:#FFFFFF;
+    --ink:#221A10;
+    --oak:#9C6A34;
+    --oak-deep:#6E4423;
+    --oak-light:#D9B98B;
+    --oak-pale:#F4ECDF;
+    --taupe:#6E6355;
+    --line:rgba(34,26,16,0.16);
   }
 
-  html { scroll-behavior: smooth; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
 
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(246,244,240,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
-  }
-  nav.scrolled { border-color: var(--rule); }
-  .nav-brand {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    flex-shrink: 0;
-  }
-  .nav-links {
-    display: flex;
-    gap: 24px;
-    list-style: none;
-    align-items: center;
-  }
-  .nav-links a {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    text-decoration: none;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white) !important;
-    background: var(--accent);
-    padding: 9px 18px;
-    transition: opacity 0.2s !important;
-  }
-  .nav-cta:hover { opacity: 0.85; }
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--ink);
-    transition: all 0.3s;
-  }
-  .mobile-nav {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(246,244,240,0.98);
-    z-index: 99;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a {
-    font-size: 22px;
-    font-family: var(--serif);
-    font-weight: 300;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    transition: color 0.2s;
-  }
-  .mobile-nav a:hover { color: var(--accent); }
-  .mobile-nav .mobile-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--ink);
-    font-family: var(--sans);
-    line-height: 1;
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Courier Prime', 'Courier New', monospace;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
 
-  /* SECTIONS */
-  section { padding: 120px 60px; }
+  a{color:inherit;}
 
-  /* HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 60px;
-    padding-top: 140px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hero-label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(56px, 9vw, 130px);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.35s forwards;
-  }
-  .hero-name em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .hero-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 40px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.55s forwards;
-  }
-  .hero-tagline {
-    font-size: clamp(15px, 2vw, 19px);
-    font-weight: 300;
-    color: var(--ink-soft);
-    max-width: 520px;
-    line-height: 1.65;
-  }
-  .hero-meta { text-align: right; flex-shrink: 0; }
-  .hero-location {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 6px;
-  }
-  .hero-scroll-cta {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: flex-end;
-  }
-  .hero-scroll-cta::after {
-    content: '↓';
-    animation: bounce 2s infinite;
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
   }
 
-  /* INTRO / WHO IS RACHEL */
-  #intro {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    align-items: start;
-    border-bottom: 1px solid var(--rule);
+  /* ---------- MASTHEAD BAR ---------- */
+  .masthead-bar{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
   }
-  .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    padding-top: 6px;
+  .masthead-bar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--taupe);
   }
-  .intro-body p {
-    font-family: var(--serif);
-    font-size: clamp(20px, 2.6vw, 28px);
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--ink);
-    margin-bottom: 24px;
+  .masthead-bar .dot{ color:var(--oak); }
+
+  /* ---------- HERO (STATIC TYPED INTRO) ---------- */
+  .hero{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    background:var(--ink);
+    padding:96px 0 84px;
   }
-  .intro-body p:last-child { margin-bottom: 0; }
-  .intro-body strong {
-    font-weight: 500;
-    color: var(--accent);
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 33px,
+      rgba(244,236,223,0.045) 34px
+    );
+    pointer-events:none;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 32px;
+  }
+  .hero-content .inner{
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .hero-eyebrow{
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--oak-light);
+    margin-bottom:16px;
+  }
+  .hero-name{
+    font-weight:700;
+    font-size:clamp(34px, 7vw, 92px);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    color:#FBF7F0;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right:3px solid var(--oak-light);
+    width:15ch;
+    animation:typing 2.6s steps(15) 0.3s 1 normal both, caret 0.9s steps(1) infinite;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-name{ animation:none; border-right:none; }
+  }
+  @keyframes typing{ from{ width:0; } to{ width:15ch; } }
+  @keyframes caret{ 50%{ border-color:transparent; } }
+
+  .hero-role{
+    font-style:italic;
+    font-size:18px;
+    color:var(--oak-pale);
+    margin-top:14px;
+  }
+  .hero-contact{
+    margin-top:26px;
+    font-size:13px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    color:#E7DCC9;
+  }
+  .hero-contact a{
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .hero-contact a:hover{
+    color:var(--oak-light);
+    border-color:var(--oak-light);
   }
 
-  /* COLLAGE TOGGLE */
-  .collage-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 48px;
-    gap: 24px;
-  }
-  .collage-toggle-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: none;
-    border: 1px solid var(--rule);
-    font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    padding: 10px 18px;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-    flex-shrink: 0;
-  }
-  .collage-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .toggle-icon {
-    font-size: 18px;
-    line-height: 1;
-    transition: transform 0.3s;
-    display: inline-block;
-  }
-  .collage-toggle-btn.open .toggle-icon { transform: rotate(45deg); }
-  .collage-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .collage-body.open { max-height: 9999px; }
-
-  /* SOCIAL FEED */
-  #collage {
-    padding-top: 80px;
-    padding-bottom: 120px;
-    border-bottom: 1px solid var(--rule);
-    background: #EDEAF8;
-  }
-  .collage-header { margin-bottom: 48px; }
-  .collage-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 12px;
-  }
-  .collage-title {
-    font-family: var(--serif);
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-  .feed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-  }
-  .feed-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    background: var(--white);
-    border: 1px solid var(--rule);
-  }
-  .feed-img {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #D8D4CC;
-    position: relative;
-  }
-  .feed-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .feed-card:hover .feed-img img { transform: scale(1.04); }
-  .feed-placeholder {
-    width: 100%; height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #E0DDD6, #CCCAC3);
-    color: var(--ink-muted);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 16px;
-  }
-  .feed-caption {
-    padding: 16px 18px 20px;
-    border-top: 1px solid var(--rule);
-  }
-  .feed-caption-tag {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 6px;
-  }
-  .feed-caption-text {
-    font-size: 13px;
-    color: var(--ink-soft);
-    line-height: 1.55;
+  .scroll-cue{
+    position:relative;
+    z-index:2;
+    margin-top:44px;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#EFE6D5;
+    opacity:0.7;
   }
 
-  /* SERVICES */
-  #services { border-bottom: 1px solid var(--rule); }
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 72px;
+  /* ---------- ABOUT (TYPED NOTE) ---------- */
+  .about{
+    padding:80px 0 70px;
+    border-bottom:1px solid var(--line);
   }
-  .services-title {
-    font-family: var(--serif);
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1;
+  .about .wrap{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
   }
-  .services-note {
-    font-size: 13px;
-    color: var(--ink-muted);
-    max-width: 260px;
-    text-align: right;
-    line-height: 1.5;
+  .about .label-col{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oak);
   }
-  .service-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 0;
-    padding: 28px 0;
-    border-top: 1px solid var(--rule);
-    align-items: baseline;
-    transition: background 0.2s;
-    cursor: default;
+  .about .label-col .line-no{
+    color:var(--taupe);
+    display:block;
+    margin-top:8px;
+    font-size:11px;
+    letter-spacing:0.05em;
   }
-  .service-row:hover { background: var(--accent-light); margin: 0 -60px; padding: 28px 60px; }
-  .service-name {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--ink);
+  .typed-page{
+    position:relative;
+    padding:8px 0 8px 26px;
+    background-image:repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      var(--line) 32px
+    );
   }
-  .service-desc {
-    font-size: 13px;
-    color: var(--ink-muted);
-    line-height: 1.5;
-    padding-right: 20px;
+  .typed-page::before{
+    content:"";
+    position:absolute;
+    left:6px; top:0; bottom:0;
+    width:1px;
+    background:var(--oak-light);
   }
-  .service-price {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--accent);
-    text-align: right;
+  .typed-page p{
+    font-size:16px;
+    line-height:32px;
+    color:var(--ink);
+    max-width:640px;
   }
-
-  /* PACKAGES */
-  #packages {
-    border-bottom: 1px solid var(--rule);
-    background: var(--white);
-  }
-  .packages-title {
-    font-family: var(--serif);
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    margin-bottom: 72px;
-  }
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
-    background: var(--rule);
-  }
-  .package-card {
-    background: var(--white);
-    padding: 48px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transition: background 0.2s;
-  }
-  .package-card:hover { background: var(--accent-light); }
-  .package-card.featured {
-    background: var(--accent);
-    color: var(--white);
-  }
-  .package-card.featured .package-price,
-  .package-card.featured .package-name,
-  .package-card.featured .package-includes { color: var(--white); }
-  .package-card.featured .package-desc { color: rgba(255,255,255,0.7); }
-  .package-name {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-  .package-price {
-    font-family: var(--serif);
-    font-size: 42px;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .package-price span { font-size: 16px; font-family: var(--sans); }
-  .package-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.6; flex: 1; }
-  .package-includes {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-top: auto;
-  }
-  .package-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .package-list li {
-    font-size: 13px;
-    color: var(--ink-soft);
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    line-height: 1.4;
-  }
-  .package-list li::before { content: '+'; color: var(--ink-muted); flex-shrink: 0; font-weight: 600; }
-  .package-card.featured .package-list li { color: rgba(255,255,255,0.8); }
-  .package-card.featured .package-list li::before { color: rgba(255,255,255,0.4); }
-  .package-footer-note {
-    margin-top: 48px;
-    font-size: 14px;
-    color: var(--ink-muted);
-    font-style: italic;
-    font-family: var(--serif);
-    text-align: center;
+  .typed-page p strong{
+    color:var(--oak-deep);
+    font-weight:700;
   }
 
-  /* PYRAMID */
-  #pyramid { border-bottom: 1px solid var(--rule); }
-  .pyramid-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
+  /* ---------- SECTION HEADERS ---------- */
+  .section{
+    padding:76px 0;
+    border-top:1px solid var(--line);
   }
-  .pyramid-text h2 {
-    font-family: var(--serif);
-    font-size: clamp(32px, 4.5vw, 56px);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:50px;
+    gap:24px;
+    flex-wrap:wrap;
   }
-  .pyramid-text p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
-  .pyramid-visual { display: flex; flex-direction: column; gap: 3px; }
-  .pyramid-tier {
-    padding: 28px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    transition: transform 0.2s;
-    cursor: default;
+  .section-head .num{
+    font-size:12px;
+    color:var(--oak);
+    letter-spacing:0.14em;
   }
-  .pyramid-tier:hover { transform: translateX(8px); }
-  .tier-1 { background: var(--accent); color: var(--white); }
-  .tier-2 { background: #5448A8; color: var(--white); }
-  .tier-3 { background: #EDEAF8; color: var(--ink); }
-  .tier-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
-  .tier-title { font-family: var(--serif); font-size: 20px; font-weight: 400; }
-  .tier-desc { font-size: 13px; opacity: 0.8; line-height: 1.5; }
-
-  /* CASE STUDIES */
-  #cases {
-    border-bottom: 1px solid var(--rule);
-    background: var(--white);
+  .section-head h2{
+    font-weight:700;
+    font-size:clamp(30px,4vw,42px);
+    letter-spacing:-0.01em;
+    margin-top:6px;
   }
-  .cases-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 64px;
-  }
-  .cases-title {
-    font-family: var(--serif);
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .cases-note {
-    font-size: 13px;
-    color: var(--ink-muted);
-    max-width: 260px;
-    text-align: right;
-    line-height: 1.5;
-  }
-  .cases-list { display: flex; flex-direction: column; gap: 0; }
-  .case-item {
-    border-top: 1px solid var(--rule);
-    overflow: hidden;
-  }
-  .case-trigger {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr auto;
-    align-items: center;
-    gap: 24px;
-    padding: 32px 0;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .case-trigger:hover { background: var(--accent-light); margin: 0 -60px; padding: 32px 60px; }
-  .case-client {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--ink);
-  }
-  .case-type {
-    font-size: 12px;
-    color: var(--ink-muted);
-    line-height: 1.4;
-  }
-  .case-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    text-align: right;
-  }
-  .case-arrow {
-    font-size: 18px;
-    color: var(--ink-muted);
-    transition: transform 0.3s;
-    flex-shrink: 0;
-  }
-  .case-item.open .case-arrow { transform: rotate(45deg); }
-  .case-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s ease;
-  }
-  .case-body-inner {
-    padding: 0 0 48px 0;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-  }
-  .case-body-text p {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.75;
-    margin-bottom: 16px;
-  }
-  .case-body-text p:last-child { margin-bottom: 0; }
-  .case-body-meta { display: flex; flex-direction: column; gap: 24px; padding-top: 4px; }
-  .case-meta-block {}
-  .case-meta-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 8px;
-  }
-  .case-meta-value {
-    font-size: 14px;
-    color: var(--ink);
-    line-height: 1.5;
+  .section-head .sub{
+    font-size:12px;
+    color:var(--taupe);
+    text-align:right;
+    max-width:220px;
+    line-height:1.6;
+    letter-spacing:0.02em;
   }
 
-  /* CONTACT */
-  #contact {
-    background: var(--bg);
-    color: var(--ink);
-    border-top: 1px solid var(--rule);
+  /* ---------- TIMELINE ---------- */
+  .timeline{
+    position:relative;
+    padding-left:120px;
   }
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 100px;
-    align-items: start;
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:96px;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    background:linear-gradient(to bottom, var(--oak), var(--oak-light) 85%, transparent);
   }
-  .contact-left h2 {
-    font-family: var(--serif);
-    font-size: clamp(36px, 5vw, 62px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 28px;
-    color: var(--ink);
+  .tl-item{
+    position:relative;
+    padding-bottom:54px;
   }
-  .contact-left p {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    margin-bottom: 16px;
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-31px;
+    top:6px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--oak);
   }
-  .contact-email {
-    display: inline-block;
-    margin-top: 20px;
-    font-family: var(--serif);
-    font-size: 17px;
-    color: var(--accent);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    transition: opacity 0.2s;
+  .tl-years{
+    position:absolute;
+    left:-120px;
+    top:2px;
+    width:88px;
+    text-align:right;
+    font-size:12.5px;
+    color:var(--ink);
+    font-weight:700;
+    line-height:1.4;
   }
-  .contact-email:hover { opacity: 0.7; }
-  .contact-form { display: flex; flex-direction: column; gap: 24px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-field { display: flex; flex-direction: column; gap: 8px; }
-  .form-field label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
+  .tl-phase{
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oak);
+    margin-bottom:6px;
   }
-  .form-field input, .form-field textarea, .form-field select {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 14px;
-    padding: 14px 18px;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
+  .tl-item h3{
+    font-weight:700;
+    font-size:23px;
+    margin-bottom:4px;
+    letter-spacing:-0.01em;
   }
-  .form-field input::placeholder,
-  .form-field textarea::placeholder { color: var(--ink-muted); }
-  .form-field input:focus,
-  .form-field textarea:focus,
-  .form-field select:focus { border-color: var(--accent); }
-  .form-field select { color: var(--ink-soft); cursor: pointer; }
-  .form-field select option { background: var(--white); color: var(--ink); }
-  .form-field textarea { resize: vertical; min-height: 130px; }
-  .form-submit {
-    align-self: flex-start;
-    background: var(--accent);
-    color: var(--white);
-    border: none;
-    padding: 16px 44px;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: opacity 0.2s;
+  .tl-item .org{
+    font-style:italic;
+    color:var(--taupe);
+    font-size:14.5px;
+    margin-bottom:10px;
   }
-  .form-submit:hover { opacity: 0.85; }
-  .form-success {
-    display: none;
-    padding: 20px 24px;
-    background: var(--accent-light);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 14px;
-    line-height: 1.6;
+  .tl-item p.desc{
+    font-size:14.5px;
+    line-height:1.7;
+    color:#3A3122;
+    max-width:600px;
   }
 
-  /* FOOTER */
-  footer {
-    padding: 48px 60px;
-    background: var(--accent);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  /* ---------- PROJECTS ---------- */
+  .projects-list{
+    border-top:1px solid var(--ink);
   }
-  .footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .project-row{
+    display:grid;
+    grid-template-columns:56px 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:24px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:var(--ink);
+    transition:background .2s ease, padding-left .2s ease, color .2s ease;
   }
-  .footer-copy {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.08em;
+  .project-row:hover{
+    background:var(--ink);
+    padding-left:14px;
   }
-  .footer-location {
-    font-size: 12px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.08em;
+  .project-row:hover .idx{
+    color:var(--oak-light);
   }
-  .footer-ctas {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+  .project-row:hover .p-title{
+    color:#FBF7F0;
   }
-  .footer-cta-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 24px;
-    border: 1.5px solid rgba(255,255,255,0.3);
-    color: var(--white);
-    text-decoration: none;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: background 0.2s, border-color 0.2s;
-    white-space: nowrap;
+  .project-row:hover .p-desc{
+    color:#CFC5B0;
   }
-  .footer-cta-btn:hover {
-    background: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.7);
-    color: var(--white);
+  .project-row:hover .arrow{
+    color:var(--oak-light);
   }
-  .footer-cta-icon {
-    font-size: 16px;
-    line-height: 1;
+  .project-row .idx{
+    font-size:13px;
+    color:var(--oak);
   }
-  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  footer a:hover { color: rgba(255,255,255,0.95); }
-
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+  .project-main .p-title{
+    font-weight:700;
+    font-size:21px;
+    letter-spacing:-0.01em;
   }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(5px); }
+  .project-main .p-desc{
+    font-size:13.5px;
+    color:var(--taupe);
+    margin-top:4px;
+    max-width:520px;
+  }
+  .project-row .arrow{
+    font-size:20px;
+    color:var(--oak);
+    transition:transform .2s ease;
+  }
+  .project-row:hover .arrow{
+    transform:translateX(6px);
   }
 
-  /* MOBILE */
-  @media (max-width: 900px) {
-    nav { padding: 20px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    section { padding: 80px 24px; }
-    #hero { padding: 100px 24px 48px; min-height: unset; justify-content: flex-start; padding-top: 100px; }
-    .hero-name { font-size: clamp(52px, 15vw, 80px); margin-bottom: 28px; }
-    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .hero-meta { text-align: left; }
-    .hero-meta .btn-calendly { margin-top: 4px; }
-    #intro { grid-template-columns: 1fr; gap: 32px; }
-    .services-header { flex-direction: column; gap: 16px; }
-    .services-note { text-align: left; }
-    .service-row { grid-template-columns: 1fr; gap: 6px; }
-    .service-row:hover { margin: 0; padding: 28px 0; }
-    .service-price { text-align: left; }
-    .pyramid-layout { grid-template-columns: 1fr; gap: 60px; }
-    .contact-layout { grid-template-columns: 1fr; gap: 60px; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 24px; padding: 40px 24px; text-align: center; }
-    .footer-ctas { justify-content: center; }
-    .feed-grid { grid-template-columns: 1fr 1fr; }
-    .cases-header { flex-direction: column; gap: 16px; }
-    .cases-note { text-align: left; }
-    .case-trigger { grid-template-columns: 1fr auto; gap: 16px; }
-    .case-type, .case-tag { display: none; }
-    .case-body-inner { grid-template-columns: 1fr; gap: 40px; }
-    .builder-header { flex-direction: column; align-items: flex-start; }
-    .builder-subtitle { text-align: left; max-width: 100%; }
-    .builder-layout { grid-template-columns: 1fr; gap: 40px; }
-    .builder-panel { position: static; }
-    .builder-list-item:hover { margin: 0; padding: 16px 0; }
-    .builder-list-item.selected { margin: 0 -8px; padding: 16px 8px; }
+  .project-row.featured{
+    background:var(--ink);
+    border-bottom:1px solid var(--ink);
+    border-left:4px solid var(--oak-light);
+    padding-left:20px;
+    margin-top:4px;
+  }
+  .project-row.featured:hover{
+    padding-left:26px;
+    background:#2A2117;
+  }
+  .project-row.featured .idx{
+    color:var(--oak-light);
+    font-weight:700;
+  }
+  .project-row.featured .featured-eyebrow{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--oak-light);
+    margin-bottom:6px;
+  }
+  .project-row.featured .p-title{
+    color:#FBF7F0;
+  }
+  .project-row.featured .p-desc{
+    color:#CFC5B0;
+  }
+  .project-row.featured .arrow{
+    color:var(--oak-light);
+  }
+  .project-row.featured:hover .p-title,
+  .project-row.featured:hover .featured-eyebrow{
+    color:#FBF7F0;
+  }
+  .project-row.featured:hover .idx,
+  .project-row.featured:hover .arrow{
+    color:var(--oak-light);
+  }
+  .project-row.featured:hover .p-desc{
+    color:#DCD3BF;
   }
 
-  .btn-calendly {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-    color: #3B2D8A;
-    border: 1.5px solid #3B2D8A;
-    padding: 13px 26px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--ink);
+    padding:44px 0 36px;
+    background:var(--ink);
+    color:var(--oak-pale);
   }
-  .btn-calendly:hover { background: #3B2D8A; color: #fff; }
-  .btn-calendly svg { stroke: currentColor; flex-shrink: 0; }
-  .btn-work-cta {
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 1.5px solid rgba(255,255,255,0.4); color: #fff;
-    font-family: var(--sans); font-size: 11px; font-weight: 600;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    text-decoration: none; padding: 13px 28px; white-space: nowrap;
-    transition: background 0.2s, border-color 0.2s;
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
   }
-  .btn-work-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.85); }
-  .btn-work-cta svg { stroke: #fff; flex-shrink: 0; transition: transform 0.2s; }
-  .btn-work-cta:hover svg { transform: translateX(4px); }
-  @media (max-width: 900px) { #work-cta { padding: 60px 24px !important; } }
+  footer .foot-name{
+    font-weight:700;
+    font-size:18px;
+    color:#FBF7F0;
+  }
+  footer .foot-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+    letter-spacing:0.04em;
+  }
+  footer .foot-links a{
+    text-decoration:none;
+    color:var(--oak-pale);
+    opacity:0.85;
+    border-bottom:1px solid transparent;
+  }
+  footer .foot-links a:hover{
+    opacity:1;
+    border-color:var(--oak-light);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:760px){
+    .hero{ height:78vh; }
+    .hero-name{ width:auto; white-space:normal; border-right:none; animation:none; }
+    .about .wrap{ grid-template-columns:1fr; }
+    .timeline{padding-left:24px;}
+    .timeline::before{left:0;}
+    .tl-item::before{left:-30px;}
+    .tl-years{
+      position:static;
+      width:auto;
+      text-align:left;
+      margin-bottom:8px;
+    }
+    .tl-item{padding-left:16px;}
+    .project-row{grid-template-columns:32px 1fr auto;}
+    .section-head{flex-direction:column; align-items:flex-start;}
+    .section-head .sub{text-align:left;}
+  }
+
+  :focus-visible{
+    outline:2px solid var(--oak);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; scroll-behavior:auto !important; animation:none !important;}
+  }
 </style>
 </head>
 <body>
 
-<nav id="navbar">
-  <a class="nav-brand" href="#">Welcome to rachelpilloff.com</a>
-  <ul class="nav-links">
-    <li><a href="#intro">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="https://rachelpilloff.com/work">Case Studies</a></li>
-    <li><a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a></li>
-    <li><a href="#contact" class="nav-cta">Work With Me</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-close" onclick="toggleMobileNav()">&times;</button>
-  <a href="#intro" onclick="toggleMobileNav()">About</a>
-  <a href="#services" onclick="toggleMobileNav()">Services</a>
-  <a href="#packages" onclick="toggleMobileNav()">Packages</a>
-  <a href="#pyramid" onclick="toggleMobileNav()">Approach</a>
-  
-  <a href="https://rachelpilloff.com/work" onclick="toggleMobileNav()">Case Studies</a>
-  <a href="#collage" onclick="toggleMobileNav()">In The Field</a>
-  <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly" onclick="toggleMobileNav()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a>
-  <a href="#contact" onclick="toggleMobileNav()" style="color:var(--accent);font-weight:500;">Work With Me</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <h1 class="hero-name">Rachel<br><em>Pilloff</em></h1>
-   <p class="hero-label">Marketing Strategist &amp; Business Consultant</p>
-  <div class="hero-bottom">
-    <p class="hero-tagline">Marketing and digital products for founders, brands and SME's who are curious about growth in the digital space. Remote-first. Available anywhere.</p>
-    <div class="hero-meta">
-    <a href="https://calendly.com/rachelpilloff" target="_blank" rel="noopener" class="btn-calendly"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</a>
-      <a href="#services" class="hero-scroll-cta">See what's possible</a>
+  <div class="masthead-bar">
+    <div class="wrap">
+      <span>Rachel Pilloff <span class="dot">·</span> Portfolio</span>
+      <span>Phnom Penh, Cambodia <span class="dot">·</span> Est. 2008</span>
     </div>
   </div>
-</section>
 
-<!-- WHO IS RACHEL -->
-<section id="intro">
-  <div>
-    <p class="section-label reveal">Who Is Rachel Pilloff?</p>
-  </div>
-  <div class="intro-body">
-    <h2 class="reveal" style="font-family:var(--serif);font-size:clamp(22px,2.8vw,30px);font-weight:300;line-height:1.5;color:var(--ink);margin-bottom:24px;">
-      I'm a tech savvy marketing strategist and business consultant who works remotely with founders, brands, and teams around the world.
-    </h2>
-    <p class="reveal">My background spans copywriting, brand strategy, sales page web development, and go-to-market consulting. I've worked with investment platforms, digital agencies, educational institutions, and early-stage businesses across multiple industries and time zones.</p>
-    <p class="reveal">Based in Southeast Asia means I have real on-the-ground experience in emerging markets. But most of my work is done straight from my computer, so I'm used to building strong working relationships without being in the same room. Timezone differences are just a scheduling detail.</p>
-    <p class="reveal">Most clients approach me with a need, but stay because the work connects to something bigger. Through focused work, we reveal the full potential of their business and lay the ground work to achieve it.</p>
-  </div>
-</section>
-
-<!-- PYRAMID -->
-<section id="pyramid">
-  <div class="pyramid-layout">
-    <div class="pyramid-text">
-      <h2 class="reveal">Three tiers.<br>Every base covered.</h2>
-      <p class="reveal">The way I work is straightforward: I handle the full scope of your project personally whenever I can. When a job calls for more, I bring in the right people from my network.</p>
-      <p class="reveal">This means you never hit a ceiling. From a single landing page to a fully advised market entry. The same point of contact, the same standard of care.</p>
-    </div>
-    <div class="pyramid-visual">
-      <div class="pyramid-tier tier-1 reveal">
-        <div class="tier-label">Tier 1: Me</div>
-        <div class="tier-title">All Business Fundamentals</div>
-        <div class="tier-desc">Marketing, SEO, landing pages, advertising, financial modeling, proposal writing, operations consulting, and GTM strategy.</div>
-      </div>
-      <div class="pyramid-tier tier-2 reveal">
-        <div class="tier-label">Tier 2: My Network</div>
-        <div class="tier-title">Freelancers, Consultants &amp; Micro-Agencies</div>
-        <div class="tier-desc">A curated network of specialists and micro-agencies that step in to deliver meaningful, impactful results at scale. Including full UI/UX, Webflow development + integrations and AI automations. We can even make a podcast.</div>
-      </div>
-      <div class="pyramid-tier tier-3 reveal">
-        <div class="tier-label">Tier 3: Government &amp; Ministry</div>
-        <div class="tier-title">Institutional Connections</div>
-        <div class="tier-desc">Ministry and governmental connections who can advise, support, and open doors for projects that require it.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="services-header reveal">
-    <h2 class="services-title">What I Do</h2>
-    <p class="services-note">All prices subject to scope and final deliverable agreements.</p>
-  </div>
-
-  <div class="service-row reveal">
-    <div class="service-name">Copywriting</div>
-    <div class="service-desc">Brand copy, web copy, campaign messaging, and long-form content.</div>
-    <div class="service-price">$30 / hr</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Marketing Strategy</div>
-    <div class="service-desc">Market research, digital strategy, funnel design, and brand storytelling.</div>
-    <div class="service-price">$30 / hr</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Branding</div>
-    <div class="service-desc">Identity, positioning, voice, and visual direction.</div>
-    <div class="service-price">$30 / hr</div>
-  </div>
-
-  <div class="service-row reveal">
-    <div class="service-name">GTM Strategy</div>
-    <div class="service-desc">Go-to-market planning, launch sequencing, and channel activation.</div>
-    <div class="service-price">$50 / hr</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Business Consulting</div>
-    <div class="service-desc">Emerging market entry, operations, narrative building, and growth strategy.</div>
-    <div class="service-price">$50 / hr</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Web Design &amp; Development</div>
-    <div class="service-desc">From landing pages to full Webflow builds with integrations and automations.</div>
-    <div class="service-price">See packages</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Google Presence</div>
-    <div class="service-desc">Google Business registration, Maps listing with photos and video, 3 social media account setups, 3 launch posts per account, and 3 seeded reviews.</div>
-    <div class="service-price">$200</div>
-  </div>
-  <div class="service-row reveal">
-    <div class="service-name">Social Launch &amp; Meta Campaigns</div>
-    <div class="service-desc">10 branded posts, caption copywriting, hashtag strategy, and peak-hour scheduling — plus Facebook and Instagram ad campaign setup and management. 10-day engagement. Ad budget billed separately.</div>
-    <div class="service-price">POA</div>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section id="packages">
-  <h2 class="packages-title reveal">Packages</h2>
-  <div class="packages-grid">
-
-    <div class="package-card reveal">
-      <div class="package-name">Starter</div>
-      <div class="package-price">$100</div>
-      <div class="package-desc">A clean, professional one-page landing page for local businesses ready to get online.</div>
-      <div class="package-includes">Includes</div>
-      <ul class="package-list">
-        <li>1-page landing page</li>
-        <li>SEO + AEO + GEO optimization</li>
-        <li>Mobile responsive</li>
-        <li>Contact integration</li>
-      </ul>
-    </div>
-
-    <div class="package-card reveal">
-      <div class="package-name">Growth</div>
-      <div class="package-price">$300<span>–500</span></div>
-      <div class="package-desc">A full digital presence connecting your website to your store, community, and email list.</div>
-      <div class="package-includes">Includes</div>
-      <ul class="package-list">
-        <li>Multi-page website</li>
-        <li>Link E-commerce + social links</li>
-        <li>Mailchimp email list integration</li>
-        <li>PDF lead magnet download</li>
-        <li>SEO + AEO + GEO optimization</li>
-      </ul>
-    </div>
-
-    <div class="package-card featured reveal">
-      <div class="package-name">Go-Local Kickstarter</div>
-      <div class="package-price">$500</div>
-      <div class="package-desc">Everything a local business needs to get found, build trust, and start growing delivered in one package with hands-on consulting built in.</div>
-      <div class="package-includes">Includes</div>
-      <ul class="package-list">
-        <li>1-page professional website</li>
-        <li>Mailchimp setup + email list</li>
-        <li>1 lead magnet (PDF download)</li>
-        <li>3 social media pages, set up and launched</li>
-        <li>Google Business + Maps listing</li>
-        <li>3 hours of 1-on-1 consultancy</li>
-      </ul>
-    </div>
-
-    <div class="package-card reveal">
-      <div class="package-name">Full Build</div>
-      <div class="package-price">$2,000+</div>
-      <div class="package-desc">A complete branded digital product: Webflow site with design system, AI automations, and third-party integrations.</div>
-      <div class="package-includes">Includes</div>
-      <ul class="package-list">
-        <li>Full Webflow website</li>
-        <li>Branding + design system</li>
-        <li>AI automations</li>
-        <li>3rd-party integrations</li>
-        <li>SEO + AEO + GEO optimization</li>
-      </ul>
-    </div>
-
-
-
-  </div>
-  <p class="package-footer-note reveal">Domain and hosting are not included in website packages. I also accept trades, equity, commissions, and collaborations. Even coffee, if the situation is right.</p>
-</section>
-
-
-
-<!-- CASE STUDIES CTA -->
-<section id="work-cta" style="padding:80px 60px;background:var(--ink);">
-  <div style="display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap;">
-    <div>
-      <p style="font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;">Case Studies</p>
-      <h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-0.02em;line-height:1.15;color:#fff;margin-bottom:12px;">Real results.<br><em style="color:#9B92D8;">Real clients.</em></h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.65;max-width:480px;margin:0;">Case studies and project breakdowns from clients across Southeast Asia, Europe, and beyond.</p>
-    </div>
-    <a href="https://rachelpilloff.com/work" class="btn-work-cta">View case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-  </div>
-</section>
-      <!-- CONTACT -->
-<section id="contact">
-  <div class="contact-layout">
-    <div class="contact-left">
-      <h2 class="reveal">Let's make something real.</h2>
-      <p class="reveal">Whether you have a fully formed brief or just an idea on a napkin, I'm glad to hear it. Fill in the form or email directly at hello@rachelpilloff.com</p>
-   </a>
-    </div>
-    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xqeygapb" method="POST">
-      <input type="hidden" name="_next" value="https://rachelpilloff.com/#contact">
-      <div class="form-row">
-        <div class="form-field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="inner">
+        <div class="hero-eyebrow">Marketing &middot; Brand Strategy &middot; Public Relations</div>
+        <h1 class="hero-name">RACHEL PILLOFF</h1>
+        <div class="hero-role">Marketing, PR &amp; Brand Strategist — Phnom Penh, Cambodia</div>
+        <div class="hero-contact">
+          <a href="mailto:rachelpilloff@gmail.com">rachelpilloff@gmail.com</a>
+          <span>&middot;</span>
+          <a href="https://rachelpilloff.com" target="_blank" rel="noopener">rachelpilloff.com</a>
+          <span>&middot;</span>
+          <span>+855 (0)81 98 3704</span>
         </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        <div class="scroll-cue">Scroll ↓</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="label-col">
+        § 00 — Field Notes
+        <span class="line-no">typed on arrival<br>in Phnom Penh</span>
+      </div>
+      <div class="typed-page">
+        <p>
+          Eighteen years in, and every job has taught the next one something. Rachel started on the
+          customer-facing floor of hospitality and retail in Texas, USA, moved into managing the teams,
+          spent a decade curating travel across Europe and the US, and has
+          spent the last 5 years building brands, campaigns, and public narratives across Cambodia and
+          Southeast Asia — for <strong>international schools, government ministries, F&B, travel companies and real estate
+          developments</strong>. Today she specializes in content marketing, sales and PR.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="num">§ 02 — Selected Work</div>
+          <h2>The Portfolio</h2>
         </div>
+        <div class="sub">EACH LINK OPENS THE FULL<br>PROJECT ARCHIVE ON DRIVE</div>
       </div>
-      <div class="form-field">
-        <label for="service">I'm interested in</label>
-        <select id="service" name="service">
-          <option value="">Select a service...</option>
-          <option>Copywriting</option>
-          <option>Marketing Strategy</option>
-          <option>Branding</option>
-          <option>Web Design &amp; Development</option>
-          <option>GTM Strategy</option>
-          <option>Business Consulting</option>
-          <option>Go-Local Kickstarter ($500)</option>
-          <option>Google Presence Package</option>
-          <option>Custom Package</option>
-          <option>Something else</option>
-        </select>
+
+      <div class="projects-list">
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1l5UovezH2UfRJBb1ij9fStDP8gX6f-mx?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">01</span>
+          <span class="project-main">
+            <span class="p-title">Bay of Lights</span>
+            <span class="p-desc">Investor narrative, pitch decks &amp; brand system for a 934-hectare government-backed coastal development.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1VPly5xCoXABoZ3IC5asuz0llRgP8jywM?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">02</span>
+          <span class="project-main">
+            <span class="p-title">AFIS International</span>
+            <span class="p-desc">Full marketing &amp; admissions rebuild for an IB-aligned school — 60% enrollment growth.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1UTdp8txJd2SF9IFgYqpGXJ5-TJDtJNea?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">03</span>
+          <span class="project-main">
+            <span class="p-title">Good Morning Cambodia</span>
+            <span class="p-desc">Government-sponsored podcast &amp; media platform — production, PR, and content strategy.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1daKRnUrOA_vHhDJqKnZ4mE51ILtaFpg1?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">04</span>
+          <span class="project-main">
+            <span class="p-title">Astral Soup</span>
+            <span class="p-desc">Boutique brand &amp; marketing consultancy for 40+ enterprise, government &amp; institutional clients.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1hYR36i2nHTqGv1xYtFu0A6Za4CQKF9v3?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">05</span>
+          <span class="project-main">
+            <span class="p-title">TechFlow</span>
+            <span class="p-desc">Go-to-market content &amp; positioning work for SaaS and infrastructure clients.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/1OwZahpg2l1fkN_vxU4reKYbtKxGMuOoc?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">06</span>
+          <span class="project-main">
+            <span class="p-title">Volunteer Work</span>
+            <span class="p-desc">Pro-bono content, fundraising strategy &amp; digital literacy work with NGOs across Cambodia.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row" href="https://drive.google.com/drive/folders/12XD21tbblYGU5HF8KXnSFDAA_Uj2WksP?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">07</span>
+          <span class="project-main">
+            <span class="p-title">Consulting Projects</span>
+            <span class="p-desc">Independent strategy &amp; advisory work across brand, marketing, and go-to-market engagements.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
+        <a class="project-row featured" href="https://drive.google.com/drive/folders/1DhhvSICwgog-LK17Mpjp2BUJ-dQrSd8z?usp=sharing" target="_blank" rel="noopener">
+          <span class="idx">08</span>
+          <span class="project-main">
+            <span class="featured-eyebrow">★ In their words</span>
+            <span class="p-title">Endorsements &amp; Recommendations</span>
+            <span class="p-desc">Letters of recommendation, client reviews, and professional references — the record, from the people who worked alongside it.</span>
+          </span>
+          <span class="arrow">&#8599;</span>
+        </a>
+
       </div>
-      <div class="form-field">
-        <label for="message">Tell me about your project</label>
-        <textarea id="message" name="message" required placeholder="What are you building? What's the challenge?"></textarea>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-name">Rachel Pilloff</div>
+      <div class="foot-links">
+        <a href="mailto:rachelpilloff@gmail.com">Email</a>
+        <a href="https://rachelpilloff.com" target="_blank" rel="noopener">rachelpilloff.com</a>
+        <a href="#timeline">The Arc</a>
+        <a href="#work">Portfolio</a>
       </div>
-      <input type="hidden" name="_packageSummary" id="packageHidden" value="">
-      <button type="submit" class="form-submit">Send message</button>
-      <div class="form-success" id="formSuccess">
-        Got it. I'll be in touch within 48 hours.
-      </div>
-    </form>
-  </div>
-</section>
+    </div>
+  </footer>
 
-<footer>
-  <div class="footer-left">
-    <span class="footer-copy">&copy; 2026 Rachel Pilloff &nbsp;&middot;&nbsp; rachelpilloff.com</span>
-    <span class="footer-location">Siem Reap, Cambodia</span>
-  </div>
-  <div class="footer-ctas">
-    <a href="https://t.me/writerachel" target="_blank" rel="noopener" class="footer-cta-btn">
-      <span class="footer-cta-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.367l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.192z"/>
-        </svg>
-      </span>
-      Message on Telegram
-    </a>
-    <a href="https://wa.me/qr/USOVNQFA5B4JH1" target="_blank" rel="noopener" class="footer-cta-btn">
-      <span class="footer-cta-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </span>
-      Message on WhatsApp
-    </a>
-  </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" onerror="void(0)"></script><script>
-// NAV SCROLL
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// MOBILE NAV
-function toggleMobileNav() {
-  document.getElementById('mobileNav').classList.toggle('open');
-}
-
-// COLLAGE TOGGLE
-function toggleCollage() {
-  const body = document.getElementById('collageBody');
-  const btn  = document.getElementById('collageToggle');
-  const label = document.getElementById('collageLabel');
-  const isOpen = body.classList.contains('open');
-  body.classList.toggle('open');
-  btn.classList.toggle('open');
-  label.textContent = isOpen ? 'Show photos' : 'Hide photos';
-}
-
-// REVEAL ON SCROLL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// CASE STUDY ACCORDION
-function toggleCase(trigger) {
-  const item = trigger.parentElement;
-  const body = item.querySelector('.case-body');
-  const isOpen = item.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.case-item.open').forEach(ci => {
-    ci.classList.remove('open');
-    ci.querySelector('.case-body').style.maxHeight = '0';
-  });
-  if (!isOpen) {
-    item.classList.add('open');
-    body.style.maxHeight = body.scrollHeight + 'px';
-  }
-}
-
-// PROJECT BUILDER
-let selectedItems = new Set();
-
-document.querySelectorAll('.builder-list-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const name = item.dataset.name;
-    if (selectedItems.has(name)) {
-      selectedItems.delete(name);
-      item.classList.remove('selected');
-    } else {
-      selectedItems.add(name);
-      item.classList.add('selected');
-    }
-    updateBuilder();
-  });
-});
-
-function updateBuilder() {
-  const items = [...document.querySelectorAll('.builder-list-item.selected')];
-  const count = items.length;
-  const rawTotal = items.reduce((sum, el) => sum + parseInt(el.dataset.price), 0);
-  const discountApplied = count >= 3;
-  const discountedTotal = discountApplied ? Math.round(rawTotal * 0.85) : rawTotal;
-
-  const lineItemsEl = document.getElementById('panelLineItems');
-  const emptyEl = document.getElementById('panelEmpty');
-  const totalEl = document.getElementById('panelTotal');
-  const originalEl = document.getElementById('panelOriginal');
-  const discountEl = document.getElementById('panelDiscount');
-  const packageHidden = document.getElementById('packageHidden');
-
-  // Clear line items (keep empty msg)
-  [...lineItemsEl.querySelectorAll('.panel-selected-item')].forEach(el => el.remove());
-
-  if (count === 0) {
-    emptyEl.style.display = 'block';
-    totalEl.textContent = '$0';
-    originalEl.classList.remove('visible');
-    discountEl.classList.remove('visible');
-    packageHidden.value = '';
-    return;
-  }
-
-  emptyEl.style.display = 'none';
-  items.forEach(el => {
-    const row = document.createElement('div');
-    row.className = 'panel-selected-item';
-    row.innerHTML = `<span>${el.dataset.name}</span><span>${el.querySelector('.builder-item-price').textContent}</span>`;
-    lineItemsEl.appendChild(row);
-  });
-
-  totalEl.textContent = '$' + discountedTotal.toLocaleString();
-  if (discountApplied) {
-    originalEl.textContent = '$' + rawTotal.toLocaleString();
-    originalEl.classList.add('visible');
-    discountEl.classList.add('visible');
-  } else {
-    originalEl.classList.remove('visible');
-    discountEl.classList.remove('visible');
-  }
-
-  const names = items.map(el => el.dataset.name).join(', ');
-  packageHidden.value = 'Custom package: ' + names + (discountApplied ? ' (15% bundle discount applied, total: $' + discountedTotal + ')' : '');
-}
-
-function resetBuilder() {
-  selectedItems.clear();
-  document.querySelectorAll('.builder-list-item').forEach(el => el.classList.remove('selected'));
-  updateBuilder();
-}
-
-
-// FORMSPREE AJAX SUBMIT
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('.form-submit');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    } else {
-      btn.textContent = 'Send message';
-      btn.disabled = false;
-    }
-  } catch (err) {
-    btn.textContent = 'Send message';
-    btn.disabled = false;
-  }
-});
-</script>
 </body>
 </html>
