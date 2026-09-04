@@ -6,24 +6,24 @@
 <title>Mazda Cambodia | Strategic Turnaround Proposal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap">
 <style>
 :root {
   --crimson: #A6192E;
-  --crimson-lift: #D31D38;
+  --crimson-lift: #C4243D;
   --crimson-soft: #FDF2F4;
-  --safety-navy: #061A29;
-  --safety-blue: #0F4C75;
+  --safety-navy: #0A2234;
+  --safety-blue: #164E72;
   --safety-accent: #0088CC;
-  --safety-soft: #E8F4FA;
-  --dark: #0D0D0D;
-  --dark-surface: #181818;
+  --safety-soft: #EDF5FA;
+  --dark: #121212;
+  --dark-surface: #1C1C1C;
   --surface: #FFFFFF;
-  --surface-alt: #F4F2F0;
-  --border: #D2CBC7;
-  --border-strong: #9E9590;
-  --text-main: #141211;
-  --text-muted: #57514E;
+  --surface-alt: #F6F4F2;
+  --border: #DDD8D5;
+  --border-strong: #BFB8B5;
+  --text-main: #191615;
+  --text-muted: #615A57;
   --f-display: "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
   --f-body: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --f-mono: "Roboto Mono", monospace;
@@ -31,202 +31,194 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--surface-alt); color: var(--text-main); font-family: var(--f-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { background: var(--surface-alt); color: var(--text-main); font-family: var(--f-body); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
 /* Sticky Header */
 header.site-header {
   position: sticky; top: 0; z-index: 1000;
   background: var(--dark); color: #fff;
   border-bottom: 4px solid var(--crimson);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 .header-inner {
-  max-width: 1160px; margin: 0 auto; padding: 0 24px;
+  max-width: 1140px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 72px;
+  height: 68px;
 }
 .brand-wordmark {
-  font-family: var(--f-display); font-size: 22px; letter-spacing: 0.28em;
-  text-transform: uppercase; font-weight: 700; color: #fff; text-decoration: none;
+  font-family: var(--f-display); font-size: 21px; letter-spacing: 0.28em;
+  text-transform: uppercase; font-weight: 600; color: #fff; text-decoration: none;
 }
 .brand-wordmark span {
   color: var(--crimson-lift); font-family: var(--f-mono);
-  font-size: 12px; letter-spacing: 0.14em; margin-left: 8px; font-weight: 600;
+  font-size: 11.5px; letter-spacing: 0.14em; margin-left: 8px; font-weight: 500;
 }
 nav.main-nav { display: flex; align-items: center; gap: 8px; }
 nav.main-nav a {
   color: #CCC; text-decoration: none; font-family: var(--f-display);
-  font-size: 13.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 10px 16px; border-radius: 4px; transition: all 0.2s ease;
+  font-size: 13.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 9px 16px; border-radius: 4px; transition: all 0.2s ease;
 }
 nav.main-nav a:hover, nav.main-nav a.active { background: var(--crimson); color: #fff; }
-nav.main-nav a.nav-safety { background: var(--safety-accent); color: #fff; }
-nav.main-nav a.nav-safety:hover { background: #0070A8; }
+nav.main-nav a.nav-safety { background: var(--safety-blue); color: #fff; }
+nav.main-nav a.nav-safety:hover { background: var(--safety-accent); }
 
-/* Container */
-.container { max-width: 1160px; margin: 0 auto; padding: 36px 24px 100px; }
+/* Layout Wrap */
+.container { max-width: 1140px; margin: 0 auto; padding: 34px 24px 100px; }
 
-/* Hero */
+/* Massive Hero */
 .hero-banner {
-  background: var(--dark); color: #fff; padding: 56px 44px;
-  border-radius: 8px; margin-bottom: 48px; border-top: 6px solid var(--crimson);
+  background: var(--dark); color: #fff; padding: 52px 42px;
+  border-radius: 8px; margin-bottom: 44px; border-top: 5px solid var(--crimson);
 }
 .hero-eyebrow {
-  font-family: var(--f-mono); font-size: 13px; text-transform: uppercase;
-  letter-spacing: 0.22em; color: var(--crimson-lift); margin-bottom: 16px; display: block; font-weight: 700;
+  font-family: var(--f-mono); font-size: 12.5px; text-transform: uppercase;
+  letter-spacing: 0.2em; color: var(--crimson-lift); margin-bottom: 14px; display: block; font-weight: 600;
 }
 .hero-banner h1 {
-  font-family: var(--f-display); font-size: clamp(34px, 5.2vw, 56px);
-  font-weight: 300; line-height: 1.05; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.02em;
+  font-family: var(--f-display); font-size: clamp(32px, 5vw, 54px);
+  font-weight: 300; line-height: 1.08; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.02em;
 }
-.hero-banner h1 strong { font-weight: 800; color: var(--crimson-lift); }
-.hero-lead { font-size: 19px; color: #D7D2CF; max-width: 76ch; margin-bottom: 32px; line-height: 1.55; }
-.hero-pill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.hero-pill { background: var(--dark-surface); border: 1px solid #333; padding: 20px 24px; border-radius: 6px; border-left: 5px solid var(--crimson); }
-.hero-pill.safety-pill { border-left-color: var(--safety-accent); }
-.hero-pill .title { font-family: var(--f-mono); font-size: 11.5px; text-transform: uppercase; color: #9E9793; letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 600; }
-.hero-pill .val { font-family: var(--f-display); font-size: 22px; font-weight: 700; color: #fff; }
+.hero-banner h1 strong { font-weight: 700; color: var(--crimson-lift); }
+.hero-lead { font-size: 18px; color: #D0CCC9; max-width: 76ch; margin-bottom: 30px; line-height: 1.55; }
+.hero-pill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.hero-pill { background: var(--dark-surface); border: 1px solid #333; padding: 18px 22px; border-radius: 6px; border-left: 4px solid var(--crimson); }
+.hero-pill.blue-pill { border-left-color: var(--safety-accent); }
+.hero-pill .title { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; color: #9A9491; letter-spacing: 0.1em; margin-bottom: 6px; }
+.hero-pill .val { font-family: var(--f-display); font-size: 21px; font-weight: 600; color: #fff; }
 
-/* Base Section */
+/* Primary Section Containers */
 section.block {
-  background: var(--surface); border: 2px solid var(--border);
-  border-radius: 8px; padding: 50px 44px; margin-bottom: 48px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 46px 42px; margin-bottom: 44px;
 }
 
 /* Big Section Headers */
 .section-header-wrap {
-  border-bottom: 3px solid var(--dark);
-  padding-bottom: 24px; margin-bottom: 36px;
-}
-.section-badge-row {
-  display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+  padding-bottom: 22px; margin-bottom: 32px;
 }
 .massive-number {
-  font-family: var(--f-display); font-size: clamp(48px, 7vw, 78px);
-  font-weight: 900; line-height: 0.9; letter-spacing: -0.03em;
-  color: var(--crimson);
+  font-family: var(--f-display); font-size: clamp(38px, 6vw, 62px);
+  font-weight: 800; line-height: 1; letter-spacing: -0.02em;
+  color: var(--crimson); display: block; margin-bottom: 6px;
 }
-.massive-number.safety-num { color: var(--safety-blue); }
-.section-tag {
-  font-family: var(--f-mono); font-size: 13px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.18em; color: var(--crimson);
-}
-.section-tag.safety-tag { color: var(--safety-blue); }
+.massive-number.safety-color { color: var(--safety-blue); }
 .section-title {
-  font-family: var(--f-display); font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.12; margin-bottom: 10px;
+  font-family: var(--f-display); font-size: clamp(26px, 3.8vw, 36px);
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.15; margin-bottom: 8px;
 }
-.section-subtitle { font-size: 18px; color: var(--text-muted); max-width: 84ch; line-height: 1.5; }
+.section-subtitle { font-size: 17px; color: var(--text-muted); max-width: 82ch; line-height: 1.5; }
 
-/* Sub Headings */
+/* Big Sub-section Headers */
 .sub-heading {
-  font-family: var(--f-display); font-size: 24px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.04em; margin: 38px 0 18px;
-  display: flex; align-items: center; gap: 12px;
+  font-family: var(--f-display); font-size: 22px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; margin: 34px 0 16px;
+  display: flex; align-items: center; gap: 10px;
 }
 .sub-heading::before {
-  content: ""; display: inline-block; width: 10px; height: 26px;
+  content: ""; display: inline-block; width: 10px; height: 22px;
   background: var(--crimson); border-radius: 2px;
 }
-.sub-heading.safety-sub::before { background: var(--safety-accent); }
+.sub-heading.safety-sub::before { background: var(--safety-blue); }
 
-/* OWN SAFETY FEATURE BLOCK */
-section.block-safety-spotlight {
-  border: 3px solid var(--safety-blue);
+/* OWN SAFETY HERO COMMAND BLOCK */
+section.block-safety {
+  border: 2px solid var(--safety-blue);
   background: #FFFFFF;
-  box-shadow: 0 10px 36px rgba(15, 76, 117, 0.14);
+  box-shadow: 0 8px 30px rgba(20, 58, 82, 0.08);
 }
 .safety-alert-banner {
-  background: var(--safety-navy); color: #fff; border-radius: 8px;
-  padding: 34px 38px; margin-bottom: 34px; border-left: 10px solid var(--safety-accent);
+  background: var(--safety-navy); color: #fff; border-radius: 6px;
+  padding: 30px 34px; margin-bottom: 32px; border-left: 8px solid var(--safety-accent);
 }
 .safety-alert-banner h3 {
-  font-family: var(--f-display); font-size: 26px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; color: #FFF;
+  font-family: var(--f-display); font-size: 24px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; color: #FFF;
 }
-.safety-alert-banner p { font-size: 17px; color: #D7E7F2; line-height: 1.6; max-width: 82ch; }
+.safety-alert-banner p { font-size: 16px; color: #D7E3EC; line-height: 1.6; max-width: 80ch; }
 
 .safety-stat-matrix {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px; margin: 28px 0 36px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; margin: 26px 0 34px;
 }
 .safety-stat-matrix .stat-tile {
-  background: var(--safety-soft); border: 2px solid #BFDCEF;
-  border-radius: 8px; padding: 26px 22px; text-align: center;
+  background: var(--safety-soft); border: 1.5px solid #BED8E8;
+  border-radius: 6px; padding: 24px 20px; text-align: center;
 }
 .safety-stat-matrix .stat-tile .big-val {
-  font-family: var(--f-display); font-size: 52px; font-weight: 800;
-  color: var(--safety-blue); line-height: 1; margin-bottom: 10px;
+  font-family: var(--f-display); font-size: 46px; font-weight: 700;
+  color: var(--safety-blue); line-height: 1; margin-bottom: 8px;
 }
 .safety-stat-matrix .stat-tile .stat-name {
-  font-family: var(--f-mono); font-size: 12px; font-weight: 700;
+  font-family: var(--f-mono); font-size: 11.5px; font-weight: 600;
   text-transform: uppercase; color: var(--safety-navy); letter-spacing: 0.08em; line-height: 1.4;
 }
 
 /* Editorial Quotes */
 .editorial-quote {
-  background: var(--surface); border: 2px solid var(--border);
-  border-left: 8px solid var(--crimson); border-radius: 6px;
-  padding: 26px 30px; margin: 22px 0;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-left: 6px solid var(--crimson); border-radius: 6px;
+  padding: 24px 28px; margin: 20px 0;
 }
 .editorial-quote.safety-card {
-  border-color: #BED8E8; border-left: 8px solid var(--safety-blue);
+  border-color: #BED8E8; border-left: 6px solid var(--safety-blue);
   background: #F8FBFC;
 }
 .quote-content {
-  font-family: var(--f-display); font-size: 20px; line-height: 1.45;
-  color: var(--text-main); margin-bottom: 14px; font-weight: 500;
+  font-family: var(--f-display); font-size: 19px; line-height: 1.45;
+  color: var(--text-main); margin-bottom: 12px; font-weight: 500;
 }
 .quote-byline {
   display: flex; align-items: center; justify-content: space-between; gap: 14px;
   border-top: 1px solid var(--border); padding-top: 10px; font-family: var(--f-mono);
-  font-size: 12.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
 }
 .quote-tag { color: var(--crimson); font-weight: 700; }
 .editorial-quote.safety-card .quote-tag { color: var(--safety-blue); }
 
-/* Buttons */
+/* Interactive Dropdown Buttons */
 .action-toggle {
-  display: inline-flex; align-items: center; justify-content: space-between; gap: 18px;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 16px;
   background: var(--surface-alt); border: 2px solid var(--border-strong);
-  color: var(--text-main); font-family: var(--f-display); font-size: 15.5px;
+  color: var(--text-main); font-family: var(--f-display); font-size: 15px;
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 16px 28px; border-radius: 6px; cursor: pointer; margin-top: 24px;
+  padding: 16px 26px; border-radius: 6px; cursor: pointer; margin-top: 24px;
   transition: all 0.2s ease;
 }
 .action-toggle:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
 .action-toggle.safety-btn:hover { background: var(--safety-blue); border-color: var(--safety-blue); }
 .action-toggle .chevron { font-family: var(--f-mono); font-size: 16px; font-weight: 800; }
-.expandable-panel { display: none; margin-top: 24px; padding: 26px; border-radius: 6px; background: var(--surface-alt); border: 1px solid var(--border); }
+.expandable-panel { display: none; margin-top: 22px; padding: 24px; border-radius: 6px; background: var(--surface-alt); border: 1px solid var(--border); }
 .expandable-panel.active { display: block; }
 
 /* Timeline List */
-.timeline-list { border-left: 4px solid var(--crimson); padding-left: 30px; margin: 24px 0 10px 10px; }
-.timeline-item { margin-bottom: 30px; }
-.timeline-item h4 { font-family: var(--f-display); font-size: 20px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
-.timeline-item p { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
+.timeline-list { border-left: 3px solid var(--crimson); padding-left: 28px; margin: 24px 0 10px 10px; }
+.timeline-item { margin-bottom: 28px; }
+.timeline-item h4 { font-family: var(--f-display); font-size: 18px; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+.timeline-item p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
-/* Tiers */
-.tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 26px; margin-top: 30px; }
+/* Three Investment Tiers */
+.tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 28px; }
 .tier-card {
   border: 2px solid var(--border); background: var(--surface);
-  border-radius: 8px; padding: 34px 30px; display: flex; flex-direction: column; position: relative;
+  border-radius: 8px; padding: 32px 28px; display: flex; flex-direction: column; position: relative;
 }
-.tier-card.featured { border-color: var(--crimson); box-shadow: 0 8px 28px rgba(166, 25, 46, 0.14); }
+.tier-card.featured { border-color: var(--crimson); box-shadow: 0 6px 24px rgba(166, 25, 46, 0.12); }
 .tier-card.featured::before {
   content: "CURRENT PROPOSAL TIER"; position: absolute; top: -14px; left: 24px;
   background: var(--crimson); color: #fff; font-family: var(--f-mono);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 4px 12px; border-radius: 4px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; padding: 4px 12px; border-radius: 4px;
 }
-.tier-title { font-family: var(--f-display); font-size: 22px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
-.tier-price { font-family: var(--f-mono); font-size: 34px; font-weight: 800; color: var(--crimson); margin-bottom: 20px; }
-.tier-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-.tier-features li { font-size: 15px; padding: 10px 0; border-bottom: 1px solid var(--surface-alt); color: #3A3533; }
-.tier-features li strong { color: var(--text-main); font-weight: 700; }
+.tier-title { font-family: var(--f-display); font-size: 21px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.tier-price { font-family: var(--f-mono); font-size: 32px; font-weight: 700; color: var(--crimson); margin-bottom: 18px; }
+.tier-features { list-style: none; margin-bottom: 28px; flex-grow: 1; }
+.tier-features li { font-size: 14.5px; padding: 10px 0; border-bottom: 1px solid var(--surface-alt); color: #3A3533; }
+.tier-features li strong { color: var(--text-main); font-weight: 600; }
 .tier-action-button {
-  display: block; text-align: center; padding: 15px; border-radius: 4px;
+  display: block; text-align: center; padding: 14px; border-radius: 4px;
   font-family: var(--f-display); font-weight: 700; text-transform: uppercase;
-  text-decoration: none; font-size: 14.5px; letter-spacing: 0.1em;
+  text-decoration: none; font-size: 14px; letter-spacing: 0.1em;
   border: 2px solid var(--dark); color: var(--dark); cursor: pointer; transition: all 0.2s;
 }
 .tier-card.featured .tier-action-button { background: var(--crimson); border-color: var(--crimson); color: #fff; }
@@ -256,18 +248,18 @@ section.block-safety-spotlight {
 
 <div class="container">
 
-  <!-- HERO BANNER -->
+  <!-- HERO -->
   <div class="hero-banner">
-    <span class="hero-eyebrow">Strategic Growth Plan &middot; 2026 Commercial Turnaround</span>
+    <span class="hero-eyebrow">Strategic Growth Plan &middot; 2026 Turnaround</span>
     <h1>We build Mazda.<br><strong>Let Cambodia know it.</strong></h1>
-    <p class="hero-lead">A targeted commercial plan to expand Mazda from 650 units to 908 units. We will activate our Poipet assembly facility, lead the market with our world-leading safety record[cite: 1], and replace used import dependencies with guaranteed residual value structures[cite: 1].</p>
+    <p class="hero-lead">A targeted commercial plan to expand Mazda from 650 units to 908 units[cite: 1]. We will activate our Poipet assembly facility[cite: 1], lead the market with our world-leading safety record[cite: 1], and replace used import dependencies with guaranteed residual value structures[cite: 1].</p>
     
     <div class="hero-pill-grid">
       <div class="hero-pill">
         <div class="title">Local Assembly Plant</div>
         <div class="val">$7M Poipet Facility[cite: 1]</div>
       </div>
-      <div class="hero-pill safety-pill">
+      <div class="hero-pill blue-pill">
         <div class="title">Global Safety Rank</div>
         <div class="val">8 IIHS Top Safety Pick+[cite: 1]</div>
       </div>
@@ -281,28 +273,25 @@ section.block-safety-spotlight {
   <!-- SECTION 01: INITIAL MARKETING AUDIT -->
   <section id="audit" class="block">
     <div class="section-header-wrap">
-      <div class="section-badge-row">
-        <span class="massive-number">01</span>
-        <span class="section-tag">Internal Diagnostic &middot; Marketing Audit</span>
-      </div>
-      <h2 class="section-title">Initial Marketing Audit: Three Operational Flags</h2>
-      <p class="section-subtitle">An audit of 1,672 published posts and brand collateral reveals the operational factors behind Mazda's market absence[cite: 1].</p>
+      <span class="massive-number">01</span>
+      <h2 class="section-title">Initial Marketing Audit &amp; Diagnosis</h2>
+      <p class="section-subtitle">Three critical operational flags identified during the initial review of Mazda Cambodia's market footprint.</p>
     </div>
 
     <div class="sub-heading">Identified Channel Failures</div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 18px;">
-      <div style="padding: 24px; border: 2px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
-        <h3 style="font-size: 17px; text-transform: uppercase; margin-bottom: 8px;">1. Inconsistent Brand Standards</h3>
-        <p style="font-size: 15px; color: var(--text-muted);">Visual assets use fragmented color schemes, varying fonts, and disjointed retail presentation. This weakens Mazda's Japanese design reputation.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 18px;">
+      <div style="padding: 22px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
+        <h3 style="font-size: 16px; text-transform: uppercase; margin-bottom: 8px;">1. Inconsistent Brand Standards</h3>
+        <p style="font-size: 14.5px; color: var(--text-muted);">Visual assets use fragmented color schemes, varying fonts, and disjointed retail presentation. This weakens Mazda's Japanese design reputation.</p>
       </div>
-      <div style="padding: 24px; border: 2px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
-        <h3 style="font-size: 17px; text-transform: uppercase; margin-bottom: 8px;">2. Complete Silence on Safety</h3>
-        <p style="font-size: 15px; color: var(--text-muted);">Despite winning more global safety honors than any competitor, safety is never mentioned on local Cambodian customer channels[cite: 1].</p>
+      <div style="padding: 22px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
+        <h3 style="font-size: 16px; text-transform: uppercase; margin-bottom: 8px;">2. Zero Safety Messaging</h3>
+        <p style="font-size: 14.5px; color: var(--text-muted);">Despite earning more global safety awards than any competitor, safety has never been mentioned on local Cambodian customer channels[cite: 1].</p>
       </div>
-      <div style="padding: 24px; border: 2px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
-        <h3 style="font-size: 17px; text-transform: uppercase; margin-bottom: 8px;">3. Low-Budget, Low-Engagement Posts</h3>
-        <p style="font-size: 15px; color: var(--text-muted);">1,672 posts across four years produced an average of only 0.29 reactions per post[cite: 1]. 46% of posts lacked captions or concrete monthly pricing figures[cite: 1].</p>
+      <div style="padding: 22px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--surface-alt);">
+        <h3 style="font-size: 16px; text-transform: uppercase; margin-bottom: 8px;">3. Low-Budget, Low-Engagement Posts</h3>
+        <p style="font-size: 14.5px; color: var(--text-muted);">1,672 posts over four years generated an average of only 0.29 reactions per post[cite: 1]. 46% lacked captions, and pricing was rarely formatted in monthly terms[cite: 1].</p>
       </div>
     </div>
 
@@ -315,31 +304,28 @@ section.block-safety-spotlight {
     </div>
 
     <button class="action-toggle" onclick="toggleBlock('audit-detail', this)">
-      <span>View Channel Audit Details</span>
+      <span>View Detailed Channel Diagnostics</span>
       <span class="chevron">&#9660;</span>
     </button>
     <div id="audit-detail" class="expandable-panel">
-      <p style="font-size: 15.5px; color: var(--text-muted); line-height: 1.65;">
-        The public channel was silent for 94 consecutive days in 2025 and posted only 11 times in 2026[cite: 1]. The content strategy failed to mention local assembly capabilities or monthly financing[cite: 1]. Rebuilding engagement requires three posts per week, clear Khmer-first text, and transparent financing terms ($492/month for CX-30 entry trim)[cite: 1].
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.65;">
+        The public channel was silent for 94 consecutive days in 2025 and posted only 11 times in 2026[cite: 1]. The content strategy completely ignored local assembly capabilities and bank financing options[cite: 1]. Rebuilding engagement requires three posts per week, clear Khmer-first text, and transparent financing terms ($492/month for the CX-30)[cite: 1].
       </p>
     </div>
   </section>
 
-  <!-- SECTION 02: OWN SAFETY (FEATURED COMMAND BLOCK) -->
-  <section id="safety" class="block block-safety-spotlight">
+  <!-- SECTION 02: OWN SAFETY (FEATURED COMMAND CENTER) -->
+  <section id="safety" class="block block-safety">
     <div class="section-header-wrap">
-      <div class="section-badge-row">
-        <span class="massive-number safety-num">02</span>
-        <span class="section-tag safety-tag">The Core Platform &middot; Safety Pillar</span>
-      </div>
+      <span class="massive-number safety-color">02</span>
       <h2 class="section-title" style="color: var(--safety-navy);">Own Safety: The Unclaimed Market Opportunity</h2>
-      <p class="section-subtitle">Cambodia recorded 1,467 road crash fatalities in 2025[cite: 1]. Mazda manufactures the safest production vehicles in this market, yet this structural advantage has never been leveraged in sales[cite: 1].</p>
+      <p class="section-subtitle">Cambodian roads saw 1,467 deaths in 2025[cite: 1]. Mazda manufactures the safest production vehicles in this market, yet this structural advantage has never been leveraged in local sales[cite: 1].</p>
     </div>
 
     <div class="safety-alert-banner">
       <h3>Verified Safety Performance &amp; Engineering</h3>
       <p>
-        Mazda holds 8 IIHS Top Safety Pick+ awards in 2026, leading the worldwide automotive industry[cite: 1]. In Euro NCAP crash evaluations, the CX-30 recorded an unprecedented 99% Adult Occupant Protection score. Structural integrity is built on patented 1,800 MPa ultra-high tensile steel developed alongside Sumitomo Metal Industries.
+        Mazda earned 8 IIHS Top Safety Pick+ honors in 2026, leading the worldwide automotive industry[cite: 1]. In Euro NCAP crash evaluations, the CX-30 recorded an unprecedented 99% Adult Occupant Protection score. Structural integrity is built on patented 1,800 MPa ultra-high tensile steel developed alongside Sumitomo Metal Industries.
       </p>
     </div>
 
@@ -397,7 +383,7 @@ section.block-safety-spotlight {
       <span class="chevron">&#9660;</span>
     </button>
     <div id="safety-detail" class="expandable-panel">
-      <p style="font-size: 15.5px; color: var(--text-muted); line-height: 1.65;">
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.65;">
         The commercial safety platform launches during the high-traffic Khmer New Year travel window[cite: 1]. We will conduct free 20-point safety inspections for all brands across provincial stops[cite: 1], release crash test telemetry translated into Khmer, and partner directly with national road transport authorities on family safety education[cite: 1].
       </p>
     </div>
@@ -406,10 +392,7 @@ section.block-safety-spotlight {
   <!-- SECTION 03: THE USED IMPORT PIPELINE -->
   <section id="pipeline" class="block">
     <div class="section-header-wrap">
-      <div class="section-badge-row">
-        <span class="massive-number">03</span>
-        <span class="section-tag">Dominance Architecture &middot; Market Analysis</span>
-      </div>
+      <span class="massive-number">03</span>
       <h2 class="section-title">The Used Import Pipeline: Why Toyota &amp; Ford Dominate</h2>
       <p class="section-subtitle">How thirty years of salvaged vehicle imports created competitor market share, and how Mazda systematically dismantles it[cite: 1].</p>
     </div>
@@ -432,11 +415,11 @@ section.block-safety-spotlight {
     </div>
 
     <button class="action-toggle" onclick="toggleBlock('pipeline-detail', this)">
-      <span>View Certified Repairer Network Details</span>
+      <span>View Certified Repairer Network Roadmap</span>
       <span class="chevron">&#9660;</span>
     </button>
     <div id="pipeline-detail" class="expandable-panel">
-      <p style="font-size: 15.5px; color: var(--text-muted); line-height: 1.65;">
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.65;">
         Partnering with ACE-C allows Mazda to train and certify 25 independent provincial workshops during year one[cite: 1]. We supply diagnostic units, maintain genuine parts lines, and install official exterior signage[cite: 1]. This matches competitor service accessibility without the capital expense of full franchise showrooms[cite: 1].
       </p>
     </div>
@@ -445,10 +428,7 @@ section.block-safety-spotlight {
   <!-- SECTION 04: THE ASK -->
   <section id="ask" class="block">
     <div class="section-header-wrap">
-      <div class="section-badge-row">
-        <span class="massive-number">04</span>
-        <span class="section-tag">Executive Decision &middot; Capital Allocation</span>
-      </div>
+      <span class="massive-number">04</span>
       <h2 class="section-title">The Investment Ask: Three Practical Tiers</h2>
       <p class="section-subtitle">Select an investment tier to reach the volume and distribution milestones[cite: 1].</p>
     </div>
