@@ -1,354 +1,1017 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mazda Cambodia: Strategic Turnaround Proposal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Mazda Cambodia: Strategic Turnaround Dossier</title>
+<meta name="description" content="Strategic turnaround proposal for Mazda Cambodia: local Poipet assembly, world-leading safety record, dismantling the used import pipeline, marketing audit fixes, and a 3-tier investment matrix.">
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Instrument+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700;800;900&family=Noto+Sans+Khmer:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          mazda: {
+            red: '#A6192E',
+            redDark: '#780E1E',
+            redGlow: '#D31D38',
+            gold: '#D4AF37',
+            navy: '#061A29',
+            safetyBlue: '#0F4C75',
+            safetyAccent: '#0088CC',
+            safetySoft: '#E8F4FA',
+            paper: '#F4F2F0',
+            surface: '#FFFFFF',
+            darkSurface: '#121417',
+            darkSurface2: '#1A1D23',
+            darkPaper: '#0A0B0D',
+            ink: '#141211',
+            inkMuted: '#57514E',
+            border: '#D2CBC7',
+            darkBorder: '#282C34'
+          }
+        },
+        fontFamily: {
+          display: ['Jost', 'sans-serif'],
+          body: ['"Instrument Sans"', 'sans-serif'],
+          mono: ['"Roboto Mono"', 'monospace'],
+          khmer: ['"Noto Sans Khmer"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
 <style>
-:root {
-  --crimson: #A6192E;
-  --crimson-lift: #C4243D;
-  --crimson-soft: #FDF2F4;
-  --safety-blue: #1B4965;
-  --safety-soft: #EEF4F8;
-  --dark: #121212;
-  --surface: #FFFFFF;
-  --surface-alt: #F7F6F5;
-  --border: #E2DEDC;
-  --text-main: #1C1917;
-  --text-muted: #66605D;
-  --f-display: "Jost", sans-serif;
-  --f-body: "Instrument Sans", sans-serif;
-  --f-mono: "Roboto Mono", monospace;
-}
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .font-display { font-family: 'Jost', sans-serif; }
+  .font-mono { font-family: 'Roboto Mono', monospace; }
+  .font-khmer { font-family: 'Noto Sans Khmer', sans-serif; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--surface-alt); color: var(--text-main); font-family: var(--f-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: rgba(0,0,0,0.04); }
+  ::-webkit-scrollbar-thumb { background: rgba(166, 25, 46, 0.5); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(166, 25, 46, 0.8); }
 
-/* Sticky Header */
-header.site-header {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--dark); color: #fff;
-  border-bottom: 3px solid var(--crimson);
-  padding: 0 20px;
-}
-.header-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 60px;
-}
-.brand-logo { font-family: var(--f-display); font-size: 18px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; color: #fff; }
-.brand-logo span { color: var(--crimson-lift); font-size: 12px; margin-left: 6px; letter-spacing: 0.1em; font-family: var(--f-mono); }
-nav.main-nav { display: flex; gap: 8px; }
-nav.main-nav a {
-  color: #DDD; text-decoration: none; font-family: var(--f-display);
-  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 8px 14px; border-radius: 4px; transition: background 0.2s, color 0.2s;
-}
-nav.main-nav a:hover, nav.main-nav a.active { background: var(--crimson); color: #fff; }
-
-/* Container */
-.container { max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px; }
-
-/* Hero Banner */
-.hero-banner { background: var(--dark); color: #fff; padding: 48px 36px; border-radius: 6px; margin-bottom: 36px; }
-.eyebrow { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--crimson-lift); margin-bottom: 12px; display: block; }
-.hero-banner h1 { font-family: var(--f-display); font-size: clamp(28px, 4.5vw, 44px); font-weight: 300; line-height: 1.15; margin-bottom: 16px; text-transform: uppercase; }
-.hero-banner h1 strong { font-weight: 600; color: var(--crimson-lift); }
-.hero-lead { font-size: 17px; color: #CCC; max-width: 72ch; margin-bottom: 24px; }
-.hero-pill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-.hero-pill { background: #1F1E1E; border: 1px solid #333; padding: 14px 18px; border-radius: 4px; }
-.hero-pill .title { font-family: var(--f-mono); font-size: 10.5px; text-transform: uppercase; color: #AAA; letter-spacing: 0.08em; margin-bottom: 6px; }
-.hero-pill .val { font-family: var(--f-display); font-size: 19px; font-weight: 500; color: #fff; }
-
-/* Section Basics */
-section.block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 36px; margin-bottom: 32px; }
-.block-header { margin-bottom: 24px; }
-.block-header h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 30px); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; }
-
-/* Interactive Toggle Buttons */
-.expand-button {
-  display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
-  background: var(--surface-alt); border: 1.5px solid var(--border);
-  color: var(--text-main); font-family: var(--f-display); font-size: 14px;
-  font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 12px 20px; border-radius: 4px; cursor: pointer; margin-top: 18px;
-  transition: all 0.2s ease;
-}
-.expand-button:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
-.expand-content { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
-.expand-content.active { display: block; }
-
-/* Own Safety Prominent Architecture */
-.safety-feature-box { background: var(--safety-soft); border: 1.5px solid #CBDCE6; border-left: 6px solid var(--safety-blue); padding: 28px; border-radius: 4px; margin-bottom: 24px; }
-.safety-stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
-.safety-stat-card { background: #fff; border: 1px solid #CBDCE6; padding: 18px; border-radius: 4px; text-align: center; }
-.safety-stat-card .num { font-family: var(--f-display); font-size: 36px; font-weight: 600; color: var(--safety-blue); line-height: 1; margin-bottom: 6px; }
-.safety-stat-card .label { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; color: var(--text-muted); }
-
-/* Quotes */
-.quote-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--crimson); padding: 18px 22px; border-radius: 4px; margin-bottom: 14px; }
-.quote-text { font-family: var(--f-display); font-size: 16px; line-height: 1.45; font-weight: 400; margin-bottom: 8px; }
-.quote-author { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.06em; }
-
-/* The Ask / Pricing Cards */
-.tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-.tier-card { border: 1.5px solid var(--border); background: var(--surface); border-radius: 6px; padding: 26px; display: flex; flex-direction: column; position: relative; }
-.tier-card.featured { border-color: var(--crimson); box-shadow: 0 4px 18px rgba(166, 25, 46, 0.12); }
-.tier-card.featured::before { content: "RECOMMENDED CURRENT PLAN"; position: absolute; top: -12px; left: 24px; background: var(--crimson); color: #fff; font-family: var(--f-mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.14em; padding: 3px 10px; border-radius: 3px; }
-.tier-name { font-family: var(--f-display); font-size: 18px; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
-.tier-budget { font-family: var(--f-mono); font-size: 28px; font-weight: 600; color: var(--crimson); margin-bottom: 14px; }
-.tier-deliverables { list-style: none; margin-bottom: 24px; flex-grow: 1; }
-.tier-deliverables li { font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--surface-alt); color: #444; }
-.tier-deliverables li strong { color: var(--text-main); }
-.tier-button { display: block; text-align: center; padding: 12px; border-radius: 4px; font-family: var(--f-display); font-weight: 600; text-transform: uppercase; text-decoration: none; font-size: 13px; letter-spacing: 0.08em; border: 1.5px solid var(--dark); color: var(--dark); cursor: pointer; transition: all 0.2s; }
-.tier-card.featured .tier-button { background: var(--crimson); border-color: var(--crimson); color: #fff; }
-.tier-card.featured .tier-button:hover { background: var(--crimson-lift); }
-.tier-button:hover { background: var(--dark); color: #fff; }
-
-@media (max-width: 768px) {
-  nav.main-nav { display: none; }
-  .hero-banner, section.block { padding: 24px 18px; }
-}
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+  input[type=range]:focus { outline: none; }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #D2CBC7;
+    border-radius: 6px;
+  }
+  .dark input[type=range]::-webkit-slider-runnable-track {
+    background: #282C34;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #A6192E;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #A6192E;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
 </style>
 </head>
-<body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand-logo">MAZDA<span>CAMBODIA</span></div>
-    <nav class="main-nav">
-      <a href="#audit">Audit</a>
-      <a href="#safety">Own Safety</a>
-      <a href="#pipeline">The Pipeline</a>
-      <a href="#ask">The Ask</a>
+<body class="bg-[#F4F2F0] text-mazda-ink dark:bg-[#0A0B0D] dark:text-[#EFEAE8] transition-colors duration-300 overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-1.5 bg-transparent z-50 pointer-events-none">
+  <div id="scroll-progress" class="h-full bg-gradient-to-r from-mazda-red via-mazda-redGlow to-mazda-safetyAccent origin-left scale-x-0 transition-transform duration-75"></div>
+</div>
+
+<header class="sticky top-0 z-40 bg-[#0E1013]/95 backdrop-blur-md border-b-4 border-mazda-red text-white transition-all shadow-xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <a href="#" class="flex flex-col">
+        <span class="font-display font-black tracking-[0.28em] text-xl sm:text-2xl text-white">MAZDA</span>
+        <span class="text-[10px] font-mono tracking-widest text-gray-400 -mt-0.5">HGB AUTO &middot; CAMBODIA</span>
+      </a>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-3 lg:space-x-4 text-xs font-mono tracking-wider uppercase font-bold text-gray-200">
+      <a href="#audit" class="px-3 py-2 rounded hover:bg-white/10 hover:text-white transition">01 &middot; Audit</a>
+      <a href="#safety" class="px-3 py-2 rounded bg-mazda-safetyBlue hover:bg-mazda-safetyAccent text-white transition shadow">02 &middot; Own Safety</a>
+      <a href="#pipeline" class="px-3 py-2 rounded hover:bg-white/10 hover:text-white transition">03 &middot; The Pipeline</a>
+      <a href="#simulator" class="px-3 py-2 rounded hover:bg-white/10 hover:text-white transition">04 &middot; Simulator</a>
+      <a href="#ask" class="px-3 py-2 rounded bg-mazda-red hover:bg-mazda-redGlow text-white transition shadow">05 &middot; The Ask</a>
     </nav>
+
+    <div class="flex items-center space-x-2 sm:space-x-3">
+      <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 transition min-w-[44px] min-h-[44px] flex items-center justify-center">
+        <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="theme-icon-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden p-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 transition min-w-[44px] min-h-[44px] flex items-center justify-center">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#0E1013] px-4 py-4 space-y-2 font-mono text-xs uppercase tracking-wider font-bold">
+    <a href="#audit" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded hover:bg-white/5 text-gray-300">01 &middot; Audit</a>
+    <a href="#safety" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded bg-mazda-safetyBlue text-white">02 &middot; Own Safety</a>
+    <a href="#pipeline" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded hover:bg-white/5 text-gray-300">03 &middot; The Pipeline</a>
+    <a href="#simulator" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded hover:bg-white/5 text-gray-300">04 &middot; Simulator</a>
+    <a href="#ask" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded bg-mazda-red text-white">05 &middot; The Ask</a>
   </div>
 </header>
 
-<div class="container">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">
 
-  <!-- HERO -->
-  <div class="hero-banner">
-    <span class="eyebrow">Executive Turnaround Proposal</span>
-    <h1>We build Mazda.<br><strong>Let Cambodia know it.</strong></h1>
-    <p class="hero-lead">A targeted commercial plan to expand Mazda from 650 units to 908 units by activating our Poipet assembly facility, securing our safety claims, and replacing used imports with guaranteed residual values.</p>
+  <section class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#14171D] via-[#101216] to-[#0A0B0D] text-white border-2 border-white/10 p-6 sm:p-10 lg:p-14 shadow-2xl">
+    <div class="absolute -right-20 -top-20 w-96 h-96 bg-mazda-red/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-mazda-safetyAccent/15 rounded-full blur-3xl pointer-events-none"></div>
     
-    <div class="hero-pill-grid">
-      <div class="hero-pill">
-        <div class="title">Local Assembly Asset</div>
-        <div class="val">$7M Poipet Facility</div>
+    <div class="relative z-10 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-mono text-gray-200 mb-6 font-semibold">
+        <span class="w-2.5 h-2.5 rounded-full bg-mazda-red animate-pulse"></span>
+        EXECUTIVE COMMERCIAL TURNAROUND &middot; CAMBODIA 2026-2029
       </div>
-      <div class="hero-pill">
-        <div class="title">Global Safety Rank</div>
-        <div class="val">8 IIHS Top Safety Pick+</div>
+      
+      <h1 class="font-display font-light text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] uppercase mb-6">
+        We build Mazda in Cambodia.<br>
+        <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-mazda-redGlow">
+          Now let the Kingdom know it.
+        </span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-3xl mb-8">
+        Toyota sells roughly 23,000 vehicles annually in Cambodia while Mazda sells 650 units, capturing 0.9% market share. Mazda is hindered not by engineering or vehicle quality, but by an inherited thirty-year grey-market used import loop. This plan leverages domestic Poipet assembly, establishes undisputed safety leadership, and introduces written buy-back contracts to win back market share.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-white/10 font-mono">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 border-l-4 border-l-mazda-red">
+          <span class="text-xs text-gray-400 uppercase tracking-wider block font-medium">Domestic Manufacturing</span>
+          <span class="text-2xl sm:text-3xl font-bold text-white mt-1 block">$7M Plant</span>
+          <span class="text-xs text-emerald-400 block mt-1">Poipet SEZ Facility &middot; 165 Jobs</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 border-l-4 border-l-mazda-safetyAccent">
+          <span class="text-xs text-gray-400 uppercase tracking-wider block font-medium">Global Safety Rank</span>
+          <span class="text-2xl sm:text-3xl font-bold text-amber-300 mt-1 block">#1 World</span>
+          <span class="text-xs text-gray-300 block mt-1">8x IIHS Top Safety Pick+</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 border-l-4 border-l-emerald-500">
+          <span class="text-xs text-gray-400 uppercase tracking-wider block font-medium">Showroom Expansion</span>
+          <span class="text-2xl sm:text-3xl font-bold text-emerald-400 mt-1 block">Siem Reap</span>
+          <span class="text-xs text-gray-300 block mt-1">Extension in Active Progress</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 border-l-4 border-l-purple-500">
+          <span class="text-xs text-gray-400 uppercase tracking-wider block font-medium">Target Growth</span>
+          <span class="text-2xl sm:text-3xl font-bold text-white mt-1 block">908 Units</span>
+          <span class="text-xs text-emerald-400 block mt-1">+39.7% First Year Hurdle</span>
+        </div>
       </div>
-      <div class="hero-pill">
-        <div class="title">Siem Reap Expansion</div>
-        <div class="val">Showroom in Construction</div>
+    </div>
+  </section>
+
+  <section id="audit" class="bg-white dark:bg-mazda-darkSurface rounded-2xl border-2 border-mazda-border dark:border-mazda-darkBorder p-6 sm:p-10 lg:p-12 shadow-sm space-y-8">
+    
+    <div class="border-b-4 border-mazda-ink dark:border-white pb-6">
+      <div class="flex items-baseline gap-4 mb-2">
+        <span class="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-mazda-red leading-none">01</span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-mazda-red bg-mazda-red/10 px-3 py-1 rounded">
+          Internal Diagnostic &middot; Marketing Audit
+        </span>
       </div>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl uppercase tracking-wide">
+        Initial Marketing Audit: Three Operational Flags
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-mazda-inkMuted dark:text-gray-300 max-w-4xl mt-3 leading-relaxed">
+        An audit of 1,672 published posts and historical marketing collateral reveals operational deficiencies that explain current market absence. Mazda Cambodia has suffered from inconsistent brand presentation, complete silence on safety, and low-budget content that produced negligible customer engagement.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-wide flex items-center gap-3 mb-6">
+        <span class="w-2.5 h-6 bg-mazda-red rounded-sm inline-block"></span>
+        Identified Operational Failures
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border-2 border-red-200 dark:border-red-900/50 bg-red-50/40 dark:bg-red-950/20 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-red-100 dark:bg-red-900/60 font-mono text-xs font-bold text-mazda-red uppercase">Flag 01</span>
+            <span class="font-mono text-xs font-bold text-red-600">Severity: High</span>
+          </div>
+          <h4 class="font-display font-bold text-lg uppercase">Inconsistent Brand Standards</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            Visual outputs lack disciplined adherence to Mazda global design guidelines. Typography choices vary wildly across campaigns, vehicle photography uses improper color grading, and showroom banners mix clashing visual languages, undermining Mazda's premium reputation.
+          </p>
+          <div class="pt-3 border-t border-red-200 dark:border-red-900/40 text-xs font-mono text-gray-600 dark:text-gray-400">
+            <strong class="text-mazda-red">Remedy:</strong> Institutionalize strict brand guidelines, standardized Khmer typography, and uniform retail display templates.
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border-2 border-red-200 dark:border-red-900/50 bg-red-50/40 dark:bg-red-950/20 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-red-100 dark:bg-red-900/60 font-mono text-xs font-bold text-mazda-red uppercase">Flag 02</span>
+            <span class="font-mono text-xs font-bold text-red-600">Severity: Critical</span>
+          </div>
+          <h4 class="font-display font-bold text-lg uppercase">Zero Safety Messaging</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            Mazda earned eight IIHS Top Safety Pick+ awards, leading the entire automotive industry. Despite this verified competitive advantage, historical posts contain zero mentions of crash ratings, structural steel integrity, or i-Activsense safety systems.
+          </p>
+          <div class="pt-3 border-t border-red-200 dark:border-red-900/40 text-xs font-mono text-gray-600 dark:text-gray-400">
+            <strong class="text-mazda-red">Remedy:</strong> Deploy crash-test footage localized into Khmer, publicize international safety ratings, and launch free roadside safety checks.
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border-2 border-red-200 dark:border-red-900/50 bg-red-50/40 dark:bg-red-950/20 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-red-100 dark:bg-red-900/60 font-mono text-xs font-bold text-mazda-red uppercase">Flag 03</span>
+            <span class="font-mono text-xs font-bold text-red-600">Severity: Critical</span>
+          </div>
+          <h4 class="font-display font-bold text-lg uppercase">Low-Budget Material &amp; 0.29 Reactions</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            The brand channel relied on formulaic graphics that averaged only 0.29 reactions per post. 46% of posts lacked captions, pricing was omitted, and the channel suffered an uninterrupted 94-day publishing blackout during 2025.
+          </p>
+          <div class="pt-3 border-t border-red-200 dark:border-red-900/40 text-xs font-mono text-gray-600 dark:text-gray-400">
+            <strong class="text-mazda-red">Remedy:</strong> Maintain a minimum cadence of three posts per week, mandatory Khmer captions, and transparent monthly pricing ($492/mo).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-5 sm:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border-l-8 border-mazda-red border border-gray-200 dark:border-gray-800 space-y-3">
+      <p class="font-display text-lg sm:text-xl text-mazda-ink dark:text-white leading-snug">
+        &ldquo;Safety is that hidden feature that most people do not care about when buying a new car. I own a Mazda CX-30.&rdquo;
+      </p>
+      <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-gray-500 pt-2 border-t border-gray-200 dark:border-gray-800">
+        <span>@CaravaggioRoma &middot; Verified CX-30 Owner Comment</span>
+        <span class="text-mazda-red font-bold uppercase">Customer Mindset Diagnostic</span>
+      </div>
+    </div>
+
+    <div>
+      <button onclick="toggleSection('audit-detail-panel', this)" class="inline-flex items-center justify-between gap-4 py-3 px-5 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:border-mazda-red dark:hover:border-mazda-red font-mono text-xs uppercase font-bold tracking-wider transition min-h-[44px]">
+        <span>View Detailed Channel Diagnostics &amp; Remedies</span>
+        <span class="chevron text-base font-bold">&darr;</span>
+      </button>
+      <div id="audit-detail-panel" class="hidden mt-4 p-5 rounded-xl bg-gray-50 dark:bg-mazda-darkSurface2 border border-gray-200 dark:border-gray-800 text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 leading-relaxed">
+        <p>The channel went dark for 94 continuous days in 2025 and published only 11 times in 2026. Price communication relied on raw list prices rather than the standard monthly terms Cambodian car buyers evaluate. Remedying this requires an active floor cadence of three posts per week, clear Khmer-first captions, and integrated bank rate structures ($492/month for CX-30 entry trim).</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="safety" class="bg-white dark:bg-mazda-darkSurface rounded-2xl border-4 border-mazda-safetyBlue p-6 sm:p-10 lg:p-12 shadow-2xl space-y-8">
+    
+    <div class="border-b-4 border-mazda-safetyBlue pb-6">
+      <div class="flex items-baseline gap-4 mb-2">
+        <span class="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-mazda-safetyBlue leading-none">02</span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-white bg-mazda-safetyBlue px-3 py-1 rounded">
+          The Core Platform &middot; Safety Pillar
+        </span>
+      </div>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl uppercase tracking-wide text-mazda-navy dark:text-blue-300">
+        Own Safety: The Unclaimed Market Opportunity
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-mazda-inkMuted dark:text-gray-300 max-w-4xl mt-3 leading-relaxed">
+        Cambodian roads caused 1,467 deaths in 2025, averaging four deaths daily. Family protection represents an urgent purchase consideration. Mazda manufactures the safest production vehicles in the market, yet this profound structural advantage has never been leveraged in local sales.
+      </p>
+    </div>
+
+    <div class="p-6 sm:p-8 rounded-xl bg-mazda-navy text-white border-l-8 border-mazda-safetyAccent shadow-lg space-y-4">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <span class="px-3 py-1 rounded bg-mazda-safetyAccent/30 text-mazda-safetyAccent font-mono text-xs uppercase font-bold tracking-wider">
+          Verified World Benchmark
+        </span>
+        <span class="font-khmer text-mazda-safetyAccent font-medium text-sm sm:text-base">សុវត្ថិភាពខ្ពស់បំផុតលើពិភពលោក</span>
+      </div>
+      <h3 class="font-display font-bold text-xl sm:text-3xl uppercase">
+        Verified Structural Integrity &amp; Global Safety Dominance
+      </h3>
+      <p class="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed max-w-4xl">
+        Mazda earned more 2026 IIHS Top Safety Pick+ awards than any vehicle manufacturer worldwide for the third consecutive year. In Euro NCAP evaluations, the Mazda CX-30 scored an unprecedented 99% for Adult Occupant Protection. The chassis incorporates 1,800 MPa ultra-high tensile steel developed with Sumitomo Metal Industries.
+      </p>
+    </div>
+
+    <!-- Triple Metric Strip -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center">
+      <div class="p-6 rounded-xl bg-mazda-safetySoft dark:bg-mazda-navy/40 border-2 border-blue-200 dark:border-blue-900/60">
+        <span class="font-display font-black text-4xl sm:text-6xl text-mazda-safetyBlue dark:text-mazda-safetyAccent block leading-none mb-2">8</span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-mazda-navy dark:text-gray-200 uppercase tracking-wider block">
+          2026 IIHS Top Safety Pick+ Awards
+        </span>
+        <span class="text-xs text-gray-500 mt-1 block">#1 Vehicle Manufacturer Globally</span>
+      </div>
+
+      <div class="p-6 rounded-xl bg-mazda-safetySoft dark:bg-mazda-navy/40 border-2 border-blue-200 dark:border-blue-900/60">
+        <span class="font-display font-black text-4xl sm:text-6xl text-mazda-safetyBlue dark:text-mazda-safetyAccent block leading-none mb-2">99%</span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-mazda-navy dark:text-gray-200 uppercase tracking-wider block">
+          Euro NCAP Adult Occupancy Score
+        </span>
+        <span class="text-xs text-gray-500 mt-1 block">Record Score for CX-30 Platform</span>
+      </div>
+
+      <div class="p-6 rounded-xl bg-mazda-safetySoft dark:bg-mazda-navy/40 border-2 border-blue-200 dark:border-blue-900/60">
+        <span class="font-display font-black text-4xl sm:text-6xl text-mazda-safetyBlue dark:text-mazda-safetyAccent block leading-none mb-2">1,800</span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-mazda-navy dark:text-gray-200 uppercase tracking-wider block">
+          MPa High-Tensile Sumitomo Steel
+        </span>
+        <span class="text-xs text-gray-500 mt-1 block">Patented Automotive Metallurgy</span>
+      </div>
+    </div>
+
+    <div class="space-y-4 pt-4">
+      <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-wide flex items-center gap-3 text-mazda-navy dark:text-blue-300">
+        <span class="w-2.5 h-6 bg-mazda-safetyBlue rounded-sm inline-block"></span>
+        Customer Survival Voices &amp; Expert Crash Test Appraisals
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <!-- Quote 1 -->
+        <div class="p-5 sm:p-6 rounded-xl bg-[#F8FBFC] dark:bg-white/5 border-l-8 border-mazda-safetyBlue border border-blue-100 dark:border-gray-800 space-y-3">
+          <p class="font-display text-lg sm:text-xl text-mazda-ink dark:text-white leading-snug font-medium">
+            &ldquo;This car saved my life in highway at 105km wow i love mazda&rdquo;
+          </p>
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-gray-500 pt-2 border-t border-blue-100 dark:border-gray-800">
+            <span>@simonegalvani1602</span>
+            <span class="text-mazda-safetyBlue dark:text-mazda-safetyAccent font-bold uppercase">Highway Incident Survivor</span>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="p-5 sm:p-6 rounded-xl bg-[#F8FBFC] dark:bg-white/5 border-l-8 border-mazda-safetyBlue border border-blue-100 dark:border-gray-800 space-y-3">
+          <p class="font-display text-lg sm:text-xl text-mazda-ink dark:text-white leading-snug font-medium">
+            &ldquo;In the event of an accident, there are few safer places to be than the front seats of the Mazda CX-30.&rdquo;
+          </p>
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-gray-500 pt-2 border-t border-blue-100 dark:border-gray-800">
+            <span>Matthew Avery &middot; Thatcham Research</span>
+            <span class="text-mazda-safetyBlue dark:text-mazda-safetyAccent font-bold uppercase">Director of Insurance Research</span>
+          </div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="p-5 sm:p-6 rounded-xl bg-[#F8FBFC] dark:bg-white/5 border-l-8 border-mazda-safetyBlue border border-blue-100 dark:border-gray-800 space-y-3">
+          <p class="font-display text-lg sm:text-xl text-mazda-ink dark:text-white leading-snug font-medium">
+            &ldquo;1. Military Tank<br>2. CX-30<br>Its build qualities justify the price tag. Good work Mazda.&rdquo;
+          </p>
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-gray-500 pt-2 border-t border-blue-100 dark:border-gray-800">
+            <span>@KallandraYT &amp; @vivaselementum</span>
+            <span class="text-mazda-safetyBlue dark:text-mazda-safetyAccent font-bold uppercase">Crash Analysis Consensus</span>
+          </div>
+        </div>
+
+        <!-- Quote 4 -->
+        <div class="p-5 sm:p-6 rounded-xl bg-[#F8FBFC] dark:bg-white/5 border-l-8 border-mazda-safetyBlue border border-blue-100 dark:border-gray-800 space-y-3">
+          <p class="font-display text-lg sm:text-xl text-mazda-ink dark:text-white leading-snug font-medium">
+            &ldquo;They teamed up with Sumitomo Metal Industries and created a world first, 1,800 MPa Ultra-High Tensile Steel. This is patented automotive engineering.&rdquo;
+          </p>
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-gray-500 pt-2 border-t border-blue-100 dark:border-gray-800">
+            <span>@inodesnet</span>
+            <span class="text-mazda-safetyBlue dark:text-mazda-safetyAccent font-bold uppercase">Metallurgy Breakdown</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button onclick="toggleSection('safety-detail-panel', this)" class="inline-flex items-center justify-between gap-4 py-3 px-5 rounded-lg border-2 border-mazda-safetyBlue text-mazda-safetyBlue dark:text-blue-300 font-mono text-xs uppercase font-bold tracking-wider hover:bg-mazda-safetyBlue hover:text-white transition min-h-[44px]">
+        <span>View Safety Campaign Execution Details</span>
+        <span class="chevron text-base font-bold">&darr;</span>
+      </button>
+      <div id="safety-detail-panel" class="hidden mt-4 p-5 rounded-xl bg-gray-50 dark:bg-mazda-darkSurface2 border border-gray-200 dark:border-gray-800 text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 leading-relaxed">
+        <p>The commercial safety platform launches during the high-traffic Khmer New Year travel window. We will conduct free 20-point safety inspections for all brands across provincial caravan stops, release crash test telemetry translated into Khmer, and partner directly with national road transport authorities on family safety education.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="pipeline" class="bg-white dark:bg-mazda-darkSurface rounded-2xl border-2 border-mazda-border dark:border-mazda-darkBorder p-6 sm:p-10 lg:p-12 shadow-sm space-y-8">
+    
+    <div class="border-b-4 border-mazda-ink dark:border-white pb-6">
+      <div class="flex items-baseline gap-4 mb-2">
+        <span class="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-mazda-red leading-none">03</span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-mazda-red bg-mazda-red/10 px-3 py-1 rounded">
+          Dominance Architecture &middot; Market Analysis
+        </span>
+      </div>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl uppercase tracking-wide">
+        The Used Import Pipeline: Why Toyota &amp; Ford Dominate
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-mazda-inkMuted dark:text-gray-300 max-w-4xl mt-3 leading-relaxed">
+        Toyota's commanding market position in Cambodia did not stem from showroom marketing. It is the cumulative outcome of thirty years of grey-market used vehicle imports shaping local mechanical literacy and perceived resale liquidity.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-wide flex items-center gap-3 mb-6">
+        <span class="w-2.5 h-6 bg-mazda-red rounded-sm inline-block"></span>
+        Three Decades of Fleet Conditioning (1993 - Present)
+      </h3>
+
+      <div class="border-l-4 border-mazda-red pl-6 sm:pl-8 space-y-8 ml-2 sm:ml-4">
+        
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold text-mazda-red bg-mazda-red/10 px-2.5 py-0.5 rounded uppercase">Stage 01</span>
+            <span class="font-mono text-xs text-gray-500">1993 - 2008</span>
+          </div>
+          <h4 class="font-display font-bold text-lg sm:text-xl uppercase">The Thirty-Year Used Fleet Inflow</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+            Between 1993 and 2018, over 80% of vehicle imports were used US auction inventory, dominated by Camrys, Corollas, and Priuses arriving through Sihanoukville ports. This created an installed vehicle base without formal distributor intervention.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold text-mazda-red bg-mazda-red/10 px-2.5 py-0.5 rounded uppercase">Stage 02</span>
+            <span class="font-mono text-xs text-gray-500">2005 - 2018</span>
+          </div>
+          <h4 class="font-display font-bold text-lg sm:text-xl uppercase">Provincial Mechanic Familiarity &amp; Scrap Parts Liquidity</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+            An entire generation of provincial mechanics learned exclusively on older Toyota carburetors and engine blocks using standard tools. In Phnom Penh, dismantling hubs in Toul Sangke established instant parts liquidity with zero supply delay.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold text-mazda-red bg-mazda-red/10 px-2.5 py-0.5 rounded uppercase">Stage 03</span>
+            <span class="font-mono text-xs text-gray-500">2015 - 2024</span>
+          </div>
+          <h4 class="font-display font-bold text-lg sm:text-xl uppercase">The Resale Liquidity Myth &amp; New Car Default</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+            Because repairs were available in every district within hours, buyers viewed used Toyotas as liquid savings reserves. As the market shifted toward new vehicles (reaching 66% of sales), graduating buyers transferred their used car habits directly into new Toyotas and Fords.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded uppercase">Stage 04 &middot; The Solution</span>
+            <span class="font-mono text-xs text-emerald-600">Active Turnaround Strategy</span>
+          </div>
+          <h4 class="font-display font-bold text-lg sm:text-xl uppercase text-emerald-600 dark:text-emerald-400">The Mazda Counter-Offensive</h4>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+            Mazda cannot replicate thirty years of ad-hoc imports overnight. Instead, we remove buyer resale anxiety with legally binding 36-month Buy-Back Certificates printed in Khmer. We back this with 25 certified independent repair shops via the Automotive Centre of Excellence Cambodia (ACE-C), and unbundle the CX-30 entry trim at $29,999 ($492/month).
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <button onclick="toggleSection('pipeline-detail-panel', this)" class="inline-flex items-center justify-between gap-4 py-3 px-5 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:border-mazda-red dark:hover:border-mazda-red font-mono text-xs uppercase font-bold tracking-wider transition min-h-[44px]">
+        <span>View Certified Repairer Network Details</span>
+        <span class="chevron text-base font-bold">&darr;</span>
+      </button>
+      <div id="pipeline-detail-panel" class="hidden mt-4 p-5 rounded-xl bg-gray-50 dark:bg-mazda-darkSurface2 border border-gray-200 dark:border-gray-800 text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 leading-relaxed">
+        <p>Partnering with ACE-C allows Mazda to train and certify 25 independent provincial workshops during year one. We supply diagnostic units, maintain genuine parts lines, and install official exterior signage. This matches competitor service accessibility without the capital expense of full franchise showrooms.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="simulator" class="bg-white dark:bg-mazda-darkSurface rounded-2xl border-2 border-mazda-border dark:border-mazda-darkBorder p-6 sm:p-10 lg:p-12 shadow-sm space-y-8">
+    
+    <div class="border-b-4 border-mazda-ink dark:border-white pb-6">
+      <div class="flex items-baseline gap-4 mb-2">
+        <span class="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-mazda-red leading-none">04</span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-mazda-red bg-mazda-red/10 px-3 py-1 rounded">
+          Operational Stress-Test &middot; Sensitivity Analysis
+        </span>
+      </div>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl uppercase tracking-wide">
+        Dynamic Planning Cockpit: The 80% Reality Test
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-mazda-inkMuted dark:text-gray-300 max-w-4xl mt-3 leading-relaxed">
+        No automotive business plan executes with 100% perfection. Model operational friction using the interactive controls to evaluate whether each tier successfully clears the board's mandatory +20% threshold (+130 units).
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-4 sm:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800">
+      
+      <div class="lg:col-span-5 space-y-5">
+        <div>
+          <label class="font-mono text-xs uppercase tracking-wider text-gray-500 block mb-2 font-bold">Select Investment Tier</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setSimTier('lean')" id="sim-btn-lean" class="py-2.5 px-2 rounded-lg border border-gray-300 dark:border-gray-700 text-xs font-mono text-center transition min-h-[44px]">
+              <span class="block font-bold">Lean</span>
+              <span class="text-[10px] text-gray-500">$405k</span>
+            </button>
+            <button onclick="setSimTier('medium')" id="sim-btn-medium" class="py-2.5 px-2 rounded-lg border border-gray-300 dark:border-gray-700 text-xs font-mono text-center transition min-h-[44px]">
+              <span class="block font-bold">Medium</span>
+              <span class="text-[10px] text-gray-500">$750k</span>
+            </button>
+            <button onclick="setSimTier('high')" id="sim-btn-high" class="py-2.5 px-2 rounded-lg border-2 border-mazda-red bg-mazda-red/10 text-xs font-mono text-center text-mazda-red font-bold transition min-h-[44px]">
+              <span class="block font-bold">High</span>
+              <span class="text-[10px] text-mazda-red font-semibold">$1.06M</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-3 p-4 rounded-xl bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-gray-500 uppercase font-bold">Execution Efficiency</span>
+            <span id="slider-val" class="font-bold text-mazda-red text-sm">80% Realistic</span>
+          </div>
+          <input type="range" id="exec-slider" min="60" max="100" value="80" step="5" oninput="updateSimulation()" class="w-full accent-mazda-red cursor-pointer min-h-[44px]">
+          <div class="flex justify-between text-[10px] font-mono text-gray-400">
+            <span>60% (Delays)</span>
+            <span>80% (Expected)</span>
+            <span>100% (Flawless)</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800 space-y-2">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-gray-500 uppercase font-bold">Baseline Volume</span>
+            <select id="base-volume" onchange="updateSimulation()" class="bg-transparent border border-gray-300 dark:border-gray-700 rounded px-2 py-1 font-mono text-xs min-h-[36px]">
+              <option value="650">650 Units (Baseline)</option>
+              <option value="450">450 Units (Downside Audit)</option>
+              <option value="750">750 Units (Optimistic)</option>
+            </select>
+          </div>
+          <p class="text-[11px] text-gray-500 leading-normal">
+            If internal data reveals 450 units base, network expansion phases to two points instead of three.
+          </p>
+        </div>
+
+        <div id="sim-verdict-box" class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-xs leading-relaxed">
+          <span class="font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase block mb-1">
+            Status: <span id="sim-verdict-title">Commitment Cleared Safely</span>
+          </span>
+          <p id="sim-verdict-desc" class="text-gray-700 dark:text-gray-300">
+            At 80% execution in the High tier, volume reaches 856 units (+31.7%), clearing the mandatory +20% hurdle (780 units) with 76 units of safety buffer.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-center">
+          <div class="p-3 rounded-lg bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+            <span class="text-[10px] text-gray-500 uppercase block font-medium">Total Units</span>
+            <span id="out-units" class="text-xl sm:text-2xl font-bold text-mazda-ink dark:text-white">856</span>
+            <span id="out-growth" class="text-[10px] text-emerald-500 block">+31.7% YoY</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+            <span class="text-[10px] text-gray-500 uppercase block font-medium">Added Units</span>
+            <span id="out-incremental" class="text-xl sm:text-2xl font-bold text-mazda-red">+206</span>
+            <span class="text-[10px] text-gray-400 block">Above Base</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+            <span class="text-[10px] text-gray-500 uppercase block font-medium">Market Share</span>
+            <span id="out-share" class="text-xl sm:text-2xl font-bold text-mazda-ink dark:text-white">1.22%</span>
+            <span class="text-[10px] text-gray-400 block">of 70k Total</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+            <span class="text-[10px] text-gray-500 uppercase block font-medium">Cost Per Car</span>
+            <span id="out-cost-unit" class="text-xl sm:text-2xl font-bold text-mazda-ink dark:text-white">$5,145</span>
+            <span class="text-[10px] text-gray-400 block">Capital Assets</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-gray-500 uppercase font-bold">Target vs Actual Output</span>
+            <span class="text-[10px] text-mazda-red font-semibold">Dashed = Mandatory Hurdle (+130 Units)</span>
+          </div>
+          
+          <div class="w-full overflow-x-auto">
+            <svg viewBox="0 0 500 180" class="w-full h-auto min-w-[320px] font-mono text-xs">
+              <line x1="70" y1="20" x2="480" y2="20" stroke="currentColor" stroke-opacity="0.1"/>
+              <line x1="70" y1="60" x2="480" y2="60" stroke="currentColor" stroke-opacity="0.1"/>
+              <line x1="70" y1="100" x2="480" y2="100" stroke="currentColor" stroke-opacity="0.1"/>
+              <line x1="70" y1="140" x2="480" y2="140" stroke="currentColor" stroke-opacity="0.2"/>
+              
+              <text x="60" y="24" fill="currentColor" opacity="0.5" text-anchor="end" font-size="9">+300</text>
+              <text x="60" y="64" fill="currentColor" opacity="0.5" text-anchor="end" font-size="9">+200</text>
+              <text x="60" y="104" fill="currentColor" opacity="0.5" text-anchor="end" font-size="9">+100</text>
+              <text x="60" y="144" fill="currentColor" opacity="0.5" text-anchor="end" font-size="9">0</text>
+              
+              <line x1="70" y1="88" x2="480" y2="88" stroke="#A6192E" stroke-width="1.8" stroke-dasharray="4 3"/>
+              <text x="480" y="83" fill="#A6192E" text-anchor="end" font-size="8.5" font-weight="bold">BOARD HURDLE: +130 UNITS (+20%)</text>
+              
+              <rect x="100" y="88" width="32" height="52" fill="#888" opacity="0.3" rx="2"/>
+              <rect id="svg-bar-lean" x="136" y="98.4" width="32" height="41.6" fill="#A6192E" opacity="0.4" rx="2"/>
+              <text x="134" y="158" text-anchor="middle" font-size="9" fill="currentColor">Lean ($405k)</text>
+              
+              <rect x="220" y="62" width="32" height="78" fill="#888" opacity="0.3" rx="2"/>
+              <rect id="svg-bar-med" x="256" y="77.6" width="32" height="62.4" fill="#A6192E" opacity="0.7" rx="2"/>
+              <text x="254" y="158" text-anchor="middle" font-size="9" fill="currentColor">Medium ($750k)</text>
+
+              <rect x="340" y="36.8" width="32" height="103.2" fill="#888" opacity="0.3" rx="2"/>
+              <rect id="svg-bar-high" x="376" y="57.6" width="32" height="82.4" fill="#A6192E" rx="2"/>
+              <text x="374" y="158" text-anchor="middle" font-size="9" font-weight="bold" fill="#A6192E">High ($1.06M)</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs text-amber-700 dark:text-amber-300 font-mono">
+          <strong>Board Consideration:</strong> If the Lean tier ($405k) encounters an 80% execution reality, delivery reaches only +104 incremental units, falling below the mandatory +130 unit threshold. The High plan provides an operational cushion that ensures compliance despite delays.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="ask" class="bg-white dark:bg-mazda-darkSurface rounded-2xl border-2 border-mazda-border dark:border-mazda-darkBorder p-6 sm:p-10 lg:p-12 shadow-sm space-y-8">
+    
+    <div class="border-b-4 border-mazda-ink dark:border-white pb-6">
+      <div class="flex items-baseline gap-4 mb-2">
+        <span class="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-mazda-red leading-none">05</span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-mazda-red bg-mazda-red/10 px-3 py-1 rounded">
+          Executive Decision &middot; Capital Allocation
+        </span>
+      </div>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl uppercase tracking-wide">
+        The Investment Ask: Three Practical Tiers
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-mazda-inkMuted dark:text-gray-300 max-w-4xl mt-3 leading-relaxed">
+        Choose the capital allocation level to achieve target volume and distribution milestones. Each tier has been calculated with explicit unit targets, risk assessments, and network commitments.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Option 01: Lean -->
+      <div class="p-6 sm:p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-mazda-darkSurface flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded bg-gray-100 dark:bg-white/10 font-mono text-xs font-bold uppercase">Option 01 &middot; Lean</span>
+            <span class="font-mono text-xs text-gray-500">Base Hurdle</span>
+          </div>
+
+          <div>
+            <h3 class="font-display font-extrabold text-3xl sm:text-4xl uppercase text-mazda-ink dark:text-white">$405,000</h3>
+            <p class="font-mono text-xs text-gray-500 mt-1">Year 1 Net Risk: ~$0 (Breakeven)</p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            Essential operational overhaul. Solves digital response SLAs, implements Khmer social media captions, introduces the $29,999 CX-30 entry trim, and capitalizes on the underway Siem Reap showroom extension by funding its service equipment and launch operations.
+          </p>
+
+          <ul class="space-y-2 pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-mono">
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Year 1 Volume Target</span>
+              <span class="font-bold">780 Units (+20%)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Provincial Outlets</span>
+              <span class="font-bold">1 (Siem Reap Extension Active)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Certified Workshops</span>
+              <span class="font-bold">5 Pilot Shops</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Buy-Back Guarantee</span>
+              <span class="text-gray-400">Deferred to Year 2</span>
+            </li>
+            <li class="flex justify-between py-1">
+              <span class="text-gray-500">80% Reality Cushion</span>
+              <span class="text-red-500 font-bold">-26 Units (Under Floor)</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="recordSelection('Lean ($405,000)')" class="w-full py-3 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-white/5 font-mono text-xs uppercase font-bold tracking-wider transition min-h-[44px]">
+          Select Lean ($405k)
+        </button>
+      </div>
+
+      <!-- Option 02: Medium -->
+      <div class="p-6 sm:p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-mazda-darkSurface flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded bg-amber-500/10 font-mono text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">Option 02 &middot; Medium</span>
+            <span class="font-mono text-xs text-gray-500">Balanced Rollout</span>
+          </div>
+
+          <div>
+            <h3 class="font-display font-extrabold text-3xl sm:text-4xl uppercase text-mazda-ink dark:text-white">$750,000</h3>
+            <p class="font-mono text-xs text-gray-500 mt-1">Year 1 Net Risk: ~$65,000</p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            Balanced multi-region expansion. Activates the underway Siem Reap extension as an operational northern hub, establishes a second provincial site in Battambang, certifies 15 ACE-C workshops, and launches a 150-unit buy-back pilot.
+          </p>
+
+          <ul class="space-y-2 pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-mono">
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Year 1 Volume Target</span>
+              <span class="font-bold">845 Units (+30%)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Provincial Outlets</span>
+              <span class="font-bold">2 (Siem Reap + Battambang)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Certified Workshops</span>
+              <span class="font-bold">15 Independent Shops</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-gray-50 dark:border-gray-800">
+              <span class="text-gray-500">Buy-Back Guarantee</span>
+              <span class="font-bold">Capped 150 Units</span>
+            </li>
+            <li class="flex justify-between py-1">
+              <span class="text-gray-500">80% Reality Cushion</span>
+              <span class="text-emerald-500 font-bold">+26 Units Over Floor</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="recordSelection('Medium ($750,000)')" class="w-full py-3 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-white/5 font-mono text-xs uppercase font-bold tracking-wider transition min-h-[44px]">
+          Select Medium ($750k)
+        </button>
+      </div>
+
+      <!-- Option 03: High (Featured) -->
+      <div class="p-6 sm:p-8 rounded-2xl border-4 border-mazda-red bg-gradient-to-b from-[#181B22] to-[#101217] text-white flex flex-col justify-between space-y-6 relative shadow-2xl">
+        <div class="absolute -top-3.5 right-6 px-3 py-1 rounded bg-mazda-red text-white text-[10px] font-mono uppercase tracking-widest font-bold">
+          RECOMMENDED CURRENT PLAN
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded bg-mazda-red/30 border border-mazda-red/50 font-mono text-xs font-bold text-mazda-redGlow uppercase">Option 03 &middot; High</span>
+            <span class="font-mono text-xs text-emerald-400">Recommended</span>
+          </div>
+
+          <div>
+            <h3 class="font-display font-extrabold text-3xl sm:text-4xl uppercase text-white">$1,060,000</h3>
+            <p class="font-mono text-xs text-emerald-400 mt-1">Year 1 Net Cost: ~$72,000 (After Unit Margins)</p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Complete market repositioning. Fully commissions the underway Siem Reap extension, expands to Battambang and Sihanoukville, deploys a mobile service van, certifies 25 ACE-C workshops, underwrites 250 buy-back contracts, and launches national Poipet assembly campaigns.
+          </p>
+
+          <ul class="space-y-2 pt-4 border-t border-white/10 text-xs font-mono">
+            <li class="flex justify-between py-1 border-b border-white/5">
+              <span class="text-gray-400">Year 1 Volume Target</span>
+              <span class="font-bold text-white">908 Units (+39.7%)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-white/5">
+              <span class="text-gray-400">Provincial Outlets</span>
+              <span class="font-bold text-white">3 Points (Inc. Siem Reap) + Van</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-white/5">
+              <span class="text-gray-400">Certified Workshops</span>
+              <span class="font-bold text-emerald-400">25 Workshops (Nationwide)</span>
+            </li>
+            <li class="flex justify-between py-1 border-b border-white/5">
+              <span class="text-gray-400">Buy-Back Guarantee</span>
+              <span class="font-bold text-white">Full Cohort (250 Units)</span>
+            </li>
+            <li class="flex justify-between py-1">
+              <span class="text-gray-400">80% Reality Cushion</span>
+              <span class="text-emerald-400 font-bold">+76 Units (Safest Buffer)</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="recordSelection('High ($1,060,000)')" class="w-full py-3.5 rounded-lg bg-mazda-red hover:bg-mazda-redGlow text-white font-mono text-xs uppercase font-bold tracking-wider transition shadow-lg min-h-[44px]">
+          Authorize High Plan ($1.06M)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Free Quick Wins -->
+    <div class="p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 space-y-3">
+      <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-mazda-red">
+        Eight Operational Actions Starting This Week at $0 Budget:
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono text-gray-700 dark:text-gray-300">
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">1. Pull 2024-2025 order baseline</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">2. Enforce 15-minute response SLA</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">3. Retrofit Khmer captions to all posts</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">4. Obtain quotes from 3 banks on 8% loans</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">5. Compile 3 years of Mazda resale values</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">6. Realign test drive routes for vehicle handling</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">7. Initiate ACE-C mechanic curriculum discussions</div>
+        <div class="p-3 rounded bg-white dark:bg-mazda-darkSurface border border-gray-200 dark:border-gray-800">8. Record Poipet factory production video</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="border-t-2 border-mazda-border dark:border-mazda-darkBorder pt-8 pb-16 space-y-6 text-xs text-gray-500 font-mono">
+    <div class="flex justify-between items-center flex-wrap gap-2">
+      <span class="font-display font-bold uppercase text-mazda-ink dark:text-gray-300 text-sm">
+        Mazda Cambodia Turnaround Dossier &middot; Executive Strategy
+      </span>
+      <span>HGB Auto Co., Ltd. &middot; Phnom Penh &middot; Poipet &middot; Siem Reap</span>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-[11px] leading-relaxed">
+      <div>
+        <strong class="text-gray-700 dark:text-gray-400 block mb-1">Market Volume Statistics:</strong>
+        <p>US Commercial Service Automotive Guide; Xinhua Jan-May 2026 registry data (30,000 units); MyKhmerCar Toyota volume analysis; Focus2Move Cambodia index.</p>
+      </div>
+      <div>
+        <strong class="text-gray-700 dark:text-gray-400 block mb-1">Assembly &amp; Industrial:</strong>
+        <p>Phnom Penh Post HGB Motors Poipet Plant ($7M, 165 technicians); AKP National Assembly records; Government directives on domestic VIN manufacturing.</p>
+      </div>
+      <div>
+        <strong class="text-gray-700 dark:text-gray-400 block mb-1">Safety Benchmark Data:</strong>
+        <p>IIHS Top Safety Pick+ 2026 official awards roster; Euro NCAP CX-30 99% Adult Occupancy score; Cambodian National Police traffic incident reports (1,467 deaths).</p>
+      </div>
+      <div>
+        <strong class="text-gray-700 dark:text-gray-400 block mb-1">Fiscal &amp; Bank Standards:</strong>
+        <p>Ministry of Economy &amp; Finance EV tariff decree; Canadia Bank auto financing structures (8.0% p.a. vs Toyota captive 9.5%).</p>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Notification Toast -->
+<div id="toast-notify" class="fixed bottom-6 right-6 max-w-sm p-4 rounded-xl bg-mazda-navy border-2 border-mazda-safetyAccent text-white shadow-2xl transition-all duration-300 transform translate-y-28 opacity-0 pointer-events-none z-50 font-mono text-xs">
+  <div class="flex items-start gap-3">
+    <div class="w-6 h-6 rounded-full bg-mazda-safetyAccent text-mazda-navy flex items-center justify-center font-bold flex-shrink-0">&check;</div>
+    <div>
+      <strong id="toast-plan-name" class="text-mazda-safetyAccent block font-display uppercase font-bold text-sm">Plan Selected</strong>
+      <p id="toast-plan-sub" class="text-gray-200 text-xs mt-0.5">Budget recorded for executive review.</p>
     </div>
   </div>
-
-  <!-- SECTION 1: MARKETING AUDIT -->
-  <section id="audit" class="block">
-    <div class="block-header">
-      <span class="eyebrow">Section 1.0</span>
-      <h2>Initial Marketing Audit &amp; Diagnosis</h2>
-      <p style="color: var(--text-muted);">Three structural flags discovered during the initial marketing audit explaining current market absence.</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
-      <div style="padding: 16px; border: 1px solid var(--border); border-radius: 4px;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">1. Inconsistent Brand Standards</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">Irregular visual standards, fragmented layouts, and inconsistent showroom presentation dilute the premium Japanese engineering profile.</p>
-      </div>
-      <div style="padding: 16px; border: 1px solid var(--border); border-radius: 4px;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">2. Complete Silence on Safety</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">Despite winning more global safety honors than any competitor, safety is never mentioned on local Cambodian customer channels.</p>
-      </div>
-      <div style="padding: 16px; border: 1px solid var(--border); border-radius: 4px;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">3. Low-Budget, Low-Engagement Posts</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">1,672 posts across 4 years produced an average of 0.29 reactions per post. 46% of posts lacked captions or concrete monthly pricing figures.</p>
-      </div>
-    </div>
-
-    <button class="expand-button" onclick="toggleDetails('audit-expand', this)">
-      <span>View Detailed Channel Diagnostics</span>
-      <span class="indicator">+</span>
-    </button>
-    <div id="audit-expand" class="expand-content">
-      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-        The channel went dark for 94 continuous days in 2025 and published only 11 times in 2026. Price communication relied on raw list prices rather than the standard monthly terms Cambodian car buyers evaluate. Remedying this requires an active floor cadence of three posts per week, clear Khmer-first captions, and integrated bank rate structures ($492/month for CX-30 entry trim).
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 2: OWN SAFETY -->
-  <section id="safety" class="block">
-    <div class="block-header">
-      <span class="eyebrow" style="color: var(--safety-blue);">Section 2.0</span>
-      <h2 style="color: var(--safety-blue);">Own Safety: The Unclaimed Pillar</h2>
-      <p style="color: var(--text-muted);">Cambodia recorded 1,467 road fatalities last year. Mazda sells the safest production vehicles in the market, yet this has never been positioned as a commercial advantage.</p>
-    </div>
-
-    <div class="safety-feature-box">
-      <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--safety-blue);">Safety Authority &amp; Structural Engineering</h3>
-      <p style="font-size: 14.5px; color: #2C3E50;">
-        Mazda holds 8 IIHS Top Safety Pick+ awards in 2026, leading the global automotive industry. In Euro NCAP evaluations, the Mazda CX-30 scored an unprecedented 99% for Adult Occupant Protection. The vehicle structure uses patented 1,800 MPa ultra-high tensile steel developed with Sumitomo Metal Industries.
-      </p>
-
-      <div class="safety-stats-row">
-        <div class="safety-stat-card">
-          <div class="num">8</div>
-          <div class="label">2026 IIHS Top Safety Pick+ Awards</div>
-        </div>
-        <div class="safety-stat-card">
-          <div class="num">99%</div>
-          <div class="label">Euro NCAP Adult Occupancy Score</div>
-        </div>
-        <div class="safety-stat-card">
-          <div class="num">1,800</div>
-          <div class="label">MPa Ultra-High Tensile Steel</div>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="font-size: 16px; text-transform: uppercase; margin: 24px 0 14px; letter-spacing: 0.04em;">Customer Testimonials &amp; Crash Survival Voices</h3>
-    
-    <div class="quote-card">
-      <div class="quote-text">"This car saved my life in highway at 105km wow i love mazda"</div>
-      <div class="quote-author">@simonegalvani1602 · Highway Incident Survivor</div>
-    </div>
-
-    <div class="quote-card">
-      <div class="quote-text">"Safety is that hidden feature that most people do not care about when buying a new car. I own a Mazda CX-30."</div>
-      <div class="quote-author">@CaravaggioRoma · Verified CX-30 Owner</div>
-    </div>
-
-    <div class="quote-card">
-      <div class="quote-text">"1. Military Tank, 2. CX-30. Its build qualities justify the price tag. Good work Mazda."</div>
-      <div class="quote-author">@KallandraYT &amp; @vivaselementum · Safety Crash Analysis</div>
-    </div>
-
-    <button class="expand-button" onclick="toggleDetails('safety-expand', this)">
-      <span>View Safety Platform Action Plan</span>
-      <span class="indicator">+</span>
-    </button>
-    <div id="safety-expand" class="expand-content">
-      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-        The commercial rollout anchors on Khmer New Year road travel. We will offer free 20-point safety checks for all makes at provincial caravan stops, publish crash test telemetry in Khmer, and coordinate official driver safety workshops with the Ministry of Public Works and Transport.
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 3: THE PIPELINE -->
-  <section id="pipeline" class="block">
-    <div class="block-header">
-      <span class="eyebrow">Section 3.0</span>
-      <h2>The Used Import Pipeline: How Toyota &amp; Ford Dominate</h2>
-      <p style="color: var(--text-muted);">Understanding the thirty-year pipeline that established competitor dominance and how Mazda dismantles it.</p>
-    </div>
-
-    <div style="border-left: 2px solid var(--border); padding-left: 20px; margin-left: 8px;">
-      <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 15px;">Stage 1: The Thirty-Year Used Fleet Pipeline</h4>
-        <p style="font-size: 14px; color: var(--text-muted);">From 1993 to 2018, over 80% of vehicle imports were used US auction models, predominantly Camrys, Corollas, and Priuses. This created a massive national fleet where every provincial mechanic learned to service Toyota systems using widely available scrap parts.</p>
-      </div>
-      <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 15px;">Stage 2: The Self-Sustaining Resale Belief</h4>
-        <p style="font-size: 14px; color: var(--text-muted);">Because mechanics were universal, buyers treated used Toyotas as liquid financial reserves that could be resold within 48 hours. Toyota's modern market share was built by used fleet familiarity rather than product superiority.</p>
-      </div>
-      <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 15px;">Stage 3: The Mazda Solution</h4>
-        <p style="font-size: 14px; color: var(--text-muted);">We cannot quickly replicate thirty years of grey imports. Instead, we remove customer hesitation with written Buy-Back Certificates at 36 months, certified independent workshops via the Automotive Centre of Excellence Cambodia (ACE-C), and an active trade-in program for aging Toyotas.</p>
-      </div>
-    </div>
-
-    <button class="expand-button" onclick="toggleDetails('pipeline-expand', this)">
-      <span>View Certified Workshop Network Plan</span>
-      <span class="indicator">+</span>
-    </button>
-    <div id="pipeline-expand" class="expand-content">
-      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-        Partnering with ACE-C enables Mazda to certify 25 independent provincial workshops in year one. We supply diagnostic scanners, genuine parts lines, and official branding. This replicates provincial service coverage at a fraction of the cost of building full franchised dealerships.
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 4: THE ASK -->
-  <section id="ask" class="block">
-    <div class="block-header">
-      <span class="eyebrow" style="color: var(--crimson);">Section 4.0</span>
-      <h2>The Investment Ask: Three Execution Tiers</h2>
-      <p style="color: var(--text-muted);">Choose the execution level to achieve target volume and market share goals.</p>
-    </div>
-
-    <div class="tiers-grid">
-      <!-- Lean -->
-      <div class="tier-card">
-        <div class="tier-name">Lean Tier</div>
-        <div class="tier-budget">$405,000</div>
-        <ul class="tier-deliverables">
-          <li><strong>780 Units (+20% volume)</strong></li>
-          <li>Operational social media fixes</li>
-          <li>CX-30 entry trim at $29,999</li>
-          <li>Active Siem Reap showroom launch</li>
-          <li>5 ACE-C certified workshops</li>
-          <li>Organic safety promotion only</li>
-        </ul>
-        <a href="#ask" class="tier-button">Select Lean</a>
-      </div>
-
-      <!-- Medium -->
-      <div class="tier-card">
-        <div class="tier-name">Medium Tier</div>
-        <div class="tier-budget">$750,000</div>
-        <ul class="tier-deliverables">
-          <li><strong>850 Units (+30.7% volume)</strong></li>
-          <li>Siem Reap + Battambang expansion</li>
-          <li>1 mobile provincial service van</li>
-          <li>15 ACE-C certified workshops</li>
-          <li>150-unit Buy-Back Certificate pilot</li>
-          <li>Regional paid safety campaign</li>
-        </ul>
-        <a href="#ask" class="tier-button">Select Medium</a>
-      </div>
-
-      <!-- High (Featured) -->
-      <div class="tier-card featured">
-        <div class="tier-name">High Tier (Recommended)</div>
-        <div class="tier-budget">$1,060,000</div>
-        <ul class="tier-deliverables">
-          <li><strong>908 Units (+39.7% volume)</strong></li>
-          <li>3 provincial points + mobile service van</li>
-          <li>Full 25-workshop ACE-C certification</li>
-          <li>250-unit Buy-Back guarantee program</li>
-          <li>National safety and crash test campaign</li>
-          <li>Poipet assembly brand activation</li>
-        </ul>
-        <a href="#ask" class="tier-button">Approve High Tier</a>
-      </div>
-    </div>
-  </section>
-
 </div>
 
 <script>
-function toggleDetails(id, btn) {
-  var content = document.getElementById(id);
-  var indicator = btn.querySelector('.indicator');
-  if (content.classList.contains('active')) {
-    content.classList.remove('active');
-    indicator.textContent = '+';
-  } else {
-    content.classList.add('active');
-    indicator.textContent = '–';
+  // Reading progress tracker
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = totalHeight > 0 ? (window.scrollY / totalHeight) : 0;
+    const bar = document.getElementById('scroll-progress');
+    if (bar) bar.style.transform = `scaleX(${progress})`;
+  });
+
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const barsIcon = document.getElementById('menu-icon-bars');
+    const closeIcon = document.getElementById('menu-icon-close');
+    if (menu) {
+      const isHidden = menu.classList.toggle('hidden');
+      if (barsIcon && closeIcon) {
+        barsIcon.classList.toggle('hidden', !isHidden);
+        closeIcon.classList.toggle('hidden', isHidden);
+      }
+    }
   }
-}
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+
+  // Light / Dark mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
+  
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('dark');
+    sunIcon?.classList.remove('hidden');
+    moonIcon?.classList.add('hidden');
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    sunIcon?.classList.toggle('hidden', !isDark);
+    moonIcon?.classList.toggle('hidden', isDark);
+  });
+
+  // Expand / collapse details
+  function toggleSection(panelId, btn) {
+    const panel = document.getElementById(panelId);
+    const chevron = btn.querySelector('.chevron');
+    if (!panel) return;
+    const isHidden = panel.classList.toggle('hidden');
+    if (chevron) {
+      chevron.innerHTML = isHidden ? '&darr;' : '&uarr;';
+    }
+  }
+
+  // Simulator State & Logic
+  let activeTier = 'high';
+  const tierConfig = {
+    lean: { budget: 405000, fullInc: 130, name: 'Lean' },
+    medium: { budget: 750000, fullInc: 195, name: 'Medium' },
+    high: { budget: 1060000, fullInc: 258, name: 'High' }
+  };
+
+  function setSimTier(tier) {
+    activeTier = tier;
+    ['lean', 'medium', 'high'].forEach(t => {
+      const btn = document.getElementById('sim-btn-' + t);
+      if (btn) {
+        if (t === tier) {
+          btn.className = 'py-2.5 px-2 rounded-lg border-2 border-mazda-red bg-mazda-red/10 text-xs font-mono text-center text-mazda-red font-bold transition min-h-[44px]';
+        } else {
+          btn.className = 'py-2.5 px-2 rounded-lg border border-gray-300 dark:border-gray-700 text-xs font-mono text-center transition min-h-[44px]';
+        }
+      }
+    });
+    updateSimulation();
+  }
+
+  function updateSimulation() {
+    const slider = document.getElementById('exec-slider');
+    const baseSelect = document.getElementById('base-volume');
+    if (!slider || !baseSelect) return;
+
+    const rate = parseInt(slider.value) / 100;
+    const baseUnits = parseInt(baseSelect.value);
+
+    document.getElementById('slider-val').textContent = `${slider.value}% Realistic`;
+
+    const data = tierConfig[activeTier];
+    const actualInc = Math.round(data.fullInc * rate);
+    const totalUnits = baseUnits + actualInc;
+    const growth = (((totalUnits - baseUnits) / baseUnits) * 100).toFixed(1);
+    const marketShare = ((totalUnits / 70000) * 100).toFixed(2);
+    const costPerCar = Math.round(data.budget / actualInc);
+
+    document.getElementById('out-units').textContent = totalUnits;
+    document.getElementById('out-growth').textContent = `+${growth}% YoY`;
+    document.getElementById('out-incremental').textContent = `+${actualInc}`;
+    document.getElementById('out-share').textContent = `${marketShare}%`;
+    document.getElementById('out-cost-unit').textContent = `$${costPerCar.toLocaleString()}`;
+
+    // SVG Bar Heights
+    const leanH = Math.round(130 * rate) * 0.4;
+    const medH = Math.round(195 * rate) * 0.4;
+    const highH = Math.round(258 * rate) * 0.4;
+
+    const barLean = document.getElementById('svg-bar-lean');
+    const barMed = document.getElementById('svg-bar-med');
+    const barHigh = document.getElementById('svg-bar-high');
+
+    if (barLean) { barLean.setAttribute('y', 140 - leanH); barLean.setAttribute('height', leanH); }
+    if (barMed) { barMed.setAttribute('y', 140 - medH); barMed.setAttribute('height', medH); }
+    if (barHigh) { barHigh.setAttribute('y', 140 - highH); barHigh.setAttribute('height', highH); }
+
+    const verdictTitle = document.getElementById('sim-verdict-title');
+    const verdictDesc = document.getElementById('sim-verdict-desc');
+    const verdictBox = document.getElementById('sim-verdict-box');
+
+    if (actualInc >= 130) {
+      verdictTitle.textContent = "Commitment Cleared Safely";
+      verdictTitle.className = "text-emerald-600 dark:text-emerald-400 font-bold";
+      verdictBox.className = "p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-xs leading-relaxed";
+      verdictDesc.textContent = `At ${slider.value}% execution in the ${data.name.toUpperCase()} tier, volume reaches ${totalUnits} units (+${growth}%), successfully clearing the +20% hurdle with a buffer of ${actualInc - 130} units.`;
+    } else {
+      verdictTitle.textContent = "Shortfall: Below Mandatory Floor";
+      verdictTitle.className = "text-red-500 font-bold";
+      verdictBox.className = "p-4 rounded-xl border border-red-500/40 bg-red-500/10 text-xs leading-relaxed";
+      verdictDesc.textContent = `At ${slider.value}% execution in the ${data.name.toUpperCase()} tier, volume falls ${130 - actualInc} units short of the +20% hurdle (+130 units). The High plan provides the necessary operational cushion.`;
+    }
+  }
+
+  // Toast feedback
+  function recordSelection(planName) {
+    const toast = document.getElementById('toast-notify');
+    const title = document.getElementById('toast-plan-name');
+    const sub = document.getElementById('toast-plan-sub');
+    if (!toast || !title || !sub) return;
+
+    title.textContent = planName + ' Selected';
+    sub.textContent = 'Strategic allocation logged for executive authorization.';
+    toast.classList.remove('translate-y-28', 'opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+    }, 4000);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateSimulation();
+  });
 </script>
 
 </body>
