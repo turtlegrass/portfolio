@@ -289,14 +289,14 @@
 
       <!-- Modal Footer -->
       <div class="p-4 border-t border-brand-border bg-[#100f13] flex items-center justify-between gap-3 font-sans">
-        <button type="button" id="modal-ics-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded bg-brand-surface hover:bg-brand-surfaceHover text-stone-300 border border-brand-border transition-colors uppercase tracking-wider text-[11px]">
+        <button id="modal-ics-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded bg-brand-surface hover:bg-brand-surfaceHover text-stone-300 border border-brand-border transition-colors uppercase tracking-wider text-[11px]">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
           Export .ICS
         </button>
 
-        <button type="button" onclick="copyShareText()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs rounded bg-stone-100 hover:bg-white text-stone-900 transition-colors font-medium uppercase tracking-wider text-[11px]">
+        <button onclick="copyShareText()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs rounded bg-stone-100 hover:bg-white text-stone-900 transition-colors font-medium uppercase tracking-wider text-[11px]">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
           </svg>
@@ -745,7 +745,7 @@
         scopeList.appendChild(li);
       });
 
-      document.getElementById('modal-ics-btn').onclick = (e) => downloadIcs(e, ev);
+      document.getElementById('modal-ics-btn').onclick = () => downloadIcs(ev);
 
       const modal = document.getElementById('event-modal');
       modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -780,10 +780,7 @@
       document.body.removeChild(el);
     }
 
-    function downloadIcs(e, ev) {
-      if (e && e.preventDefault) e.preventDefault();
-      if (!ev) return;
-      
+    function downloadIcs(ev) {
       let monthNum = '09';
       if (ev.month === 'October') monthNum = '10';
       if (ev.month === 'November') monthNum = '11';
@@ -808,13 +805,11 @@
 
       const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
       const a = document.createElement('a');
-      const objectUrl = URL.createObjectURL(blob);
-      a.href = objectUrl;
+      a.href = URL.createObjectURL(blob);
       a.download = `Mazda_${ev.title.replace(/[^a-zA-Z0-9]/g, '_')}.ics`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(objectUrl), 1500);
       showToast('Downloaded .ICS calendar file');
     }
 
