@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0c0b0e] text-stone-200">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="We Build Mazda. A fifteen-episode live engineering masterclass series, concluding on the assembly line.">
+  <title>WE BUILD MAZDA · ENGINEERING LIVE SERIES</title>
+
+  <!-- Typography: Segoe UI (official guideline fallback) + Jost for geometric elegance, Source Serif 4 for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              // Mazda Brand Guidelines: Red is reserved for vehicles/live indicators. Graphic design prioritizes monochrome.
+              soul: '#A6192E',
+              soulHover: '#871122',
+              ink: '#0b0b0e',
+              surface: '#131217',
+              surfaceHover: '#1a1920',
+              surfaceMuted: '#201f27',
+              border: '#272530',
+              borderLight: '#383543',
+              muted: '#8e8997',
+              pewter: '#b0abb9',
+              text: '#f2eff5'
+            }
+          },
+          fontFamily: {
+            sans: ['"Segoe UI"', 'Jost', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['Jost', '"Segoe UI"', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'Georgia', 'serif']
+          },
+          letterSpacing: {
+            brand: '0.28em',
+            headline: '0.14em',
+            tag: '0.18em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #0b0b0e; }
+    ::-webkit-scrollbar-thumb { background: #272530; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #383543; }
+
+    .glass-nav {
+      background: rgba(11, 11, 14, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .tabular-numbers {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-sans bg-brand-ink text-brand-text antialiased selection:bg-stone-700 selection:text-white">
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-brand-surface border border-brand-borderLight text-stone-100 px-4 py-3 rounded shadow-2xl text-xs font-sans">
+    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+    <span id="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <!-- Header: Monochromatic typographic lockup per Brand Guidelines D.1.6 & D.2.5 -->
+  <header class="glass-nav sticky top-0 z-40 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <!-- Mazda Typographic Brand Mark (Uppercase, Medium weight, tracked) -->
+        <span class="text-sm tracking-[0.32em] font-medium text-white uppercase select-none">MAZDA</span>
+        <span class="h-4 w-px bg-brand-border hidden sm:inline-block"></span>
+        <div class="text-[10px] tracking-brand uppercase text-brand-muted hidden sm:block">
+          ENGINEERING MASTERCLASS · 15 EPISODES
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#curriculum" class="text-[10px] tracking-brand uppercase text-brand-muted hover:text-white transition-colors hidden md:inline-block">
+          THE INDEX
+        </a>
+        <a href="#ladder" class="text-[10px] tracking-brand uppercase text-brand-muted hover:text-white transition-colors hidden md:inline-block">
+          THE LADDER
+        </a>
+        <span class="inline-flex items-center gap-2 text-[10px] tracking-brand uppercase text-stone-300 bg-brand-surface border border-brand-border px-3 py-1 rounded">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-soul animate-pulse"></span>
+          LIVE SERIES
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1 · COVER: Spacious, dignified typography based on Mazda Golden Ratio Layout (C.2.1.4) -->
+  <section class="border-b border-brand-border bg-gradient-to-b from-[#15131a] via-[#100f14] to-brand-ink pt-16 sm:pt-24 pb-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-baseline gap-4 mb-8">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-brand-muted font-medium">
+          ORIGINAL BROADCAST SERIES
+        </p>
+        <span class="text-[10px] uppercase tracking-brand text-brand-pewter border border-brand-border px-2.5 py-0.5 rounded bg-brand-surface">
+          AUTUMN 2026
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-8xl font-light tracking-tight text-white uppercase leading-[0.95] max-w-4xl">
+        WE BUILD<br><span class="font-normal text-stone-100">MAZDA</span>
+      </h1>
+
+      <p class="mt-6 sm:mt-8 text-sm sm:text-base text-brand-muted font-serif font-light leading-relaxed max-w-2xl">
+        A fifteen-episode live broadcast curriculum breaking down the automotive craft—system by system, part by part, ending directly on the factory assembly line.
+      </p>
+
+      <div class="mt-10 pt-6 border-t border-brand-border/70 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-brand text-brand-muted">
+        <div class="flex items-center gap-4">
+          <span class="text-white font-medium">15 EPISODES</span>
+          <span>·</span>
+          <span>5 CURRICULUM MODULES</span>
+          <span>·</span>
+          <span>HOSTED BY SERVICE MASTER TECHNICIANS</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="#curriculum" class="inline-flex items-center gap-1 text-white hover:text-stone-300 transition-colors">
+            EXPLORE MODULES &darr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · INVITATION & THE PEOPLE: Precision and Warmth Created by Human Hands (A.3.1) -->
+  <section class="border-b border-brand-border py-14 sm:py-20 bg-brand-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-[10px] uppercase tracking-brand font-medium text-brand-muted block">PHILOSOPHY</span>
+          <h2 class="text-2xl sm:text-3xl font-light text-white uppercase tracking-headline leading-snug">
+            LET’S LOOK INSIDE
+          </h2>
+          <p class="text-sm text-brand-muted font-serif font-light leading-relaxed">
+            A Mazda is engineered to be kept. We open the vehicle down to its structural metallurgy, algorithmic balance, and thermal engineering so you understand the tactile physics you feel on the road.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 sm:pt-0">
+          <div class="p-5 rounded border border-brand-border bg-brand-ink/60">
+            <span class="text-[9px] uppercase tracking-wider text-brand-muted block mb-2">THE INTERLOCUTOR</span>
+            <h3 class="text-xs uppercase tracking-wider text-white font-medium mb-1.5">THE PRESENTER</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              Asks the direct, unfiltered questions you would ask on the showroom floor.
+            </p>
+          </div>
+
+          <div class="p-5 rounded border border-brand-border bg-brand-ink/60">
+            <span class="text-[9px] uppercase tracking-wider text-brand-muted block mb-2">THE CRAFTSMAN</span>
+            <h3 class="text-xs uppercase tracking-wider text-white font-medium mb-1.5">THE TECHNICIAN</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              Disassembles real assemblies with the unvarnished mechanical part in hand.
+            </p>
+          </div>
+
+          <div class="p-5 rounded border border-brand-border bg-brand-ink/60">
+            <span class="text-[9px] uppercase tracking-wider text-brand-muted block mb-2">THE PARTNERSHIP</span>
+            <h3 class="text-xs uppercase tracking-wider text-white font-medium mb-1.5">THE SERVICE BAY</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              The person explaining your engine is the certified master technician who services it.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · THE INDEX: The Full 15-Episode Curriculum -->
+  <section id="curriculum" class="py-14 sm:py-20 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header with Category Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-brand-border pb-6 mb-8">
+        <div>
+          <span class="text-[10px] uppercase tracking-brand font-medium text-brand-muted block mb-1">CURRICULUM</span>
+          <h2 class="text-2xl sm:text-3xl font-light text-white uppercase tracking-headline">
+            THE INDEX
+          </h2>
+          <p class="text-xs text-brand-muted font-serif font-light mt-1">
+            Select any episode to inspect the engineering syllabus, demonstration part, and audience Q&amp;A scope.
+          </p>
+        </div>
+
+        <!-- Filter Pill Navigation -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none" id="module-filters">
+          <button type="button" onclick="filterEpisodes('all')" class="mod-btn active px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-stone-100 text-stone-950 font-medium" data-part="all">
+            ALL (15)
+          </button>
+          <button type="button" onclick="filterEpisodes('feel')" class="mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border" data-part="feel">
+            WHAT YOU FEEL
+          </button>
+          <button type="button" onclick="filterEpisodes('stops')" class="mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border" data-part="stops">
+            WHAT STOPS YOU
+          </button>
+          <button type="button" onclick="filterEpisodes('protects')" class="mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border" data-part="protects">
+            WHAT PROTECTS YOU
+          </button>
+          <button type="button" onclick="filterEpisodes('lasts')" class="mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border" data-part="lasts">
+            WHAT LASTS
+          </button>
+          <button type="button" onclick="filterEpisodes('builds')" class="mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border" data-part="builds">
+            WHO BUILDS IT
+          </button>
+        </div>
+      </div>
+
+      <!-- Episodes List -->
+      <div id="episodes-container" class="space-y-10">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5 · IIHS SAFETY MILESTONES: Monochromatic data representation conforming to D.4.1/D.4.2 -->
+  <section class="py-14 sm:py-20 border-b border-brand-border bg-gradient-to-b from-brand-ink via-brand-surface to-brand-ink">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border border-brand-borderLight rounded p-6 sm:p-10 bg-brand-surface/70">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-brand-border pb-4 mb-8">
+          <div>
+            <span class="text-[10px] uppercase tracking-brand text-brand-muted block mb-1">SAFETY RECOGNITION</span>
+            <h2 class="text-xl sm:text-2xl font-light text-white uppercase tracking-headline">
+              INSURANCE INSTITUTE FOR HIGHWAY SAFETY
+            </h2>
+          </div>
+          <span class="text-xs font-serif italic text-brand-muted font-light">Independent crashworthiness benchmark</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          
+          <div class="flex items-start gap-6">
+            <span class="text-5xl sm:text-7xl font-light text-white tabular-numbers leading-none shrink-0 font-display">
+              3
+            </span>
+            <div class="space-y-1.5 pt-1">
+              <h3 class="text-xs uppercase tracking-wider text-stone-200 font-medium">CONSECUTIVE YEARS OF LEADERSHIP</h3>
+              <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+                Consecutive years earning more IIHS <em>Top Safety Pick+</em> designations across our passenger model line than any other automotive manufacturer in the world.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 border-t md:border-t-0 md:border-l border-brand-border pt-6 md:pt-0 md:pl-8 lg:pl-12">
+            <span class="text-5xl sm:text-7xl font-light text-white tabular-numbers leading-none shrink-0 font-display">
+              100
+            </span>
+            <div class="space-y-1.5 pt-1">
+              <h3 class="text-xs uppercase tracking-wider text-stone-200 font-medium">CUMULATIVE IIHS ACCOLADES</h3>
+              <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+                Total cumulative safety accolades awarded since 2008. The Mazda CX-5 marked the historic hundredth accolade for our high-tensile passenger cell architecture.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · THE LADDER: 5-Step Progressive Engagement Journey -->
+  <section id="ladder" class="py-14 sm:py-20 border-b border-brand-border bg-brand-ink">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl mb-8">
+        <span class="text-[10px] uppercase tracking-brand font-medium text-brand-muted block mb-1">PARTNERSHIP JOURNEY</span>
+        <h2 class="text-2xl sm:text-3xl font-light text-white uppercase tracking-headline">
+          THE LADDER
+        </h2>
+        <p class="text-xs text-brand-muted font-serif font-light mt-1.5 leading-relaxed">
+          Five structured steps from casual curiosity to vehicle handover. The commercial conversation happens only after engineering trust has been established.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 pt-2">
+        
+        <div class="p-5 rounded border border-brand-border bg-brand-surface flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-medium text-brand-muted block mb-3">01</span>
+            <h3 class="text-sm uppercase tracking-wider text-white font-medium mb-1.5">WATCH</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              A fixed weekly live broadcast appointment, never a superficial one-off social post.
+            </p>
+          </div>
+          <span class="text-[9px] uppercase tracking-brand text-brand-muted mt-6 pt-3 border-t border-brand-border/60">Stage One</span>
+        </div>
+
+        <div class="p-5 rounded border border-brand-border bg-brand-surface flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-medium text-brand-muted block mb-3">02</span>
+            <h3 class="text-sm uppercase tracking-wider text-white font-medium mb-1.5">ASK</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              Viewer inquiries addressed on-air by name, dissected directly by technicians.
+            </p>
+          </div>
+          <span class="text-[9px] uppercase tracking-brand text-brand-muted mt-6 pt-3 border-t border-brand-border/60">Stage Two</span>
+        </div>
+
+        <div class="p-5 rounded border border-brand-border bg-brand-surface flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-medium text-brand-muted block mb-3">03</span>
+            <h3 class="text-sm uppercase tracking-wider text-white font-medium mb-1.5">WALK IN</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              A no-obligation showroom &amp; bay inspection. Zero sales pitches attached.
+            </p>
+          </div>
+          <span class="text-[9px] uppercase tracking-brand text-brand-muted mt-6 pt-3 border-t border-brand-border/60">Stage Three</span>
+        </div>
+
+        <div class="p-5 rounded border border-brand-border bg-brand-surface flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-medium text-brand-muted block mb-3">04</span>
+            <h3 class="text-sm uppercase tracking-wider text-white font-medium mb-1.5">DRIVE</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              A private test drive, conducted once the viewer understands the vehicle kinematics.
+            </p>
+          </div>
+          <span class="text-[9px] uppercase tracking-brand text-brand-muted mt-6 pt-3 border-t border-brand-border/60">Stage Four</span>
+        </div>
+
+        <div class="p-5 rounded border border-brand-border bg-brand-surfaceMuted flex flex-col justify-between border-brand-borderLight">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-medium text-stone-200">05</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-soul"></span>
+            </div>
+            <h3 class="text-sm uppercase tracking-wider text-white font-medium mb-1.5">BUY</h3>
+            <p class="text-xs text-brand-muted font-serif font-light leading-relaxed">
+              The final transition, and the single step that involves a financial transaction.
+            </p>
+          </div>
+          <span class="text-[9px] uppercase tracking-brand text-stone-300 mt-6 pt-3 border-t border-brand-border/60">Ownership</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · CLOSE: Dignified brand coda conforming to B.2.1 & D.2.5 -->
+  <section class="py-16 sm:py-24 border-b border-brand-border bg-gradient-to-b from-[#141319] to-[#0d0c10]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8">
+      <div>
+        <div class="flex items-center justify-center sm:justify-start gap-3 mb-2">
+          <span class="text-xs tracking-[0.34em] font-medium text-white uppercase">MAZDA</span>
+          <span class="h-3 w-px bg-brand-border"></span>
+          <span class="text-[10px] tracking-brand uppercase text-brand-muted">HGB AUTO GROUP</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-light text-white uppercase tracking-headline">
+          MOVE AND BE MOVED.
+        </h2>
+        <p class="mt-2 text-xs text-brand-muted font-serif font-light max-w-lg">
+          Live broadcasts stream weekly from Pochentong and Mean Chey workshop bays. Available to club members and the driving public.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <button type="button" onclick="copySeriesShare()" class="px-4 py-2 text-xs uppercase tracking-wider rounded bg-brand-surface hover:bg-brand-surfaceHover text-stone-200 border border-brand-border transition-colors font-medium">
+          Copy Series Link
+        </button>
+        <a href="#curriculum" class="px-4 py-2 text-xs uppercase tracking-wider rounded bg-stone-100 hover:bg-white text-stone-950 transition-colors font-medium">
+          Inspect Episodes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-brand-ink py-8 text-xs text-brand-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="tracking-wide uppercase text-[10px]">&copy; 2026 MAZDA CAMBODIA · HGB AUTO · WE BUILD MAZDA LIVE SERIES</div>
+      <div class="flex items-center gap-3 text-[10px] tracking-widest uppercase">
+        <span>POCHENTONG WORKSHOP</span>
+        <span>·</span>
+        <span>MEAN CHEY SERVICE CENTER</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Episode Detail Modal -->
+  <div id="episode-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 opacity-0 pointer-events-none transition-opacity duration-200" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeEpisodeModal()"></div>
+
+    <div class="relative w-full max-w-lg bg-[#141318] border border-brand-borderLight rounded shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col font-sans">
+      <div class="h-0.5 w-full bg-brand-borderLight"></div>
+
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-brand-border flex items-start justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+            <span id="modal-ep-number" class="text-[9px] font-medium uppercase tracking-[0.16em] px-2 py-0.5 rounded bg-brand-surfaceMuted text-stone-200 border border-brand-border">
+              EPISODE 01
+            </span>
+            <span id="modal-ep-module" class="text-xs text-brand-muted tracking-wide uppercase">
+              MODULE NAME
+            </span>
+          </div>
+          <h3 id="modal-ep-title" class="text-base sm:text-lg font-normal text-white uppercase tracking-headline leading-snug">
+            Title
+          </h3>
+          <p id="modal-ep-subtitle" class="text-xs text-brand-muted font-serif italic mt-1 font-light">
+            Subtitle
+          </p>
+        </div>
+
+        <button type="button" onclick="closeEpisodeModal()" aria-label="Close dialog" class="text-stone-400 hover:text-white p-1.5 rounded hover:bg-stone-800 transition-colors shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 overflow-y-auto space-y-4 text-xs text-stone-300">
+        <div>
+          <h4 class="font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-brand-muted mb-2">TECHNICAL SYLLABUS</h4>
+          <ul id="modal-ep-bullets" class="space-y-1.5 list-disc list-inside text-stone-300 font-serif font-light leading-relaxed"></ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded bg-brand-surface border border-brand-border font-sans">
+          <div>
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">BENCH DEMONSTRATION PART</span>
+            <span id="modal-ep-part" class="text-white font-normal mt-0.5 block text-xs">Part in hand</span>
+          </div>
+          <div>
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">LIVE Q&amp;A THEME</span>
+            <span id="modal-ep-qa" class="text-white font-normal mt-0.5 block text-xs">Viewer focus</span>
+          </div>
+          <div class="sm:col-span-2 pt-2 border-t border-brand-border">
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">BROADCAST LOCATION</span>
+            <span id="modal-ep-location" class="text-stone-300 mt-0.5 block text-xs">Pochentong / Mean Chey Bay</span>
+          </div>
+        </div>
+
+        <div class="p-3 rounded bg-brand-surfaceMuted border border-brand-border">
+          <div class="flex items-center gap-1.5 text-stone-200 font-sans font-medium text-[10px] uppercase tracking-wider mb-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-soul"></span>
+            <span>PRESENTER’S DIRECT QUESTION</span>
+          </div>
+          <p id="modal-ep-question" class="text-brand-muted text-xs font-serif font-light leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-brand-border bg-[#100f13] flex items-center justify-between gap-3 font-sans">
+        <button type="button" onclick="copyEpisodeDetails()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded bg-brand-surface hover:bg-brand-surfaceHover text-stone-300 border border-brand-border transition-colors uppercase tracking-wider text-[11px]">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          Copy Outline
+        </button>
+
+        <button type="button" onclick="closeEpisodeModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs rounded bg-stone-100 hover:bg-white text-stone-900 transition-colors font-medium uppercase tracking-wider text-[11px]">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 15-Episode Master Curriculum Data
+    const episodesData = [
+      // PART 1: WHAT YOU FEEL
+      {
+        id: "ep-01",
+        num: "01",
+        partKey: "feel",
+        partLabel: "WHAT YOU FEEL",
+        title: "The Walkaround",
+        subtitle: "How to read an authentic specification sheet without marketing jargon.",
+        bullets: [
+          "Understanding dimensional architecture: wheelbase vs. track vs. rear overhang balance.",
+          "Curb weight vs. gross vehicle weight: how chassis mass impacts cornering agility.",
+          "Distinguishing manufacturer gross output from real wheel horsepower and torque curves."
+        ],
+        part: "Unmounted bare CX-5 suspension subframe & chassis cross-member",
+        qa: "Decoding dealership brochures: which numbers actually matter on Cambodian roads?",
+        location: "Pochentong Workshop · Bay 1",
+        question: "“Why does one 2.5L car feel sluggish when another with the exact same horsepower feels instant off the line?”"
+      },
+      {
+        id: "ep-02",
+        num: "02",
+        partKey: "feel",
+        partLabel: "WHAT YOU FEEL",
+        title: "Skyactiv",
+        subtitle: "Atmospheric compression, 13:1 ratios, and how Mazda engines differ.",
+        bullets: [
+          "4-2-1 exhaust manifold layout: scavenging exhaust gases to eliminate engine knock.",
+          "Ultra-high compression chamber geometry and multi-hole direct fuel injectors.",
+          "Why linear atmospheric throttle response creates a natural human-machine connection (Jinba Ittai)."
+        ],
+        part: "Cutaway Skyactiv-G cylinder block with forged pistons and hollow camshaft",
+        qa: "High compression and Phnom Penh fuel: octanes, heat cycles, and longevity.",
+        location: "Mean Chey Workshop · Bay 3",
+        question: "“Everyone else added a turbocharger. Why did Mazda spend billions perfecting high-compression natural aspiration?”"
+      },
+      {
+        id: "ep-03",
+        num: "03",
+        partKey: "feel",
+        partLabel: "WHAT YOU FEEL",
+        title: "The Gearbox",
+        subtitle: "Torque converters, CVTs, and dual-clutch comparisons.",
+        bullets: [
+          "The mechanical multi-plate lock-up clutch: engaging at 89% of operating time for direct drive feel.",
+          "Eliminating the rubber-band sensation common in Continuously Variable Transmissions (CVTs).",
+          "Low-speed smoothness vs. dual-clutch transmission shudder in dense urban traffic."
+        ],
+        part: "Disassembled Skyactiv-Drive 6-speed automatic transmission & lock-up assembly",
+        qa: "Transmission fluid temperature management in Southeast Asian stop-and-go conditions.",
+        location: "Pochentong Workshop · Bay 2",
+        question: "“Why does a CVT feel mushy when you step on the gas, and how does Skyactiv-Drive lock up mechanically?”"
+      },
+      {
+        id: "ep-04",
+        num: "04",
+        partKey: "feel",
+        partLabel: "WHAT YOU FEEL",
+        title: "Steering and G-Vectoring",
+        subtitle: "Chassis weight transfer and G-Vectoring Control Plus (GVC Plus).",
+        bullets: [
+          "Micro-torque reduction: trimming engine torque by up to 30Nm on turn-in to load front tires.",
+          "GVC Plus yaw recovery: applying subtle outside wheel braking as steering straightens out.",
+          "Preventing neck strain and head-sway for all cabin passengers over long journeys."
+        ],
+        part: "Electronic steering rack with real-time CAN-bus telemetry data screen",
+        qa: "Experiencing G-Vectoring: subtle physics vs. intrusive electronic stability controls.",
+        location: "Mean Chey Workshop · Bay 1",
+        question: "“Why do passengers get car-sick in some SUVs on winding roads, but stay relaxed in a CX-5?”"
+      },
+      {
+        id: "ep-05",
+        num: "05",
+        partKey: "feel",
+        partLabel: "WHAT YOU FEEL",
+        title: "Air Conditioning",
+        subtitle: "Cabin thermodynamic capacity, humidity management, and why systems fail.",
+        bullets: [
+          "Variable-displacement swash-plate compressor: matching cabin cooling without engine drag.",
+          "Dual-layer micro-filtration: capturing PM2.5 particulate matter in Phnom Penh traffic.",
+          "Condenser fin airflow, moisture evacuation, and preventative mold eradication."
+        ],
+        part: "Cross-section A/C compressor, expansion valve, and clogged vs. clean evaporator cores",
+        qa: "Pre-cooling protocols: maintaining high compressor efficiency in 38°C ambient heat.",
+        location: "Pochentong Workshop · Bay 4",
+        question: "“Why does an air conditioner lose its chill after 3 years, and what maintenance prevents a $600 compressor seizure?”"
+      },
+
+      // PART 2: WHAT STOPS YOU
+      {
+        id: "ep-06",
+        num: "06",
+        partKey: "feel",
+        partLabel: "WHAT STOPS YOU",
+        title: "Brakes",
+        subtitle: "Friction coefficients, thermal heat dissipation, ABS, and EBD.",
+        bullets: [
+          "Ventilated front rotor thermodynamics: why braking creates over 500°C of friction heat.",
+          "Electronic Brakeforce Distribution (EBD): adjusting rear brake bias depending on passenger luggage load.",
+          "Brake fluid hygroscopic absorption: why 2-year fluid flushes prevent pedal fade and line vapor lock."
+        ],
+        part: "Worn glazed rotor vs. brand-new rotor and dual-piston floating caliper set",
+        qa: "Brake pad compounds: semi-metallic vs. ceramic for monsoon downpours.",
+        location: "Mean Chey Workshop · Bay 2",
+        question: "“What causes brake shudder on the highway, and why does cheap brake fluid boil when you need it most?”"
+      },
+      {
+        id: "ep-07",
+        num: "07",
+        partKey: "stops",
+        partLabel: "WHAT STOPS YOU",
+        title: "Tyres",
+        subtitle: "Sidewall marking codes, load indices, cold pressure, and tread depth.",
+        bullets: [
+          "Deciphering tyre markings: speed ratings, load capacities, and UTQG traction ratings.",
+          "Hydroplaning dynamics: how water evacuation channels behave when tread drops below 3mm.",
+          "The friction footprint: why the entire car relies on contact patches the size of a human palm."
+        ],
+        part: "Sectioned tyre slice showing steel belt construction and bead bundle",
+        qa: "Inflation pressure checks: nitrogen vs. ambient air under scorching road heat.",
+        location: "Pochentong Workshop · Bay 3",
+        question: "“How can 2 psi of tyre under-inflation double your wet stopping distance?”"
+      },
+      {
+        id: "ep-08",
+        num: "08",
+        partKey: "stops",
+        partLabel: "WHAT STOPS YOU",
+        title: "Suspension",
+        subtitle: "MacPherson struts, torsion beams vs. multi-link, ground clearance.",
+        bullets: [
+          "Hydraulic twin-tube shock absorbers: oil flow through micro-valves during compression and rebound.",
+          "Bushing deflection kinematics: isolating chassis vibrations without blunting steering accuracy.",
+          "Ground clearance vs. center of gravity: the geometric trade-offs of modern crossover ride heights."
+        ],
+        part: "Cutaway coilover strut and polyurethane suspension arm bushings",
+        qa: "Pothole resistance: why suspension travel matters as much as ride softness.",
+        location: "Mean Chey Workshop · Bay 4",
+        question: "“Why is a soft, floaty suspension actually more dangerous when making an emergency lane change?”"
+      },
+
+      // PART 3: WHAT PROTECTS YOU
+      {
+        id: "ep-09",
+        num: "09",
+        partKey: "protects",
+        partLabel: "WHAT PROTECTS YOU",
+        title: "Airbags",
+        subtitle: "Microsecond sensor detection, pyrotechnic charges, and airbag arrays.",
+        bullets: [
+          "Accelerometer and pressure pulse sensors: differentiating a curb strike from a 50 km/h collision.",
+          "Two-stage dual inflators: tailoring airbag inflation pressure according to passenger seat position.",
+          "Full-length side curtain airbags: rollover duration and side intrusion head cushioning."
+        ],
+        part: "Decommissioned deployed curtain airbag assembly and steering wheel airbag module",
+        qa: "Child seat placement and airbag isolation: non-negotiable family safety rules.",
+        location: "Pochentong Workshop · Bay 1",
+        question: "“How does an airbag system know whether to deploy in less than 30 milliseconds?”"
+      },
+      {
+        id: "ep-10",
+        num: "10",
+        partKey: "protects",
+        partLabel: "WHAT PROTECTS YOU",
+        title: "i-Activsense",
+        subtitle: "Millimeter-wave radar, forward-sensing cameras, and active intervention.",
+        bullets: [
+          "Smart Brake Support (SBS): camera & radar fusion for pedestrian and night-time obstacle detection.",
+          "Blind Spot Monitoring (BSM) & Rear Cross Traffic Alert: wide-angle 24GHz radar sweeps.",
+          "Adaptive LED Headlights (ALH): dynamically shielding blinding glare from oncoming drivers."
+        ],
+        part: "Forward-facing camera bracket, windscreen calibration rig, and front radar emblem unit",
+        qa: "Windscreen replacement and camera recalibration: why optical targeting is mandatory.",
+        location: "Mean Chey Workshop · Bay 1",
+        question: "“Can automatic emergency braking distinguish between a cardboard box and a pedestrian in heavy rain?”"
+      },
+      {
+        id: "ep-11",
+        num: "11",
+        partKey: "protects",
+        partLabel: "WHAT PROTECTS YOU",
+        title: "The Body",
+        subtitle: "Ultra-high-tensile steel, crumple paths, and the rigid passenger cage.",
+        bullets: [
+          "1,800 MPa hot-stamped steel: ultra-strong alloys protecting cabin A-pillars and B-pillars.",
+          "Multi-load path absorption: dispersing frontal impact energy around the cabin floor and side sills.",
+          "Continuous ring structure: bonding roof, sides, and underbody for structural torsional rigidity."
+        ],
+        part: "Color-coded body-in-white alloy sample showing 590, 980, and 1,800 MPa tensile grades",
+        qa: "After-collision chassis straightening: why hot-stamped structural pillars cannot be heated or re-bent.",
+        location: "Pochentong Workshop · Bay 2",
+        question: "“Why does the front of a modern car look completely destroyed in a crash that leaves the passengers unhurt?”"
+      },
+      {
+        id: "ep-12",
+        num: "12",
+        partKey: "protects",
+        partLabel: "WHAT PROTECTS YOU",
+        title: "Lights and Glass",
+        subtitle: "Adaptive LED matrix arrays, acoustic laminated glass, and night-time safety.",
+        bullets: [
+          "12-block independent LED arrays: high-beam visibility without dazzling oncoming drivers.",
+          "Acoustic laminate windscreen interlayer: dampening wind resonance and preventing shatter intrusion.",
+          "Hydrophobic glass coatings and wiper swept-area engineering for monsoon storm downpours."
+        ],
+        part: "Cutaway LED projector headlight cluster with internal heat sink and micro-actuators",
+        qa: "Headlight lens yellowing vs. UV-stabilized polycarbonate lenses: longevity insights.",
+        location: "Mean Chey Workshop · Bay 3",
+        question: "“How do adaptive matrix headlights stay on high-beam without ever blinding the driver ahead?”"
+      },
+
+      // PART 4: WHAT LASTS
+      {
+        id: "ep-13",
+        num: "13",
+        partKey: "lasts",
+        partLabel: "WHAT LASTS",
+        title: "Fluids and Filters",
+        subtitle: "Fully synthetic oils, the five critical fluids, and strict service intervals.",
+        bullets: [
+          "Viscosity grades (0W-20 vs. 5W-30): cold-start flow and high-heat film shear strength.",
+          "The 5 vehicle fluids: Engine oil, transmission fluid, coolant, brake fluid, and differential gear oil.",
+          "Air filter filtration efficiency: preventing micro-silica sand dust from scouring cylinder walls."
+        ],
+        part: "Oil laboratory spectrometer samples: degraded oil vs. fresh synthetic fluid",
+        qa: "Severe service schedule: Phnom Penh short-trip driving and idling wear patterns.",
+        location: "Pochentong Workshop · Bay 4",
+        question: "“Why does changing engine oil at 5,000 km protect the engine better than buying expensive additives?”"
+      },
+      {
+        id: "ep-14",
+        num: "14",
+        partKey: "lasts",
+        partLabel: "WHAT LASTS",
+        title: "Resale Value",
+        subtitle: "Depreciation curves, vehicle maintenance logs, and what holds equity.",
+        bullets: [
+          "Certified service book provenance: why documented authorized service records protect resale equity.",
+          "Paint protection and rust inhibitors: maintaining flawless clear-coat depth against UV sunlight.",
+          "Aftermarket alterations vs. factory integrity: which modifications destroy resale value."
+        ],
+        part: "Genuine service history logbook & electronic diagnostic health check report",
+        qa: "Used car valuations: assessing 5-year total cost of ownership across major segments.",
+        location: "Mean Chey Workshop · Bay 2",
+        question: "“What is the single biggest factor that causes one 5-year-old car to be worth $4,000 more than another identical model?”"
+      },
+
+      // PART 5: WHO BUILDS IT
+      {
+        id: "ep-15",
+        num: "15",
+        partKey: "builds",
+        partLabel: "WHO BUILDS IT",
+        title: "The Factory",
+        subtitle: "Live from the assembly line: body welding, automated paint, and final vehicle inspection.",
+        bullets: [
+          "Robotic spot-welding and structural adhesive application on the primary unibody.",
+          "Takuminuri painting technology: multi-layer robotic spraying mimicking a master artisan’s hand stroke.",
+          "The final inspection line: rolling dyno checks, millimeter panel alignment, and monsoon rain booth tests."
+        ],
+        part: "Live streaming broadcast link directly from the manufacturing assembly line",
+        qa: "The human touch (Monotsukuri): why clay modeling and hand finish remain essential at Mazda.",
+        location: "Global Assembly Line Broadcast (Live Feed)",
+        question: "“How does a car roll off the assembly line every 60 seconds with zero-defect panel gaps and paint perfection?”"
+      }
+    ];
+
+    let currentModuleFilter = 'all';
+    let currentSelectedEpisode = null;
+
+    function renderCurriculum() {
+      const container = document.getElementById('episodes-container');
+      container.innerHTML = '';
+
+      const modules = [
+        { key: 'feel', title: 'PART 1: WHAT YOU FEEL', desc: 'The fundamental sensory mechanics of the drive: engine, throttle, gearbox, and steering.' },
+        { key: 'stops', title: 'PART 2: WHAT STOPS YOU', desc: 'Friction, chassis physics, and tire contact patches controlling kinetic energy.' },
+        { key: 'protects', title: 'PART 3: WHAT PROTECTS YOU', desc: 'Active safety sensors, crumple zones, and ultra-high-tensile structural cell integrity.' },
+        { key: 'lasts', title: 'PART 4: WHAT LASTS', desc: 'Chemical fluids, preventive maintenance regimens, and vehicle equity preservation.' },
+        { key: 'builds', title: 'PART 5: WHO BUILDS IT', desc: 'The finale: live on the assembly line, exploring the master craftsman philosophy (Monotsukuri).' }
+      ];
+
+      modules.forEach(mod => {
+        if (currentModuleFilter !== 'all' && currentModuleFilter !== mod.key) return;
+
+        const epsInMod = episodesData.filter(ep => ep.partKey === mod.key);
+        if (epsInMod.length === 0) return;
+
+        const modBlock = document.createElement('div');
+        modBlock.className = "space-y-3";
+
+        modBlock.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-brand-border pb-2.5 gap-1">
+            <h3 class="text-sm sm:text-base font-normal tracking-headline text-white uppercase font-display">${mod.title}</h3>
+            <span class="text-xs text-brand-muted font-serif italic font-light">${mod.desc}</span>
+          </div>
+        `;
+
+        const list = document.createElement('div');
+        list.className = "divide-y divide-brand-border/60 border border-brand-border rounded overflow-hidden bg-brand-surface";
+
+        epsInMod.forEach(ep => {
+          const row = document.createElement('div');
+          row.className = "p-4 sm:p-5 hover:bg-brand-surfaceHover transition-colors cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-3";
+          row.onclick = () => openEpisodeModal(ep.id);
+
+          const isFinal = ep.num === "15";
+
+          row.innerHTML = `
+            <div class="flex items-start sm:items-center gap-3.5 min-w-0">
+              <span class="w-8 h-8 rounded bg-brand-surfaceMuted border border-brand-border text-xs font-medium ${isFinal ? 'text-brand-soul border-brand-soul/40' : 'text-stone-300'} flex items-center justify-center shrink-0 tabular-numbers">
+                ${ep.num}
+              </span>
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h4 class="text-sm font-medium text-white uppercase tracking-wider ${isFinal ? 'text-stone-100' : ''}">
+                    ${ep.title}
+                  </h4>
+                  ${isFinal ? '<span class="text-[9px] uppercase tracking-brand px-1.5 py-0.5 rounded bg-brand-soul/20 text-brand-soul border border-brand-soul/40 font-medium">GRAND FINALE</span>' : ''}
+                </div>
+                <p class="text-xs text-brand-muted font-serif font-light mt-0.5 line-clamp-1">
+                  ${ep.subtitle}
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-brand-border/40 text-[11px] text-brand-muted">
+              <span class="hidden md:inline-block font-mono text-[10px] text-brand-pewter truncate max-w-[180px]">${ep.location.split('·')[0].trim()}</span>
+              <span class="text-stone-300 font-medium group-hover:translate-x-0.5 transition-transform flex items-center gap-1 uppercase tracking-wider text-[10px]">
+                Inspect &rarr;
+              </span>
+            </div>
+          `;
+
+          list.appendChild(row);
+        });
+
+        modBlock.appendChild(list);
+        container.appendChild(modBlock);
+      });
+    }
+
+    function filterEpisodes(key) {
+      currentModuleFilter = key;
+      document.querySelectorAll('.mod-btn').forEach(btn => {
+        if (btn.dataset.part === key) {
+          btn.className = "mod-btn active px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-stone-100 text-stone-950 font-medium";
+        } else {
+          btn.className = "mod-btn px-3 py-1 text-[10px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border";
+        }
+      });
+      renderCurriculum();
+    }
+
+    function openEpisodeModal(id) {
+      const ep = episodesData.find(e => e.id === id);
+      if (!ep) return;
+      currentSelectedEpisode = ep;
+
+      document.getElementById('modal-ep-number').textContent = `EPISODE ${ep.num}`;
+      document.getElementById('modal-ep-module').textContent = ep.partLabel;
+      document.getElementById('modal-ep-title').textContent = ep.title;
+      document.getElementById('modal-ep-subtitle').textContent = ep.subtitle;
+      document.getElementById('modal-ep-part').textContent = ep.part;
+      document.getElementById('modal-ep-qa').textContent = ep.qa;
+      document.getElementById('modal-ep-location').textContent = ep.location;
+      document.getElementById('modal-ep-question').textContent = ep.question;
+
+      const bulletsContainer = document.getElementById('modal-ep-bullets');
+      bulletsContainer.innerHTML = '';
+      ep.bullets.forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b;
+        bulletsContainer.appendChild(li);
+      });
+
+      const modal = document.getElementById('episode-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeEpisodeModal() {
+      const modal = document.getElementById('episode-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeEpisodeModal();
+    });
+
+    function copyEpisodeDetails() {
+      if (!currentSelectedEpisode) return;
+      const ep = currentSelectedEpisode;
+      const text = `WE BUILD MAZDA · EPISODE ${ep.num}: ${ep.title.toUpperCase()}\nModule: ${ep.partLabel}\nFocus: ${ep.subtitle}\nDemonstration: ${ep.part}\nBroadcast Location: ${ep.location}\nAudience Question: ${ep.question}`;
+      
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast('Episode syllabus copied');
+      } catch (err) {
+        showToast('Could not copy outline');
+      }
+      document.body.removeChild(el);
+    }
+
+    function copySeriesShare() {
+      const text = `WE BUILD MAZDA: A 15-episode live automotive engineering masterclass broadcast, concluding live on the assembly line. Move and be moved.`;
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast('Series link copied');
+      } catch (err) {
+        showToast('Could not copy link');
+      }
+      document.body.removeChild(el);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('translate-y-16', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0');
+      }, 2400);
+    }
+
+    // Initialize display on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCurriculum();
+    });
+  </script>
+</body>
+</html>
