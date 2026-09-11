@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en" class="h-full bg-[#0c0b0e] text-stone-200">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>EVENTS BY MAZDA · DRIVE CLUB CALENDAR</title>
+  <meta name="description" content="Mazda Cambodia Drive Club calendar: drives, screenings, community sports, and member experiences.">
+  
+  <!-- Fonts: Segoe UI (official guideline fallback) + Jost for geometric elegance, Source Serif 4 for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              // Mazda Brand Guidelines: Red is reserved for vehicles. Graphic design prioritizes monochrome.
+              red: '#A6192E',
+              redHover: '#871122',
+              ink: '#0e0d10',
+              surface: '#151419',
+              surfaceHover: '#1c1b22',
+              surfaceMuted: '#212028',
+              border: '#2a2832',
+              borderLight: '#393644',
+              muted: '#948f9e',
+              text: '#ece9f0'
+            }
+          },
+          fontFamily: {
+            sans: ['"Segoe UI"', 'Jost', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'Georgia', 'serif']
+          },
+          letterSpacing: {
+            brand: '0.18em',
+            headline: '0.12em'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #0e0d10; }
+    ::-webkit-scrollbar-thumb { background: #2a2832; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3d3947; }
+
+    .glass-nav {
+      background: rgba(14, 13, 16, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-sans bg-brand-ink text-brand-text antialiased selection:bg-stone-700 selection:text-white">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-brand-surface border border-brand-borderLight text-stone-100 px-4 py-3 rounded shadow-2xl text-xs font-sans">
+    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+    <span id="toast-msg">Copied</span>
+  </div>
+
+  <!-- Header conforming to Brand Guidelines: Pure typographic lockup, no unapproved SVG badges -->
+  <header class="glass-nav sticky top-0 z-40 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <!-- Mazda Typographic Brand Mark (Brand Guidelines D.1.6 & D.2.5: Uppercase, Medium weight, balanced tracking) -->
+        <span class="text-sm tracking-[0.32em] font-medium text-white uppercase select-none">MAZDA</span>
+        <span class="h-4 w-px bg-brand-border hidden sm:inline-block"></span>
+        <div class="text-[10px] tracking-[0.2em] uppercase text-brand-muted hidden sm:block">
+          CAMBODIA · HGB AUTO
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-2 text-[10px] tracking-brand uppercase text-stone-300 bg-brand-surface border border-brand-border px-3 py-1 rounded">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+          2026 CALENDAR
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Refined, calm typography emphasizing space and dignity (Guidelines A.4.2 & D.2.5) -->
+  <section class="border-b border-brand-border bg-gradient-to-b from-[#141318] via-[#100f14] to-brand-ink pt-12 pb-11">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[10px] uppercase tracking-[0.28em] text-brand-muted font-medium mb-3">
+        MAZDA DRIVE CLUB · AUTUMN 2026
+      </p>
+      <h1 class="text-2xl sm:text-4xl font-normal tracking-headline text-white uppercase leading-tight">
+        EVENTS BY MAZDA
+      </h1>
+      <p class="mt-3 text-xs sm:text-sm text-brand-muted leading-relaxed max-w-2xl font-serif font-light">
+        Curated drive caravans, private cinema screenings, and community sports across Phnom Penh. Every gathering features prepared test-drive vehicles on-site.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.16em] text-brand-muted border-t border-brand-border/60 pt-4">
+        <div><span id="hero-total-count" class="text-white font-medium">10</span> CONFIRMED DATES</div>
+        <span class="text-stone-700 hidden sm:inline">·</span>
+        <div>POCHENTONG &amp; MEAN CHEY SHOWROOMS</div>
+        <span class="text-stone-700 hidden sm:inline">·</span>
+        <div>FLEET READY ON-SITE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Controls: Monochrome with subtle highlights -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2 w-full">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-border pb-4">
+      
+      <!-- Category Pill Filters -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none" id="filter-container">
+        <button onclick="setFilter('all')" class="filter-btn active shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-stone-100 text-stone-900 font-medium transition-colors" data-filter="all">
+          ALL (<span id="cnt-all">0</span>)
+        </button>
+        <button onclick="setFilter('drive')" class="filter-btn shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-colors" data-filter="drive">
+          DRIVES &amp; CARAVANS (<span id="cnt-drive">0</span>)
+        </button>
+        <button onclick="setFilter('cinema')" class="filter-btn shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-colors" data-filter="cinema">
+          SCREENINGS (<span id="cnt-cinema">0</span>)
+        </button>
+        <button onclick="setFilter('lifestyle')" class="filter-btn shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-colors" data-filter="lifestyle">
+          SPORTS &amp; COMMUNITY (<span id="cnt-lifestyle">0</span>)
+        </button>
+      </div>
+
+      <!-- Month Filter Dropdown -->
+      <div class="flex items-center gap-2 shrink-0">
+        <select id="month-filter" onchange="setMonth(this.value)" class="w-full sm:w-auto bg-brand-surface border border-brand-border text-xs text-brand-muted hover:text-white rounded px-3 py-1.5 focus:outline-none focus:border-stone-500 tracking-wide uppercase">
+          <option value="all">ALL MONTHS (SEP – NOV 2026)</option>
+          <option value="September">SEPTEMBER 2026</option>
+          <option value="October">OCTOBER 2026</option>
+          <option value="November">NOVEMBER 2026</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Feed -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow py-4 w-full">
+    <div id="events-feed" class="space-y-12">
+      <!-- Generated dynamically by JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-16 border border-dashed border-brand-border rounded">
+      <p class="text-xs uppercase tracking-wider text-brand-muted">No scheduled events match this selection</p>
+      <button onclick="resetFilters()" class="mt-3 px-3 py-1.5 bg-brand-surface text-white text-xs uppercase tracking-wider border border-brand-border rounded hover:bg-brand-surfaceHover">Show all dates</button>
+    </div>
+
+    <!-- Operational Notes: Plus-One Perks & Fleet Staging -->
+    <div class="mt-14 border-t border-brand-border pt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- Plus-One Purchase Referral Perks -->
+        <div class="bg-brand-surface border border-brand-border rounded p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+              <h3 class="text-[11px] font-medium uppercase tracking-[0.16em] text-white">PLUS-ONE AFTERCARE REFERRAL PROGRAM</h3>
+            </div>
+            <p class="text-xs text-brand-muted font-serif leading-relaxed mb-4 font-light">
+              Club members who invite a plus-one companion for an official test drive receive complimentary Mazda aftersales servicing credits whenever their plus-one proceeds to purchase a vehicle.
+            </p>
+          </div>
+          <div class="space-y-2 text-xs border-t border-brand-border/60 pt-3 font-serif">
+            <div class="flex items-center justify-between py-1 border-b border-brand-border/40">
+              <span class="text-brand-muted">Plus-One Test Drive &amp; Vehicle Purchase</span>
+              <span class="text-white font-sans text-[11px] uppercase tracking-wider font-medium text-right">Complimentary Servicing Package</span>
+            </div>
+            <div class="flex items-center justify-between py-1">
+              <span class="text-brand-muted">Service Redemption</span>
+              <span class="text-brand-muted font-sans text-[11px] uppercase tracking-wider text-right">Pochentong &amp; Mean Chey</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fleet Operations Guidelines -->
+        <div class="bg-brand-surface border border-brand-border rounded p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-500"></span>
+              <h3 class="text-[11px] font-medium uppercase tracking-[0.16em] text-white">FLEET LOGISTICS &amp; STAGING</h3>
+            </div>
+            <p class="text-xs text-brand-muted font-serif leading-relaxed mb-3 font-light">
+              Showroom coordination across our Phnom Penh locations:
+            </p>
+            <ul class="space-y-1.5 text-xs text-stone-300 font-serif font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-stone-500 font-sans leading-none mt-1">·</span>
+                <span><strong class="font-sans font-medium text-white">Mean Chey Showroom:</strong> Staging point for private cinema screenings, night boulevard drives, and child matinee family test drives.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-stone-500 font-sans leading-none mt-1">·</span>
+                <span><strong class="font-sans font-medium text-white">Pochentong Showroom:</strong> Meeting point for the BALE CX-5 caravan convoy and the Women’s Temple Cruise.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-stone-500 font-sans leading-none mt-1">·</span>
+                <span><strong class="font-sans font-medium text-white">Community Sports:</strong> Printed Mazda banners on court; walk-up test drives available with a valid driver’s license.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-brand-border mt-14 bg-brand-ink py-8 text-xs text-brand-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="tracking-wide uppercase text-[11px]">&copy; 2026 MAZDA CAMBODIA · HGB AUTO GROUP · MAZDA DRIVE CLUB</div>
+      <div class="flex items-center gap-3 text-[10px] tracking-widest uppercase">
+        <span>POCHENTONG SHOWROOM</span>
+        <span>·</span>
+        <span>MEAN CHEY SHOWROOM</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Modal Dialog -->
+  <div id="event-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 opacity-0 pointer-events-none transition-opacity duration-200" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+
+    <div class="relative w-full max-w-lg bg-[#141318] border border-brand-borderLight rounded shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col font-sans">
+      <div class="h-0.5 w-full bg-brand-borderLight"></div>
+
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-brand-border flex items-start justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+            <span id="modal-category-badge" class="text-[9px] font-medium uppercase tracking-[0.16em] px-2 py-0.5 rounded bg-brand-surfaceMuted text-stone-200 border border-brand-border">
+              Category
+            </span>
+            <span id="modal-date-tag" class="text-xs text-brand-muted tracking-wide">Date</span>
+          </div>
+          <h3 id="modal-title" class="text-base sm:text-lg font-normal text-white uppercase tracking-headline leading-snug">Title</h3>
+          <p id="modal-location" class="text-xs text-brand-muted mt-1.5 flex items-start sm:items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span id="modal-location-text">Location</span>
+          </p>
+        </div>
+
+        <button onclick="closeModal()" aria-label="Close dialog" class="text-stone-400 hover:text-white p-1.5 rounded hover:bg-stone-800 transition-colors shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 overflow-y-auto space-y-4 text-xs font-serif text-stone-300">
+        <div>
+          <h4 class="font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-brand-muted mb-2">EVENT OUTLINE</h4>
+          <ul id="modal-scope-list" class="space-y-1.5 list-disc list-inside text-stone-300 font-light leading-relaxed"></ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded bg-brand-surface border border-brand-border font-sans">
+          <div>
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">TEST DRIVE PLAN</span>
+            <span id="modal-test-drive" class="text-white font-normal mt-0.5 block text-xs">Test Drive</span>
+          </div>
+          <div>
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">CAPACITY</span>
+            <span id="modal-capacity" class="text-white font-normal mt-0.5 block text-xs">Capacity</span>
+          </div>
+          <div class="sm:col-span-2 pt-2 border-t border-brand-border">
+            <span class="text-[9px] uppercase tracking-wider font-medium text-brand-muted block">FLEET STAGING</span>
+            <span id="modal-fleet-origin" class="text-stone-300 mt-0.5 block text-xs">Fleet origin</span>
+          </div>
+        </div>
+
+        <div id="modal-special-note" class="p-3 rounded bg-brand-surfaceMuted border border-brand-border">
+          <div class="flex items-center gap-1.5 text-stone-200 font-sans font-medium text-[10px] uppercase tracking-wider mb-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>
+            <span>COORDINATION GUIDELINES</span>
+          </div>
+          <p id="modal-special-text" class="text-brand-muted text-xs font-serif font-light leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-brand-border bg-[#100f13] flex items-center justify-between gap-3 font-sans">
+        <button id="modal-ics-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded bg-brand-surface hover:bg-brand-surfaceHover text-stone-300 border border-brand-border transition-colors uppercase tracking-wider text-[11px]">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          Export .ICS
+        </button>
+
+        <button onclick="copyShareText()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs rounded bg-stone-100 hover:bg-white text-stone-900 transition-colors font-medium uppercase tracking-wider text-[11px]">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          Copy Summary
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Master Event Data matching all corrected user instructions and Brand Guidelines
+    const eventsData = [
+      {
+        id: "e-pub",
+        day: 15,
+        weekday: "Tuesday",
+        month: "September",
+        year: 2026,
+        time: "10:00 AM",
+        category: "drive",
+        categoryLabel: "Announcement",
+        title: "Publish Public Events Calendar",
+        location: "Digital Release & Showroom Displays",
+        shortDesc: "Official publication of the Mazda Drive Club calendar across member and public channels.",
+        scope: [
+          "Release of the September – November event calendar to club members and registered prospects.",
+          "Digital showroom displays and RSVP registration links activated.",
+          "Booking window opens for CX-5 Caravan, Pickleball, and Cinema series."
+        ],
+        testDrive: "RSVP booking links active across showroom fleets.",
+        capacity: "Public Club Announcement",
+        fleetOrigin: "Mean Chey & Pochentong Showrooms",
+        specialNote: "Public launch of the autumn club schedule."
+      },
+      {
+        id: "e1",
+        day: 19,
+        weekday: "Saturday",
+        month: "September",
+        year: 2026,
+        time: "11:00 AM",
+        category: "drive",
+        categoryLabel: "Caravan",
+        title: "BALE Resort CX-5 Caravan",
+        location: "Meet at Pochentong Showroom · Drive to Makro · Shuttle to BALE Resort",
+        shortDesc: "Convoy drive from Pochentong to Makro staging hub, followed by a 3-minute private shuttle to BALE Resort. Plus-one test drives qualify for aftersales perks if they purchase a car.",
+        scope: [
+          "Rally and morning coffee at Pochentong Showroom.",
+          "Caravan drive from Pochentong to Makro staging area.",
+          "Private 3-minute shuttle transfer from Makro to BALE Resort.",
+          "Members are welcome to bring a plus-one companion.",
+          "Members whose plus-one completes a registered test drive and purchases a Mazda earn the complimentary aftersales servicing package."
+        ],
+        testDrive: "Convoy drive from Pochentong to Makro staging hub. Plus-one guests take the wheel on the test-drive leg.",
+        capacity: "50 Guests (25 CX-5 Owners + 25 Plus-Ones)",
+        fleetOrigin: "Pochentong Showroom Fleet",
+        specialNote: "Aftersales servicing perks are awarded to members whose plus-one takes a test drive and purchases a car."
+      },
+      {
+        id: "e2",
+        day: 23,
+        weekday: "Wednesday",
+        month: "September",
+        year: 2026,
+        time: "7:00 PM – 9:00 PM",
+        category: "lifestyle",
+        categoryLabel: "Sports & Social",
+        title: "Drive Club Pickleball Social #1",
+        location: "Connexion Sports Hub (Near Koh Pich)",
+        shortDesc: "Evening doubles session. Official Mazda banner on site; passersby with a valid driver’s license can also take a test drive.",
+        scope: [
+          "Community sports evening for Mazda members, invited guests, and visitors.",
+          "Official printed Mazda banner displayed at the venue entrance.",
+          "Walk-by visitors with a valid driver’s license are welcome to register and test-drive on site.",
+          "Complimentary court reservations, fresh towels, and chilled hydration stations."
+        ],
+        testDrive: "Prepared Mazda vehicles staged at the Connexion entrance; test drives open to players and walk-by visitors with a valid driver’s license.",
+        capacity: "20–24 Players + Walk-up Visitors",
+        fleetOrigin: "Pochentong Showroom Fleet",
+        specialNote: "Printed banner on site. Walk-by test drives permitted with valid driver's license."
+      },
+      {
+        id: "e3",
+        day: 25,
+        weekday: "Friday",
+        month: "September",
+        year: 2026,
+        time: "Evening (Showings 1 & 2)",
+        category: "cinema",
+        categoryLabel: "Cinema & Drives",
+        title: "The Fast and the Furious: Tokyo Drift (Showings 1 & 2)",
+        location: "Private Screening Theatre, Mean Chey Showroom",
+        shortDesc: "Private 12-seat theatre evening with Japanese snacks and illuminated night boulevard test drives.",
+        scope: [
+          "Private screening lounge at Mean Chey Showroom with Japanese snacks, refreshments, and espresso.",
+          "Showings 1 & 2 for Friday evening attendees (12 seats per showing).",
+          "Relaxed post-screening night boulevard test drives departing from Mean Chey."
+        ],
+        testDrive: "Night drives along Hun Sen Boulevard departing immediately after screenings.",
+        capacity: "24 Guests Total (12 seats per showing)",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "The drive afterwards is the main experience—an unhurried, enjoyable cruise."
+      },
+      {
+        id: "e4",
+        day: 26,
+        weekday: "Saturday",
+        month: "September",
+        year: 2026,
+        time: "10:30 AM",
+        category: "cinema",
+        categoryLabel: "Cinema & Drives",
+        title: "The Fast and the Furious: Tokyo Drift (Showing 3)",
+        location: "Private Screening Theatre, Mean Chey Showroom",
+        shortDesc: "Saturday morning matinee screening followed by daylight boulevard drive sessions.",
+        scope: [
+          "Third showing of the Tokyo Drift series in the private theatre at Mean Chey.",
+          "Morning espresso and Japanese refreshments.",
+          "Daylight test drive routes departing the showroom."
+        ],
+        testDrive: "Daylight circuit departing Mean Chey Showroom forecourt.",
+        capacity: "12 Guests",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "Concludes the September cinema run."
+      },
+      {
+        id: "e5",
+        day: 7,
+        weekday: "Wednesday",
+        month: "October",
+        year: 2026,
+        time: "9:00 AM – 1:30 PM",
+        category: "drive",
+        categoryLabel: "Culture & Cruise",
+        title: "Women’s Lunch and Temple Cruise",
+        location: "Depart Pochentong Showroom · Temple Sanctuary · Boutique Luncheon",
+        shortDesc: "Scenic cruise visiting a sanctuary run by female monks. Guests select a car at Pochentong for the journey; optional swaps available on the return leg.",
+        scope: [
+          "Guests meet at Pochentong Showroom and select their preferred car for the trip.",
+          "No car swap during the outbound route; passengers can request a vehicle swap on the return leg if desired.",
+          "Cultural visit to a serene Buddhist sanctuary run by female monks.",
+          "Curated boutique luncheon celebrating women drivers and community members."
+        ],
+        testDrive: "Drivers select their vehicle at Pochentong Showroom. No mid-route swaps; swap upon request for the drive back.",
+        capacity: "Up to 24 Guests (8–10 vehicles)",
+        fleetOrigin: "Pochentong Showroom Fleet",
+        specialNote: "Meet at Pochentong and select car for the trip. No car swap en route; swap on the return trip upon request."
+      },
+      {
+        id: "e7",
+        day: 21,
+        weekday: "Wednesday",
+        month: "October",
+        year: 2026,
+        time: "7:00 PM – 9:00 PM",
+        category: "lifestyle",
+        categoryLabel: "Sports & Social",
+        title: "Drive Club Pickleball Social #2",
+        location: "Connexion Sports Hub (Near Koh Pich)",
+        shortDesc: "Evening pickleball games with printed Mazda banner on site. Walk-by passersby with valid licenses are invited to test-drive.",
+        scope: [
+          "Social doubles matches under the lights at Connexion.",
+          "Official Mazda banner on location.",
+          "Walk-by spectators and visitors with a valid driver’s license can register for an on-site test drive.",
+          "Chilled refreshments and towels provided."
+        ],
+        testDrive: "Prepared Mazda demo vehicles staged at the entrance; open to players and passersby with a valid driver's license.",
+        capacity: "20–24 Players + Walk-up Visitors",
+        fleetOrigin: "Pochentong Showroom Fleet",
+        specialNote: "Printed banner on site; test drives available for walk-by guests with valid driver's license."
+      },
+      {
+        id: "e8",
+        day: 24,
+        weekday: "Saturday",
+        month: "October",
+        year: 2026,
+        time: "6:00 PM – 9:30 PM",
+        category: "lifestyle",
+        categoryLabel: "Spectator Sports",
+        title: "Interclub Kun Khmer Fight Night Experience",
+        location: "Championship Arena · Convoy Departs Mean Chey Showroom",
+        shortDesc: "Live Kun Khmer championship spectating with Mazda VIP seating and convoy drive departing Mean Chey.",
+        scope: [
+          "Dedicated Mazda VIP seating section for the live card.",
+          "Official Mazda brand presentation banner on location.",
+          "Convoy drive from Mean Chey Showroom directly to the arena.",
+          "Guests can test-drive a demo car in the convoy or park and enjoy the matches."
+        ],
+        testDrive: "Convoy drive departing Mean Chey Showroom to the fight venue.",
+        capacity: "20 Mazda Club VIP Seats",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "Official club banner on location. Departs from Mean Chey."
+      },
+      {
+        id: "e9",
+        day: 30,
+        weekday: "Friday",
+        month: "October",
+        year: 2026,
+        time: "Evening (Showings 1 & 2)",
+        category: "cinema",
+        categoryLabel: "Cinema & Drives",
+        title: "Tokyo Drift Cinema Series (Autumn Encore)",
+        location: "Private Screening Theatre, Mean Chey Showroom",
+        shortDesc: "Friday evening double-header screenings with Japanese refreshments and night boulevard circuits.",
+        scope: [
+          "12 seats per showing in the Mean Chey private theatre.",
+          "Specialty coffees, Japanese treats, and cold drinks.",
+          "Night boulevard test drives along Hun Sen Boulevard departing showroom forecourt."
+        ],
+        testDrive: "Night drives departing Mean Chey Showroom forecourt.",
+        capacity: "24 Guests Total (12 per showing)",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "Lead-in to Saturday's morning showing and afternoon family matinee."
+      },
+      {
+        id: "e10",
+        day: 31,
+        weekday: "Saturday",
+        month: "October",
+        year: 2026,
+        time: "10:30 AM",
+        category: "cinema",
+        categoryLabel: "Cinema & Drives",
+        title: "Tokyo Drift Series (Morning Finale)",
+        location: "Private Screening Theatre, Mean Chey Showroom",
+        shortDesc: "Saturday morning screening closing out the Tokyo Drift series before the afternoon family matinee.",
+        scope: [
+          "Final Tokyo Drift showing of the autumn series at Mean Chey.",
+          "Lounge breakfast snacks and morning test-drive slots."
+        ],
+        testDrive: "Morning highway and boulevard runs.",
+        capacity: "12 Guests",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "Concludes the Tokyo Drift series at Mean Chey."
+      },
+      {
+        id: "e11",
+        day: 31,
+        weekday: "Saturday",
+        month: "October",
+        year: 2026,
+        time: "2:30 PM – 5:30 PM",
+        category: "cinema",
+        categoryLabel: "Family Matinee",
+        title: "The Movie 'Cars' for Kids @ Mean Chey · Parents Test Drive & Dine",
+        location: "Private Screening Theatre & Lounge, Mean Chey Showroom",
+        shortDesc: "Pixar’s 'Cars' on the big screen with supervised seating for kids, while parents enjoy test drives and afternoon dining.",
+        scope: [
+          "Comfortable floor cushions and mats arranged for children to watch Pixar’s 'Cars' in the Mean Chey theatre.",
+          "Dedicated child-care assistants supervising the screening room.",
+          "Staggered test-drive departures allowing parents to take turns experiencing the fleet.",
+          "Catered afternoon dining and refreshments in the showroom hospitality lounge."
+        ],
+        testDrive: "Flexible parent rotation drives departing Mean Chey forecourt during the film.",
+        capacity: "approx. 20–25 Children + Parents",
+        fleetOrigin: "Mean Chey Showroom Fleet",
+        specialNote: "Supervised film for kids at Mean Chey while parents test-drive and dine."
+      },
+      {
+        id: "e12",
+        day: 7,
+        weekday: "Saturday",
+        month: "November",
+        year: 2026,
+        time: "9:30 AM – 2:30 PM",
+        category: "lifestyle",
+        categoryLabel: "Family & Community",
+        title: "Family Wellness Day in the Park",
+        location: "Park Lawn (Phnom Penh)",
+        shortDesc: "Open-air family wellness gathering with lawn games, picnic lunch, on-site test drives, bookings, and an exclusive raffle draw.",
+        scope: [
+          "Celebration taking advantage of the post-monsoon fair weather in Phnom Penh.",
+          "Outdoor lawn games, relaxation zones, and supervised kids' activities.",
+          "Picnic lunch boxes and fresh cold-pressed juices provided for registered guests.",
+          "Dedicated Mazda vehicle staging area with on-site test drives and consultation desk.",
+          "Special Mazda Club raffle giveaway with prizes drawn during the afternoon."
+        ],
+        testDrive: "Pre-conditioned demo fleet on-site with guided perimeter and city drive circuits.",
+        capacity: "Open Club Event (approx. 50–70 guests)",
+        fleetOrigin: "Joint Fleet (Mean Chey & Pochentong)",
+        specialNote: "First Saturday in November. Lawn games, picnic lunch, on-site test drives, and raffle."
+      }
+    ];
+
+    let currentFilter = 'all';
+    let currentMonth = 'all';
+    let currentModalEvent = null;
+
+    function updateCounts() {
+      const allCount = eventsData.length;
+      const driveCount = eventsData.filter(e => e.category === 'drive').length;
+      const cinemaCount = eventsData.filter(e => e.category === 'cinema').length;
+      const lifestyleCount = eventsData.filter(e => e.category === 'lifestyle').length;
+
+      document.getElementById('cnt-all').textContent = allCount;
+      document.getElementById('cnt-drive').textContent = driveCount;
+      document.getElementById('cnt-cinema').textContent = cinemaCount;
+      document.getElementById('cnt-lifestyle').textContent = lifestyleCount;
+      
+      const heroTotal = document.getElementById('hero-total-count');
+      if (heroTotal) heroTotal.textContent = allCount;
+    }
+
+    function setFilter(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.dataset.filter === cat) {
+          btn.className = "filter-btn active shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-stone-100 text-stone-900 font-medium transition-colors";
+        } else {
+          btn.className = "filter-btn shrink-0 px-3 py-1.5 text-[11px] uppercase tracking-wider rounded bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-colors";
+        }
+      });
+      renderFeed();
+    }
+
+    function setMonth(m) {
+      currentMonth = m;
+      renderFeed();
+    }
+
+    function resetFilters() {
+      setFilter('all');
+      document.getElementById('month-filter').value = 'all';
+      setMonth('all');
+    }
+
+    function cleanText(str) {
+      if (!str) return '';
+      return str.replace(/&middot;/g, '·');
+    }
+
+    function renderFeed() {
+      const container = document.getElementById('events-feed');
+      const emptyState = document.getElementById('empty-state');
+      container.innerHTML = '';
+
+      const filtered = eventsData.filter(ev => {
+        const matchCat = (currentFilter === 'all' || ev.category === currentFilter);
+        const matchMonth = (currentMonth === 'all' || ev.month === currentMonth);
+        return matchCat && matchMonth;
+      });
+
+      if (filtered.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      const months = ['September 2026', 'October 2026', 'November 2026'];
+
+      months.forEach(mName => {
+        const evs = filtered.filter(e => `${e.month} ${e.year}` === mName);
+        if (evs.length === 0) return;
+
+        const monthBox = document.createElement('div');
+        monthBox.className = "space-y-4";
+
+        let subtitle = "";
+        if (mName.includes("September")) subtitle = "Caravan launch & inaugural cinema series";
+        if (mName.includes("October")) subtitle = "Women's cruise, sports socials & encore screenings";
+        if (mName.includes("November")) subtitle = "Family wellness gathering in the park";
+
+        monthBox.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-brand-border pb-2.5 gap-1">
+            <h3 class="text-base sm:text-lg font-normal tracking-headline text-white uppercase">${mName}</h3>
+            <span class="text-xs text-brand-muted font-serif italic font-light">${subtitle}</span>
+          </div>
+        `;
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-1";
+
+        evs.forEach(ev => {
+          const card = document.createElement('div');
+          card.className = "group bg-brand-surface hover:bg-brand-surfaceHover border border-brand-border hover:border-brand-borderLight rounded p-4 sm:p-5 transition-all duration-150 cursor-pointer flex flex-col justify-between";
+          card.onclick = () => openModal(ev.id);
+
+          const shortLoc = cleanText(ev.location.split('·')[0].replace('Meet at ', '').trim());
+
+          card.innerHTML = `
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-10 h-10 rounded bg-brand-surfaceMuted border border-brand-border flex flex-col items-center justify-center text-center shrink-0">
+                    <span class="text-xs font-semibold text-white leading-none">${ev.day}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-brand-muted font-medium mt-0.5">${ev.month.substr(0, 3)}</span>
+                  </div>
+                  <div>
+                    <span class="text-xs font-medium text-stone-200 block uppercase tracking-wide">${ev.weekday}</span>
+                    <span class="text-[11px] text-brand-muted block">${cleanText(ev.time)}</span>
+                  </div>
+                </div>
+
+                <span class="text-[9px] uppercase tracking-[0.16em] px-2 py-0.5 rounded border border-brand-border bg-brand-surfaceMuted text-brand-muted shrink-0 font-medium">
+                  ${ev.categoryLabel}
+                </span>
+              </div>
+
+              <h4 class="text-xs sm:text-sm font-medium text-stone-100 group-hover:text-white uppercase tracking-wider leading-snug line-clamp-2">
+                ${cleanText(ev.title)}
+              </h4>
+              <p class="text-xs text-brand-muted font-serif line-clamp-2 mt-1.5 leading-relaxed font-light">
+                ${cleanText(ev.shortDesc)}
+              </p>
+            </div>
+
+            <div class="mt-4 pt-2.5 border-t border-brand-border/60 flex items-center justify-between text-[11px] text-brand-muted">
+              <span class="truncate max-w-[190px]">${shortLoc}</span>
+              <span class="text-stone-300 font-medium group-hover:translate-x-0.5 transition-transform flex items-center gap-1 uppercase tracking-wider text-[10px]">
+                Details &rarr;
+              </span>
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+
+        monthBox.appendChild(grid);
+        container.appendChild(monthBox);
+      });
+    }
+
+    function openModal(id) {
+      currentModalEvent = eventsData.find(e => e.id === id);
+      if (!currentModalEvent) return;
+
+      const ev = currentModalEvent;
+      document.getElementById('modal-title').textContent = cleanText(ev.title);
+      document.getElementById('modal-date-tag').textContent = `${ev.weekday.toUpperCase()}, ${ev.month.toUpperCase()} ${ev.day}, ${ev.year} · ${cleanText(ev.time)}`;
+      document.getElementById('modal-location-text').textContent = cleanText(ev.location);
+      document.getElementById('modal-test-drive').textContent = cleanText(ev.testDrive);
+      document.getElementById('modal-capacity').textContent = cleanText(ev.capacity);
+      document.getElementById('modal-fleet-origin').textContent = cleanText(ev.fleetOrigin);
+      document.getElementById('modal-special-text').textContent = cleanText(ev.specialNote);
+
+      const badge = document.getElementById('modal-category-badge');
+      badge.textContent = ev.categoryLabel;
+
+      const scopeList = document.getElementById('modal-scope-list');
+      scopeList.innerHTML = '';
+      ev.scope.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = cleanText(item);
+        scopeList.appendChild(li);
+      });
+
+      document.getElementById('modal-ics-btn').onclick = () => downloadIcs(ev);
+
+      const modal = document.getElementById('event-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('event-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function copyShareText() {
+      if (!currentModalEvent) return;
+      const cleanLoc = cleanText(currentModalEvent.location);
+      const text = `MAZDA DRIVE CLUB: ${cleanText(currentModalEvent.title)}\nDate: ${currentModalEvent.weekday}, ${currentModalEvent.month} ${currentModalEvent.day}, ${currentModalEvent.year} (${cleanText(currentModalEvent.time)})\nLocation: ${cleanLoc}\nHighlights: ${cleanText(currentModalEvent.shortDesc)}`;
+      
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast('Event summary copied to clipboard');
+      } catch (err) {
+        showToast('Could not copy to clipboard');
+      }
+      document.body.removeChild(el);
+    }
+
+    function downloadIcs(ev) {
+      let monthNum = '09';
+      if (ev.month === 'October') monthNum = '10';
+      if (ev.month === 'November') monthNum = '11';
+      
+      const dayNum = String(typeof ev.day === 'number' ? ev.day : 1).padStart(2, '0');
+      const dateStr = `2026${monthNum}${dayNum}`;
+      
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Mazda Cambodia//Drive Club//EN',
+        'BEGIN:VEVENT',
+        `SUMMARY:Mazda Drive Club: ${cleanText(ev.title)}`,
+        `DESCRIPTION:${cleanText(ev.shortDesc)} | Fleet: ${cleanText(ev.fleetOrigin)}`,
+        `LOCATION:${cleanText(ev.location)}`,
+        `DTSTART:${dateStr}T090000Z`,
+        `DTEND:${dateStr}T120000Z`,
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `Mazda_${ev.title.replace(/[^a-zA-Z0-9]/g, '_')}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast('Downloaded .ICS calendar file');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('translate-y-16', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0');
+      }, 2400);
+    }
+
+    // Initialize display and dynamic counters on load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateCounts();
+      renderFeed();
+    });
+  </script>
+</body>
+</html>
